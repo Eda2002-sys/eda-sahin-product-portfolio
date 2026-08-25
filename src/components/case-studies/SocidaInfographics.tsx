@@ -39,8 +39,23 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
           </div>
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-medium">Company knowledge</p>
-            <p className="text-[11px] text-background/65">online</p>
+            <p className="text-[11px] text-background/65">7 brands · approved sources</p>
           </div>
+        </div>
+
+        <div className="flex gap-1.5 overflow-x-auto border-b border-border bg-surface px-3 py-2">
+          {["Brand A", "Brand B", "Multi-brand", "Service"].map((brand, index) => (
+            <span
+              key={brand}
+              className={`shrink-0 rounded-sm px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] ${
+                index === 0
+                  ? "bg-burgundy/10 text-burgundy"
+                  : "border border-border text-muted"
+              }`}
+            >
+              {brand}
+            </span>
+          ))}
         </div>
 
         <div className="space-y-3 bg-background px-3 py-4">
@@ -64,7 +79,10 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
           </div>
 
           <div className="max-w-[92%] rounded-sm rounded-tl-none border border-border bg-surface-elevated px-3 py-2.5">
-            <p className="text-[13px] leading-relaxed text-navy">
+            <p className="text-[10px] uppercase tracking-[0.12em] text-burgundy">
+              Approved source · Brand A
+            </p>
+            <p className="mt-1 text-[13px] leading-relaxed text-navy">
               Voici les modèles et les parcours de financement approuvés — avec
               les documents et le quiz du jour.
             </p>
@@ -110,12 +128,21 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
 }
 
 export function SocidaProblemVisual({ caption }: { caption?: string }) {
-  const sources = ["Documents", "Product sheets", "Training sessions", "Team chats"];
+  const sources = [
+    "Documents",
+    "Product sheets",
+    "Training sessions",
+    "Team chats",
+    "Brand portals",
+  ];
 
   return (
     <figure>
       <Panel>
-        <p className="max-w-3xl font-serif text-xl leading-snug text-navy md:text-2xl">
+        <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
+          Mid-conversation friction
+        </p>
+        <p className="mt-3 max-w-3xl font-serif text-xl leading-snug text-navy md:text-2xl">
           A salesperson speaking with a customer could not pause to search across
           portals, product sheets, and team chats.
         </p>
@@ -134,6 +161,16 @@ export function SocidaProblemVisual({ caption }: { caption?: string }) {
           <span className="rounded-sm bg-navy px-3 py-1.5 text-sm text-background">
             No single point of access
           </span>
+        </div>
+        <div className="mt-6 rounded-sm border border-burgundy/25 bg-burgundy/[0.04] px-4 py-3">
+          <p className="text-sm text-navy">
+            ~300 employees · 7 brand knowledge bases · WhatsApp already in daily
+            use
+          </p>
+          <p className="mt-1 text-sm text-muted">
+            The product had to meet people in-channel — not add another portal to
+            search during a live customer moment.
+          </p>
         </div>
       </Panel>
       {caption ? <Caption>{caption}</Caption> : null}

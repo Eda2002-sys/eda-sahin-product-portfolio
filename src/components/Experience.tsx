@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { experience } from "@/data/experience";
 
@@ -8,7 +10,7 @@ export function Experience() {
       className="scroll-mt-24"
       aria-labelledby="experience-heading"
     >
-      <div className="container-page py-20 md:py-28">
+      <div className="container-page py-16 md:py-28">
         <SectionHeading
           id="experience-heading"
           eyebrow="Experience"
@@ -20,16 +22,50 @@ export function Experience() {
           {experience.map((item) => (
             <li
               key={item.id}
-              className="grid gap-3 border-t border-border py-8 md:grid-cols-12 md:gap-6"
+              className="grid gap-4 border-t border-border py-8 md:grid-cols-12 md:gap-6 md:py-10"
             >
-              <div className="md:col-span-4">
-                <h3 className="font-serif text-2xl text-navy">{item.company}</h3>
-                <p className="mt-1 text-sm text-muted">{item.role}</p>
+              <div className="min-w-0 md:col-span-4">
+                <div className="flex items-start justify-between gap-4 md:block">
+                  <div className="flex min-w-0 items-start gap-3">
+                    {item.logo ? (
+                      <Link
+                        href={item.logoHref ?? "#"}
+                        target={item.logoHref ? "_blank" : undefined}
+                        rel={item.logoHref ? "noopener noreferrer" : undefined}
+                        className="mt-0.5 shrink-0 transition-opacity hover:opacity-80"
+                        aria-label={`${item.company} (opens in new tab)`}
+                      >
+                        {(() => {
+                          const height = item.logoHeight ?? 22;
+                          const aspect = item.logoAspect ?? 984 / 421;
+                          const width = Math.round(height * aspect);
+                          return (
+                            <Image
+                              src={item.logo}
+                              alt=""
+                              width={width}
+                              height={height}
+                              className="max-w-full object-contain"
+                              style={{ width, height, maxWidth: "100%" }}
+                            />
+                          );
+                        })()}
+                      </Link>
+                    ) : null}
+                    <div className="min-w-0">
+                      <h3 className="font-serif text-xl text-navy sm:text-2xl">
+                        {item.company}
+                      </h3>
+                      <p className="mt-1 text-sm text-muted">{item.role}</p>
+                    </div>
+                  </div>
+                  <p className="shrink-0 text-sm text-muted md:hidden">{item.period}</p>
+                </div>
               </div>
-              <div className="md:col-span-2">
+              <div className="hidden md:col-span-2 md:block">
                 <p className="text-sm text-muted">{item.period}</p>
               </div>
-              <div className="md:col-span-6">
+              <div className="min-w-0 md:col-span-6">
                 {item.focus ? (
                   <ul className="flex flex-wrap gap-2">
                     {item.focus.map((focusItem) => (

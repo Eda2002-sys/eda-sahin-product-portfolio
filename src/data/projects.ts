@@ -50,7 +50,28 @@ export type ProjectVisualComponent =
   | "cre-build"
   | "cre-sheet"
   | "cre-insights"
-  | "cre-outcome";
+  | "cre-outcome"
+  | "third-eye-hero"
+  | "third-eye-problem"
+  | "third-eye-approach"
+  | "third-eye-build"
+  | "third-eye-journey"
+  | "third-eye-brief"
+  | "third-eye-outcome"
+  | "clinical-hero"
+  | "clinical-problem"
+  | "clinical-approach"
+  | "clinical-build"
+  | "clinical-journey"
+  | "clinical-review"
+  | "clinical-outcome"
+  | "analystai-hero"
+  | "analystai-problem"
+  | "analystai-approach"
+  | "analystai-build"
+  | "analystai-journey"
+  | "analystai-workspace"
+  | "analystai-outcome";
 
 export type ProjectVisual = {
   alt: string;
@@ -103,6 +124,8 @@ export type Project = {
   type: "case-study" | "reviews";
   visualNote: string;
   coverImage?: string;
+  brandLogo?: string;
+  brandUrl?: string;
   caseStudy?: CaseStudyContent;
 };
 
@@ -317,8 +340,61 @@ export const projects: Project[] = [
     href: "/work/third-eye",
     type: "case-study",
     visualNote:
-      "SCREENSHOT PLACEHOLDER: Add Third Eye check-in, daily brief, and executive dashboard screenshots here.",
+      "Editorial product patterns for WhatsApp check-ins, daily briefs and executive dashboard logic.",
     caseStudy: {
+      sourceNote:
+        "Infographics redesigned for this portfolio. Product patterns informed by Third Eye operating intelligence workflows — no live product screenshots or client data are shown.",
+      visuals: [
+        {
+          component: "third-eye-hero",
+          alt: "Frontline WhatsApp updates flowing through synthesis into manager-ready actions",
+          caption:
+            "Frontline updates → synthesis → manager actions — the core Third Eye operating loop.",
+          placement: "hero",
+        },
+        {
+          component: "third-eye-problem",
+          alt: "Before and after comparison of typical corporate tools versus Third Eye visibility",
+          caption:
+            "Too many updates, not enough visibility — from scattered chat to a daily manager-ready rhythm.",
+          placement: "problem",
+        },
+        {
+          component: "third-eye-approach",
+          alt: "WhatsApp check-in converting into a daily operating brief with grouped signals",
+          caption:
+            "Daily operating signal — WhatsApp in, brief out: risk, ownership, and next action.",
+          placement: "approach",
+        },
+        {
+          component: "third-eye-build",
+          alt: "Four daily manager outputs in the pilot format",
+          caption:
+            "Pilot surfaces — WhatsApp pulse, web fallback, morning brief, and owner-linked action queue.",
+          placement: "build",
+        },
+        {
+          component: "third-eye-journey",
+          alt: "Pulse, synthesise, brief and act operating journey",
+          caption:
+            "Pulse → synthesise → brief → act — closing the loop between field reality and management.",
+          placement: "journey",
+        },
+        {
+          component: "third-eye-brief",
+          alt: "Three manager insight cards with issue, branches, owner and next action",
+          caption:
+            "Manager-level insights — staffing risk, customer trends, and training gaps with clear owners.",
+          placement: "governance",
+        },
+        {
+          component: "third-eye-outcome",
+          alt: "Institutional memory cards for living knowledge base, turnover-proofing and onboarding",
+          caption:
+            "Institutional memory — operational knowledge that compounds instead of walking out the door.",
+          placement: "outcome",
+        },
+      ],
       glance: {
         role: "Product flows, QA, Meta/WhatsApp testing, and engineering handoff",
         stage: "Product definition through workflow validation and integration testing",
@@ -1238,10 +1314,61 @@ export const projects: Project[] = [
     href: "/work/clinical-document-processing",
     type: "case-study",
     visualNote:
-      "SCREENSHOT PLACEHOLDER: Add upload → extract → source compare → exception review → longitudinal record screenshots here.",
+      "Editorial product patterns for clinical document intake, extraction, review and longitudinal records.",
     caseStudy: {
       sourceNote:
-        "Product context informed by the published AnalystAI clinical document processing case study. Demonstrations use sanitized clinical data and are not diagnostic advice.",
+        "Infographics redesigned for this portfolio. Product context informed by the published AnalystAI clinical document processing case study. Demonstrations use sanitized clinical data and are not diagnostic advice.",
+      visuals: [
+        {
+          component: "clinical-hero",
+          alt: "Clinical document upload flowing through extraction to a source-linked longitudinal record",
+          caption:
+            "Upload → extract → compare — every value stays tied to the page it came from.",
+          placement: "hero",
+        },
+        {
+          component: "clinical-problem",
+          alt: "Three challenges in clinical document processing and longitudinal trust",
+          caption:
+            "The friction: varied layouts, detached evidence, and review boundaries before trends are usable.",
+          placement: "problem",
+        },
+        {
+          component: "clinical-approach",
+          alt: "Three product principles for source retention, normalization and clinical boundaries",
+          caption:
+            "Product approach — preserve source, normalize carefully, keep clinical judgment human.",
+          placement: "approach",
+        },
+        {
+          component: "clinical-build",
+          alt: "Intake, extract, normalize and approve product surfaces",
+          caption:
+            "One reviewable path from document intake to authorized approval.",
+          placement: "build",
+        },
+        {
+          component: "clinical-journey",
+          alt: "Upload through approve clinical document journey",
+          caption:
+            "Upload → extract → compare → approve — extraction is not diagnosis.",
+          placement: "journey",
+        },
+        {
+          component: "clinical-review",
+          alt: "Exception review workspace comparing source page and reviewer decision",
+          caption:
+            "Review workspace — conflicts visible, approval explicit, clinical boundary stated.",
+          placement: "governance",
+        },
+        {
+          component: "clinical-outcome",
+          alt: "Before and after comparison of manual re-entry versus source-preserving workflow",
+          caption:
+            "From detached re-keying to a reviewable, source-preserving longitudinal path.",
+          placement: "outcome",
+        },
+      ],
       glance: {
         role: "Product testing, extraction / review workflow validation, and engineering coordination",
         stage: "Upload → extract → normalize → resolve exceptions → approve longitudinal record",
@@ -1356,9 +1483,64 @@ export const projects: Project[] = [
     ctaLabel: "View case study",
     href: "/work/analystai-enterprise",
     type: "case-study",
+    brandLogo: "/images/analystai-logo.png",
+    brandUrl: "https://www.analystai.ai",
     visualNote:
-      "SCREENSHOT PLACEHOLDER: Add AnalystAI document Q&A, DDQ, data room, and reporting screenshots here.",
+      "Editorial product patterns for document Q&A, DDQ workflows and source-linked diligence.",
     caseStudy: {
+      sourceNote:
+        "Infographics redesigned for this portfolio. Product patterns informed by AnalystAI enterprise diligence workflows — no client documents or proprietary deal data are shown.",
+      visuals: [
+        {
+          component: "analystai-hero",
+          alt: "Document Q&A with source-linked answer and citation verification panel",
+          caption:
+            "Source-linked answers — investment teams verify evidence before they share or act.",
+          placement: "hero",
+        },
+        {
+          component: "analystai-problem",
+          alt: "Three operating problems in AI diligence and workspace fragmentation",
+          caption:
+            "The friction: unsupported summaries, drifting task state, and demo-vs-implementation gaps.",
+          placement: "problem",
+        },
+        {
+          component: "analystai-approach",
+          alt: "Three product principles for source linkage, connected workspace and client feedback",
+          caption:
+            "Product approach — citations as behaviour, one operating system, client sessions as input.",
+          placement: "approach",
+        },
+        {
+          component: "analystai-build",
+          alt: "Ask, work, organize and report product pillars",
+          caption:
+            "Document Q&A, DDQ, libraries and reporting as one diligence workspace.",
+          placement: "build",
+        },
+        {
+          component: "analystai-journey",
+          alt: "Ingest through report diligence journey",
+          caption:
+            "Ingest → query → verify → coordinate → report — diligence as a connected loop.",
+          placement: "journey",
+        },
+        {
+          component: "analystai-workspace",
+          alt: "DDQ workspace with linked tasks and source-backed answers",
+          caption:
+            "Workspace pattern — DDQ progress, source-backed answers and open tasks in one view.",
+          placement: "governance",
+        },
+        {
+          component: "analystai-outcome",
+          alt: "Before and after comparison of fragmented AI tools versus connected diligence workspace",
+          caption:
+            "From confident-but-unverified outputs to a workspace teams can trust and coordinate in.",
+          placement: "outcome",
+        },
+      ],
       glance: {
         role: "Product testing, client feedback loops, demos, and engineering coordination",
         stage: "Enterprise AI product iteration across diligence and document workflows",

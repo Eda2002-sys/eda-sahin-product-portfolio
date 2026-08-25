@@ -39,7 +39,7 @@ export function Header() {
           {siteConfig.name}
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-5 lg:gap-8 md:flex" aria-label="Primary">
           {navLinks.map((link) => (
             <Link
               key={link.href}

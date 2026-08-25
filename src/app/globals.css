@@ -34,6 +34,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -42,6 +43,7 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 ::selection {
@@ -89,4 +91,101 @@ body {
 .section-divider {
   border: 0;
   border-top: 1px solid var(--border);
+}
+
+/* Homepage project cover — full infographic visible, no crop */
+.project-cover-shell {
+  width: 100%;
+  min-width: 0;
+  border-radius: 0.2rem;
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--surface-elevated) 92%, var(--background)),
+    var(--background)
+  );
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--border-strong) 70%, transparent),
+    0 18px 44px -32px color-mix(in srgb, var(--navy) 28%, transparent);
+  transition:
+    box-shadow 280ms ease,
+    transform 280ms ease;
+}
+
+.project-cover-shell--phone {
+  display: flex;
+  justify-content: center;
+  padding: 1.75rem 1.25rem 2rem;
+}
+
+.project-cover-shell--wide {
+  padding: 0.875rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 768px) {
+  .project-cover-shell--wide {
+    padding: 1rem 1.125rem 1.25rem;
+    overflow-x: visible;
+  }
+}
+
+.group:hover .project-cover-shell,
+.group:focus-visible .project-cover-shell {
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--burgundy) 18%, transparent),
+    0 22px 52px -28px color-mix(in srgb, var(--burgundy) 22%, transparent);
+  transform: translateY(-2px);
+}
+
+.project-cover-visual figure {
+  margin: 0;
+}
+
+.project-cover-visual [class*="!p-0"] {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 639px) {
+  .project-cover-visual {
+    font-size: 0.92rem;
+  }
+
+  .project-cover-visual .font-serif.text-2xl,
+  .project-cover-visual .font-serif.text-3xl {
+    font-size: 1.15rem;
+    line-height: 1.35;
+  }
+
+  .project-cover-visual .text-sm {
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .project-cover-visual .text-xs,
+  .project-cover-visual .text-\[11px\],
+  .project-cover-visual .text-\[10px\] {
+    font-size: 0.625rem;
+  }
+
+  .project-cover-visual .p-5,
+  .project-cover-visual .md\:p-7,
+  .project-cover-visual .md\:p-6,
+  .project-cover-visual .p-4 {
+    padding: 0.65rem !important;
+  }
+
+  .project-cover-visual .gap-4,
+  .project-cover-visual .gap-3 {
+    gap: 0.5rem;
+  }
+
+  .project-cover-visual .mt-5,
+  .project-cover-visual .mt-6,
+  .project-cover-visual .mt-4 {
+    margin-top: 0.65rem;
+  }
 }

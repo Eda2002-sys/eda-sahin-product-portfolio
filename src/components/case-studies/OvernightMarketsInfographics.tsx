@@ -46,18 +46,33 @@ export function OvernightHeroVisual({ caption }: { caption?: string }) {
 
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           {[
-            ["Equities", "Moved"],
-            ["FX", "Tracked"],
-            ["Rates", "Updated"],
-          ].map(([label, value]) => (
+            ["Equities", "Moved", "Asia close → EU open"],
+            ["FX", "Tracked", "USD crosses flagged"],
+            ["Rates", "Updated", "Curve shift noted"],
+          ].map(([label, value, detail]) => (
             <div
               key={label}
               className="rounded-sm border border-background/15 bg-background/5 px-3 py-3"
             >
               <p className="text-xs text-background/55">{label}</p>
               <p className="mt-1 text-sm text-background">{value}</p>
+              <p className="mt-1 text-[10px] text-background/45">{detail}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] text-background/50">
+          <span className="rounded-sm border border-background/15 px-2 py-1">
+            22:00 intake start
+          </span>
+          <span aria-hidden="true">→</span>
+          <span className="rounded-sm border border-background/15 px-2 py-1">
+            05:55 source cutoff
+          </span>
+          <span aria-hidden="true">→</span>
+          <span className="rounded-sm border border-burgundy/40 bg-burgundy/15 px-2 py-1 text-burgundy-soft">
+            06:30 review ready
+          </span>
         </div>
 
         <div className="mt-4 grid gap-4 lg:grid-cols-12">

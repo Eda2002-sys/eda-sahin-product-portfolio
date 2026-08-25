@@ -1,5 +1,23 @@
 import { CaseStudyMedia } from "@/components/CaseStudyMedia";
 import {
+  AnalystAiApproachVisual,
+  AnalystAiBuildVisual,
+  AnalystAiHeroVisual,
+  AnalystAiJourneyVisual,
+  AnalystAiOutcomeVisual,
+  AnalystAiProblemVisual,
+  AnalystAiWorkspaceVisual,
+} from "@/components/case-studies/AnalystAiInfographics";
+import {
+  ClinicalDocsApproachVisual,
+  ClinicalDocsBuildVisual,
+  ClinicalDocsHeroVisual,
+  ClinicalDocsJourneyVisual,
+  ClinicalDocsOutcomeVisual,
+  ClinicalDocsProblemVisual,
+  ClinicalDocsReviewVisual,
+} from "@/components/case-studies/ClinicalDocsInfographics";
+import {
   CreApproachVisual,
   CreBuildVisual,
   CreHeroVisual,
@@ -56,6 +74,15 @@ import {
   SocidaProblemVisual,
   SocidaWhatsAppMock,
 } from "@/components/case-studies/SocidaInfographics";
+import {
+  ThirdEyeApproachVisual,
+  ThirdEyeBriefVisual,
+  ThirdEyeBuildVisual,
+  ThirdEyeHeroVisual,
+  ThirdEyeJourneyVisual,
+  ThirdEyeOutcomeVisual,
+  ThirdEyeProblemVisual,
+} from "@/components/case-studies/ThirdEyeInfographics";
 import type { ProjectVisual, ProjectVisualComponent } from "@/data/projects";
 
 const componentMap: Record<
@@ -107,6 +134,27 @@ const componentMap: Record<
   "cre-sheet": CreSheetVisual,
   "cre-insights": CreInsightsVisual,
   "cre-outcome": CreOutcomeVisual,
+  "third-eye-hero": ThirdEyeHeroVisual,
+  "third-eye-problem": ThirdEyeProblemVisual,
+  "third-eye-approach": ThirdEyeApproachVisual,
+  "third-eye-build": ThirdEyeBuildVisual,
+  "third-eye-journey": ThirdEyeJourneyVisual,
+  "third-eye-brief": ThirdEyeBriefVisual,
+  "third-eye-outcome": ThirdEyeOutcomeVisual,
+  "clinical-hero": ClinicalDocsHeroVisual,
+  "clinical-problem": ClinicalDocsProblemVisual,
+  "clinical-approach": ClinicalDocsApproachVisual,
+  "clinical-build": ClinicalDocsBuildVisual,
+  "clinical-journey": ClinicalDocsJourneyVisual,
+  "clinical-review": ClinicalDocsReviewVisual,
+  "clinical-outcome": ClinicalDocsOutcomeVisual,
+  "analystai-hero": AnalystAiHeroVisual,
+  "analystai-problem": AnalystAiProblemVisual,
+  "analystai-approach": AnalystAiApproachVisual,
+  "analystai-build": AnalystAiBuildVisual,
+  "analystai-journey": AnalystAiJourneyVisual,
+  "analystai-workspace": AnalystAiWorkspaceVisual,
+  "analystai-outcome": AnalystAiOutcomeVisual,
 };
 
 export function CaseStudyVisual({

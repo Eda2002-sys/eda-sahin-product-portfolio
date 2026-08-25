@@ -56,12 +56,17 @@ export function CreHeroVisual({ caption }: { caption?: string }) {
           <div>
             <p className="text-sm text-background">Selected property</p>
             <p className="mt-1 text-xs text-background/55">
-              Auction · location · bid context
+              Auction · location · bid context · source status
             </p>
           </div>
-          <span className="rounded-sm bg-burgundy px-2.5 py-1 text-xs text-background">
-            Sanitized
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="rounded-sm border border-burgundy/40 px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-burgundy-soft">
+              Map ↔ table synced
+            </span>
+            <span className="rounded-sm bg-burgundy px-2.5 py-1 text-xs text-background">
+              Sanitized
+            </span>
+          </div>
         </div>
       </Panel>
       {caption ? <Caption>{caption}</Caption> : null}

@@ -4,6 +4,10 @@ export type ExperienceItem = {
   role: string;
   period: string;
   focus?: string[];
+  logo?: string;
+  logoHref?: string;
+  logoHeight?: number;
+  logoAspect?: number;
 };
 
 export const experience: ExperienceItem[] = [
@@ -12,6 +16,9 @@ export const experience: ExperienceItem[] = [
     company: "AnalystAI",
     role: "Chief of Staff",
     period: "2025–2026",
+    logo: "/images/analystai-logo.png",
+    logoHref: "https://www.analystai.ai",
+    logoAspect: 984 / 421,
     focus: [
       "Product testing",
       "AI product workflows",
@@ -28,6 +35,10 @@ export const experience: ExperienceItem[] = [
     company: "GA Capital",
     role: "Chief of Staff",
     period: "2025–2026",
+    logo: "/images/ga-capital-logo.png",
+    logoHref: "https://www.gacapital.ai",
+    logoHeight: 20,
+    logoAspect: 462 / 158,
     focus: [
       "Live M&A execution",
       "Market research",
@@ -40,14 +51,22 @@ export const experience: ExperienceItem[] = [
   },
   {
     id: "mentor",
-    company: "Mentor Ozel Ders",
+    company: "Mentor Özel Ders",
     role: "Marketing Specialist",
     period: "2024–2026",
+    logo: "/images/mentor-logo.png",
+    logoHref: "https://mentorozelders.com",
+    logoHeight: 20,
+    logoAspect: 524 / 185,
   },
   {
     id: "docquity",
     company: "Docquity / Doctor Jobs Today",
     role: "SEO Intern",
     period: "2022–2023",
+    logo: "/images/docquity-logo.png",
+    logoHref: "https://docquity.com",
+    logoHeight: 20,
+    logoAspect: 1018 / 225,
   },
 ];

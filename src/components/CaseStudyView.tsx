@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CaseStudyMedia } from "@/components/CaseStudyMedia";
 import { CaseStudyVisualBlock } from "@/components/CaseStudyVisual";
 import { PlaceholderVisual } from "@/components/PlaceholderVisual";
@@ -32,6 +33,25 @@ export function CaseStudyView({ project }: { project: Project }) {
           <p className="text-[11px] uppercase tracking-[0.2em] text-burgundy">
             Case study · {project.number}
           </p>
+          {project.brandLogo ? (
+            <div className="mt-6">
+              <Link
+                href={project.brandUrl ?? "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex transition-opacity hover:opacity-80"
+              >
+                <Image
+                  src={project.brandLogo}
+                  alt="AnalystAI"
+                  width={140}
+                  height={60}
+                  className="h-10 w-auto object-contain md:h-12"
+                  priority
+                />
+              </Link>
+            </div>
+          ) : null}
           <h1 className="mt-4 font-serif text-4xl text-navy md:text-5xl lg:text-6xl">
             {project.title}
           </h1>
