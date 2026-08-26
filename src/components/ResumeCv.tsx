@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   resumeEducation,
   resumeExperience,
@@ -19,21 +18,15 @@ function Section({
   variant: "web" | "print";
 }) {
   return (
-    <section
-      className={`grid gap-4 border-t pt-5 ${
-        variant === "print"
-          ? "border-[#6f2c3a]/25 pt-4"
-          : "border-border pt-6"
-      } sm:grid-cols-[7.5rem_1fr] sm:gap-8`}
-    >
+    <section className="grid items-start gap-3 py-6 sm:grid-cols-[7.5rem_1fr] sm:gap-8 sm:py-7">
       <h2
-        className={`text-[11px] font-medium uppercase tracking-[0.16em] ${
+        className={`text-[11px] font-semibold uppercase leading-none tracking-[0.18em] ${
           variant === "print" ? "text-[#6f2c3a]" : "text-burgundy"
         }`}
       >
         {label}
       </h2>
-      <div>{children}</div>
+      <div className="min-w-0">{children}</div>
     </section>
   );
 }
@@ -49,48 +42,52 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
           : "rounded-sm border border-border bg-surface-elevated p-6 md:p-10"
       }
     >
-      <header className="flex items-start justify-between gap-6 border-b border-[#6f2c3a]/20 pb-6">
-        <div className="min-w-0 flex-1">
-          <h1
-            className={`font-serif leading-none ${
-              isPrint
-                ? "text-[2.35rem] text-[#6f2c3a]"
-                : "text-4xl text-burgundy md:text-5xl"
-            }`}
-          >
-            {resumeProfile.name}
-          </h1>
-          <p
-            className={`mt-3 text-sm leading-relaxed ${
-              isPrint ? "text-[#4a5568]" : "text-muted"
-            }`}
-          >
-            {resumeProfile.location} · {resumeProfile.phone} ·{" "}
-            {resumeProfile.email}
-          </p>
-          <p className={`mt-1 text-sm ${isPrint ? "text-[#4a5568]" : "text-muted"}`}>
-            {resumeProfile.github} · {resumeProfile.linkedin}
-          </p>
-        </div>
-        <figure
-          className={`relative shrink-0 overflow-hidden ${
-            isPrint ? "h-[88px] w-[68px]" : "h-28 w-[5.5rem] sm:h-32 sm:w-24"
+      <header
+        className={`pb-6 ${
+          isPrint ? "border-b-[1.5px] border-[#6f2c3a]" : "border-b border-border"
+        }`}
+      >
+        <h1
+          className={`font-serif leading-none tracking-tight ${
+            isPrint
+              ? "text-[2.6rem] text-[#6f2c3a]"
+              : "text-4xl text-burgundy md:text-5xl"
           }`}
         >
-          <Image
-            src={resumeProfile.portraitPath}
-            alt=""
-            fill
-            className="object-cover object-[center_18%]"
-            sizes="96px"
-            priority
-          />
-        </figure>
+          {resumeProfile.name}
+        </h1>
+        <p
+          className={`mt-3 text-[11px] font-medium uppercase tracking-[0.16em] ${
+            isPrint ? "text-[#6b6f7a]" : "text-muted"
+          }`}
+        >
+          Product · Operations · AI
+        </p>
+        <p
+          className={`mt-3 text-sm leading-relaxed ${
+            isPrint ? "text-[#6b6f7a]" : "text-muted"
+          }`}
+        >
+          {resumeProfile.location} · {resumeProfile.phone} ·{" "}
+          {resumeProfile.email}
+        </p>
+        <p className={`mt-1 text-sm ${isPrint ? "text-[#6b6f7a]" : "text-muted"}`}>
+          {resumeProfile.github} · {resumeProfile.linkedin}
+        </p>
       </header>
 
-      <div className={`space-y-0 ${isPrint ? "mt-5" : "mt-8"}`}>
+      <div
+        className={`divide-y ${
+          isPrint
+            ? "divide-[#6f2c3a]/18"
+            : "divide-border border-t-0"
+        }`}
+      >
         <Section label="Contact" variant={variant}>
-          <ul className={`space-y-1 text-sm ${isPrint ? "text-[#1a1f2e]" : "text-navy"}`}>
+          <ul
+            className={`space-y-1 text-sm ${isPrint ? "text-[#1a1f2e]" : "text-navy"}`}
+            {...{ "x-apple-data-detectors": "false" }}
+          >
             <li>{resumeProfile.phone}</li>
             <li>{resumeProfile.email}</li>
             <li>{resumeProfile.location}</li>
@@ -98,27 +95,47 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
         </Section>
 
         <Section label="Experience" variant={variant}>
-          <ul className="space-y-5">
+          <ul className="space-y-6">
             {resumeExperience.map((role) => (
               <li key={`${role.company}-${role.period}`}>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <p className={`text-sm ${isPrint ? "text-[#1a1f2e]" : "text-navy"}`}>
-                    <span className="font-medium">{role.title}</span>
-                    <span className={isPrint ? "text-[#6f2c3a]" : "text-burgundy"}>
+                  <p
+                    className={`text-[15px] font-semibold tracking-tight ${
+                      isPrint ? "text-[#1a1f2e]" : "text-navy"
+                    }`}
+                  >
+                    {role.title}
+                    <span
+                      className={`font-normal ${
+                        isPrint ? "text-[#6b6f7a]" : "text-muted"
+                      }`}
+                    >
                       {" "}
-                      | {role.company}
+                      · {role.company}
                     </span>
                   </p>
-                  <p className={`text-sm ${isPrint ? "text-[#4a5568]" : "text-muted"}`}>
+                  <p
+                    className={`text-sm font-medium ${
+                      isPrint ? "text-[#6b6f7a]" : "text-muted"
+                    }`}
+                  >
                     {role.period}
                   </p>
                 </div>
                 {role.website ? (
-                  <p className={`mt-0.5 text-sm ${isPrint ? "text-[#4a5568]" : "text-muted"}`}>
+                  <p
+                    className={`mt-0.5 text-xs tracking-wide ${
+                      isPrint ? "text-[#8a909c]" : "text-muted"
+                    }`}
+                  >
                     {role.website}
                   </p>
                 ) : null}
-                <ul className={`mt-2 list-disc space-y-1 pl-4 text-sm leading-relaxed ${isPrint ? "text-[#1a1f2e]" : "text-muted"}`}>
+                <ul
+                  className={`mt-2.5 list-disc space-y-1.5 pl-4 text-sm leading-relaxed marker:text-burgundy/70 ${
+                    isPrint ? "text-[#2a3040]" : "text-muted"
+                  }`}
+                >
                   {role.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}
@@ -130,96 +147,62 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
 
         <Section label="Education" variant={variant}>
           <ul className="space-y-5">
-            {resumeEducation.map((item) => {
-              const logoHeight = item.logoHeight ?? 22;
-              const logoWidth = Math.round(logoHeight * (item.logoAspect ?? 4));
-
-              return (
-                <li key={item.institution}>
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div className="flex min-w-0 flex-1 items-start gap-3">
-                      {item.logo ? (
-                        <a
-                          href={item.logoHref}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`mt-0.5 shrink-0 transition-opacity hover:opacity-80 ${
-                            item.logoContained ? "overflow-hidden rounded-sm" : ""
-                          }`}
-                          aria-label={`${item.institution} (opens in new tab)`}
-                        >
-                          <Image
-                            src={item.logo}
-                            alt=""
-                            width={logoWidth}
-                            height={logoHeight}
-                            className="object-contain"
-                            style={{ width: logoWidth, height: logoHeight }}
-                          />
-                        </a>
-                      ) : null}
-                      <div className="min-w-0">
-                        <p
-                          className={`text-sm font-medium ${isPrint ? "text-[#1a1f2e]" : "text-navy"}`}
-                        >
-                          {item.institution}
-                        </p>
-                        <p
-                          className={`mt-1 text-sm ${isPrint ? "text-[#1a1f2e]" : "text-muted"}`}
-                        >
-                          {item.detail}
-                        </p>
-                      </div>
-                    </div>
+            {resumeEducation.map((item) => (
+              <li key={item.institution}>
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div className="min-w-0">
                     <p
-                      className={`shrink-0 text-sm ${isPrint ? "text-[#4a5568]" : "text-muted"}`}
+                      className={`text-[15px] font-semibold tracking-tight ${
+                        isPrint ? "text-[#1a1f2e]" : "text-navy"
+                      }`}
                     >
-                      {item.period}
+                      {item.institution}
+                    </p>
+                    <p
+                      className={`mt-0.5 text-sm ${
+                        isPrint ? "text-[#2a3040]" : "text-muted"
+                      }`}
+                    >
+                      {item.detail}
                     </p>
                   </div>
-                  {item.notes ? (
-                    <ul
-                      className={`mt-2 space-y-0.5 text-sm ${isPrint ? "text-[#4a5568]" : "text-muted"}`}
-                      style={
-                        item.logo
-                          ? { paddingLeft: `calc(${logoWidth}px + 0.75rem)` }
-                          : undefined
-                      }
-                    >
-                      {item.notes.map((note) => (
-                        <li key={note.text}>
-                          {note.href && !isPrint ? (
-                            <a
-                              href={note.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="underline decoration-border underline-offset-2 transition-colors hover:text-burgundy"
-                            >
-                              {note.text}
-                            </a>
-                          ) : note.href && isPrint ? (
-                            <>
-                              {note.text}{" "}
-                              <span className="text-[#4a5568]">({note.href})</span>
-                            </>
-                          ) : (
-                            note.text
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </li>
-              );
-            })}
+                  <p
+                    className={`shrink-0 text-sm font-medium ${
+                      isPrint ? "text-[#6b6f7a]" : "text-muted"
+                    }`}
+                  >
+                    {item.period}
+                  </p>
+                </div>
+                {item.notes ? (
+                  <ul
+                    className={`mt-2 space-y-1 text-sm leading-relaxed ${
+                      isPrint ? "text-[#6b6f7a]" : "text-muted"
+                    }`}
+                  >
+                    {item.notes.map((note) => (
+                      <li key={note.text}>{note.text}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </li>
+            ))}
           </ul>
         </Section>
 
         <Section label="Languages" variant={variant}>
-          <ul className={`space-y-1 text-sm ${isPrint ? "text-[#1a1f2e]" : "text-navy"}`}>
+          <ul
+            className={`flex flex-wrap gap-x-6 gap-y-1 text-sm ${
+              isPrint ? "text-[#1a1f2e]" : "text-navy"
+            }`}
+          >
             {resumeProfile.languages.map((entry) => (
               <li key={entry.language}>
-                {entry.language} — {entry.level}
+                {entry.language}
+                <span className={isPrint ? "text-[#6b6f7a]" : "text-muted"}>
+                  {" "}
+                  · {entry.level}
+                </span>
               </li>
             ))}
           </ul>

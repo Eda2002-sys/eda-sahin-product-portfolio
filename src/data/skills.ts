@@ -7,14 +7,14 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Product",
     items: [
-      "Product Thinking",
+      "Product Discovery",
+      "Product Analysis",
+      "Feature Prioritisation",
       "User Journeys",
       "UX Review",
       "Product Operations",
       "Product QA",
-      "Feature Validation",
       "Product Requirements",
-      "Process Design",
     ],
   },
   {
@@ -29,7 +29,7 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    title: "AI / Tools",
+    title: "AI & Tools",
     items: [
       "Cursor",
       "Codex",
@@ -42,7 +42,7 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    title: "Business",
+    title: "Cross-functional",
     items: [
       "Founder Support",
       "Client Management",
@@ -72,6 +72,6 @@ export const howIWorkSteps = [
   },
   {
     number: "05",
-    title: "Coordinate until the solution actually ships",
+    title: "Stay with the problem until the solution ships",
   },
 ] as const;

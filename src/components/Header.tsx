@@ -24,34 +24,37 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b transition-colors ${
+      className={`sticky top-0 z-40 border-b border-border bg-surface-elevated transition-[box-shadow,border-color] duration-200 ${
         scrolled || open
-          ? "border-border bg-background/95 backdrop-blur-sm"
-          : "border-transparent bg-background/80 backdrop-blur-sm"
+          ? "border-border-strong shadow-[0_10px_30px_rgba(26,31,46,0.06)]"
+          : ""
       }`}
     >
-      <div className="container-page flex h-16 items-center justify-between md:h-[4.25rem]">
+      <div className="container-page flex h-14 items-center justify-between md:h-16">
         <Link
           href="/"
-          className="font-serif text-xl tracking-tight text-navy transition-colors hover:text-burgundy md:text-[1.35rem]"
+          className="font-serif text-[1.2rem] tracking-tight text-navy transition-colors hover:text-burgundy md:text-xl"
           onClick={() => setOpen(false)}
         >
           {siteConfig.name}
         </Link>
 
-        <nav className="hidden items-center gap-5 lg:gap-8 md:flex" aria-label="Primary">
+        <nav
+          className="hidden items-center gap-1 md:flex"
+          aria-label="Primary"
+        >
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="link-underline text-sm text-muted transition-colors hover:text-navy"
+              className="rounded-sm px-3 py-2 text-[13px] tracking-[0.02em] text-muted transition-colors hover:bg-surface hover:text-navy"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href={siteConfig.resumePath}
-            className="rounded-sm border border-border-strong px-3 py-1.5 text-sm text-navy transition-colors hover:border-burgundy hover:text-burgundy"
+            className="ml-2 rounded-sm border border-navy/15 bg-background px-3.5 py-1.5 text-[13px] tracking-[0.02em] text-navy transition-colors hover:border-burgundy hover:text-burgundy"
           >
             Resume
           </Link>
@@ -59,7 +62,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-border text-navy md:hidden"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-sm border border-border text-navy md:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -70,7 +73,9 @@ export function Header() {
             <span
               className={`h-px w-full bg-current transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
             />
-            <span className={`h-px w-full bg-current transition-opacity ${open ? "opacity-0" : ""}`} />
+            <span
+              className={`h-px w-full bg-current transition-opacity ${open ? "opacity-0" : ""}`}
+            />
             <span
               className={`h-px w-full bg-current transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
             />
@@ -78,12 +83,21 @@ export function Header() {
         </button>
       </div>
 
+      {/* Thin editorial accent under the bar */}
+      <div
+        className="h-px w-full bg-gradient-to-r from-transparent via-burgundy/35 to-transparent"
+        aria-hidden="true"
+      />
+
       {open ? (
         <div
           id="mobile-menu"
-          className="border-t border-border bg-background md:hidden"
+          className="border-t border-border bg-surface-elevated md:hidden"
         >
-          <nav className="container-page flex flex-col gap-1 py-4" aria-label="Mobile">
+          <nav
+            className="container-page flex flex-col gap-1 py-3"
+            aria-label="Mobile"
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -96,7 +110,7 @@ export function Header() {
             ))}
             <Link
               href={siteConfig.resumePath}
-              className="mt-2 rounded-sm border border-border-strong px-3 py-3 text-base text-navy"
+              className="mt-1 rounded-sm border border-border-strong px-3 py-3 text-base text-navy"
               onClick={() => setOpen(false)}
             >
               Resume

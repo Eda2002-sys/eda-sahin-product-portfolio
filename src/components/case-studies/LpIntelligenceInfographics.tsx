@@ -37,7 +37,7 @@ export function LpHeroVisual({ caption }: { caption?: string }) {
   return (
     <figure>
       <Panel dark className="relative overflow-hidden min-h-[22rem]">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-soft">
+        <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
           Investor intelligence
         </p>
         <p className="mt-2 max-w-md font-serif text-2xl text-background md:text-3xl">
@@ -72,7 +72,7 @@ export function LpHeroVisual({ caption }: { caption?: string }) {
               y1="50%"
               x2="18%"
               y2="22%"
-              stroke="color-mix(in srgb, var(--burgundy-soft) 70%, transparent)"
+              stroke="color-mix(in srgb, var(--burgundy-on-dark) 70%, transparent)"
               strokeDasharray="4 4"
             />
             <line
@@ -80,7 +80,7 @@ export function LpHeroVisual({ caption }: { caption?: string }) {
               y1="50%"
               x2="82%"
               y2="22%"
-              stroke="color-mix(in srgb, var(--burgundy-soft) 70%, transparent)"
+              stroke="color-mix(in srgb, var(--burgundy-on-dark) 70%, transparent)"
               strokeDasharray="4 4"
             />
             <line
@@ -88,7 +88,7 @@ export function LpHeroVisual({ caption }: { caption?: string }) {
               y1="50%"
               x2="18%"
               y2="78%"
-              stroke="color-mix(in srgb, var(--burgundy-soft) 70%, transparent)"
+              stroke="color-mix(in srgb, var(--burgundy-on-dark) 70%, transparent)"
               strokeDasharray="4 4"
             />
             <line
@@ -96,7 +96,7 @@ export function LpHeroVisual({ caption }: { caption?: string }) {
               y1="50%"
               x2="82%"
               y2="78%"
-              stroke="color-mix(in srgb, var(--burgundy-soft) 70%, transparent)"
+              stroke="color-mix(in srgb, var(--burgundy-on-dark) 70%, transparent)"
               strokeDasharray="4 4"
             />
           </svg>
@@ -172,7 +172,7 @@ export function LpApproachVisual({ caption }: { caption?: string }) {
       <div className="grid gap-4 md:grid-cols-3">
         {cards.map((card, index) => (
           <Panel key={card.title} dark className="h-full">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-soft">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               0{index + 1}
             </p>
             <h3 className="mt-3 font-serif text-xl text-background md:text-2xl">
@@ -487,9 +487,7 @@ export function LpOutcomeVisual({ caption }: { caption?: string }) {
           <ul className="mt-4 space-y-3">
             {before.map((item) => (
               <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted">
-                <span className="mt-1 text-burgundy" aria-hidden="true">
-                  —
-                </span>
+                <span className="mt-1 text-burgundy" aria-hidden="true">·</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -505,9 +503,7 @@ export function LpOutcomeVisual({ caption }: { caption?: string }) {
                 key={item}
                 className="flex gap-3 text-sm leading-relaxed text-background/85"
               >
-                <span className="mt-1 text-burgundy-soft" aria-hidden="true">
-                  —
-                </span>
+                <span className="mt-1 text-burgundy-on-dark" aria-hidden="true">·</span>
                 <span>{item}</span>
               </li>
             ))}

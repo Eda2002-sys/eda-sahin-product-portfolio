@@ -10,15 +10,21 @@ export function Experience() {
       className="scroll-mt-24"
       aria-labelledby="experience-heading"
     >
-      <div className="container-page py-16 md:py-28">
+      <div className="container-page section-space">
         <SectionHeading
           id="experience-heading"
           eyebrow="Experience"
-          title="Founder-facing roles with product at the centre"
-          description="A concise timeline. The work above is the fuller story."
+          title="Where the work sat in the organisation."
+          description="Timeline of roles. Selected Work above carries the product detail."
         />
 
-        <ol className="mt-14 space-y-0">
+        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted md:mt-10">
+          AnalystAI and GA Capital run concurrently across the same AI and
+          advisory ecosystem: product delivery on one side, live M&amp;A
+          execution on the other.
+        </p>
+
+        <ol className="mt-10 space-y-0 md:mt-12">
           {experience.map((item) => (
             <li
               key={item.id}
@@ -57,6 +63,9 @@ export function Experience() {
                         {item.company}
                       </h3>
                       <p className="mt-1 text-sm text-muted">{item.role}</p>
+                      {item.subtitle ? (
+                        <p className="mt-1 text-xs text-muted">{item.subtitle}</p>
+                      ) : null}
                     </div>
                   </div>
                   <p className="shrink-0 text-sm text-muted md:hidden">{item.period}</p>
@@ -77,9 +86,7 @@ export function Experience() {
                       </li>
                     ))}
                   </ul>
-                ) : (
-                  <p className="text-sm text-muted">—</p>
-                )}
+                ) : null}
               </div>
             </li>
           ))}

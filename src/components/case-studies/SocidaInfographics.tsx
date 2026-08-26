@@ -28,96 +28,110 @@ function Panel({
   );
 }
 
-/** Editorial phone mock — product idea preserved, palette aligned to the portfolio. */
+/** Editorial phone mock: product idea preserved, palette aligned to the portfolio. */
 export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
   return (
-    <figure className="mx-auto w-full max-w-[22rem]">
-      <div className="overflow-hidden rounded-[1.4rem] border border-border-strong bg-surface-elevated shadow-[0_18px_50px_-28px_rgba(26,31,46,0.35)]">
-        <div className="flex items-center gap-3 border-b border-border bg-navy px-4 py-3 text-background">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full border border-background/20 text-xs">
+    <figure className="mx-auto w-full max-w-[19.5rem]">
+      <div className="overflow-hidden rounded-[1.35rem] border border-border-strong bg-surface-elevated shadow-[0_20px_48px_-30px_rgba(26,31,46,0.38)]">
+        <div className="flex items-center gap-3 bg-navy px-3.5 py-3 text-background">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-background/25 text-[11px] tracking-wide">
             CK
           </div>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-sm font-medium">Company knowledge</p>
-            <p className="text-[11px] text-background/65">7 brands · approved sources</p>
+            <p className="truncate text-[13px] font-medium leading-tight">
+              Company knowledge
+            </p>
+            <p className="mt-0.5 text-[10px] leading-tight text-background/60">
+              7 brands · approved sources
+            </p>
           </div>
         </div>
 
-        <div className="flex gap-1.5 overflow-x-auto border-b border-border bg-surface px-3 py-2">
-          {["Brand A", "Brand B", "Multi-brand", "Service"].map((brand, index) => (
-            <span
-              key={brand}
-              className={`shrink-0 rounded-sm px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] ${
-                index === 0
-                  ? "bg-burgundy/10 text-burgundy"
-                  : "border border-border text-muted"
-              }`}
-            >
-              {brand}
-            </span>
-          ))}
+        <div className="flex gap-1.5 overflow-x-auto border-b border-border bg-surface px-3 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {["Brand A", "Brand B", "Multi-brand", "Service"].map(
+            (brand, index) => (
+              <span
+                key={brand}
+                className={`shrink-0 rounded-sm px-2 py-1 text-[9px] font-medium uppercase tracking-[0.1em] ${
+                  index === 0
+                    ? "bg-burgundy/15 text-[#54222e]"
+                    : "border border-border-strong text-navy/75"
+                }`}
+              >
+                {brand}
+              </span>
+            ),
+          )}
         </div>
 
-        <div className="space-y-3 bg-background px-3 py-4">
-          <div className="ml-auto max-w-[85%] rounded-sm rounded-tr-none border border-border bg-surface px-3 py-2">
-            <div className="flex items-center gap-2 text-xs text-muted">
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-burgundy/10 text-[10px] text-burgundy">
+        <div className="space-y-2.5 bg-background px-3 py-3.5">
+          <div className="ml-auto max-w-[86%] rounded-sm rounded-tr-none border border-border bg-surface px-2.5 py-2">
+            <div className="flex items-center gap-2 text-[11px] text-navy/70">
+              <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-burgundy/15 text-[9px] text-[#54222e]">
                 ▶
               </span>
-              <span className="h-4 flex-1 rounded-sm bg-border/80" />
-              <span>0:18</span>
+              <span className="h-3.5 flex-1 rounded-sm bg-border-strong/80" />
+              <span className="shrink-0 tabular-nums">0:18</span>
             </div>
-            <p className="mt-1 text-right text-[10px] text-muted">09:40</p>
+            <p className="mt-1 text-right text-[9px] tabular-nums text-navy/55">
+              09:40
+            </p>
           </div>
 
-          <div className="ml-auto max-w-[88%] rounded-sm rounded-tr-none border border-border bg-surface px-3 py-2.5">
-            <p className="text-[13px] leading-relaxed text-navy">
+          <div className="ml-auto max-w-[90%] rounded-sm rounded-tr-none border border-border bg-surface px-2.5 py-2">
+            <p className="text-[12px] leading-snug text-navy">
               Quels sont les modèles disponibles et les options de financement
               pour cette gamme ?
             </p>
-            <p className="mt-1 text-right text-[10px] text-muted">09:41</p>
+            <p className="mt-1 text-right text-[9px] tabular-nums text-navy/55">
+              09:41
+            </p>
           </div>
 
-          <div className="max-w-[92%] rounded-sm rounded-tl-none border border-border bg-surface-elevated px-3 py-2.5">
-            <p className="text-[10px] uppercase tracking-[0.12em] text-burgundy">
+          <div className="max-w-[94%] rounded-sm rounded-tl-none border border-border bg-surface-elevated px-2.5 py-2.5">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-[#54222e]">
               Approved source · Brand A
             </p>
-            <p className="mt-1 text-[13px] leading-relaxed text-navy">
-              Voici les modèles et les parcours de financement approuvés — avec
+            <p className="mt-1.5 text-[12px] leading-snug text-navy">
+              Voici les modèles et les parcours de financement approuvés: avec
               les documents et le quiz du jour.
             </p>
-            <div className="mt-3 space-y-2 border-t border-border pt-3">
-              <div className="flex items-center gap-2 rounded-sm border border-border px-2.5 py-2">
-                <span className="text-[10px] uppercase tracking-[0.12em] text-burgundy">
+            <div className="mt-2.5 space-y-1.5 border-t border-border pt-2.5">
+              <div className="flex items-center gap-2.5 rounded-sm border border-border px-2 py-1.5">
+                <span className="shrink-0 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#54222e]">
                   PDF
                 </span>
-                <div>
-                  <p className="text-xs text-navy">Financing_routes.pdf</p>
-                  <p className="text-[10px] text-muted">1.2 MB</p>
+                <div className="min-w-0">
+                  <p className="truncate text-[11px] text-navy">
+                    Financing_routes.pdf
+                  </p>
+                  <p className="text-[9px] text-navy/60">1.2 MB</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2 rounded-sm border border-border px-2.5 py-2">
-                <span className="text-[10px] uppercase tracking-[0.12em] text-burgundy">
+              <div className="flex items-center gap-2.5 rounded-sm border border-border px-2 py-1.5">
+                <span className="shrink-0 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#54222e]">
                   Quiz
                 </span>
-                <div>
-                  <p className="text-xs text-navy">Quiz du jour</p>
-                  <p className="text-[10px] text-muted">
+                <div className="min-w-0">
+                  <p className="text-[11px] text-navy">Quiz du jour</p>
+                  <p className="text-[9px] text-navy/60">
                     4 questions · models &amp; financing
                   </p>
                 </div>
               </div>
             </div>
-            <p className="mt-2 text-right text-[10px] text-muted">09:41</p>
+            <p className="mt-2 text-right text-[9px] tabular-nums text-navy/55">
+              09:41
+            </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 border-t border-border bg-surface-elevated px-3 py-3">
-          <span className="text-sm text-muted">+</span>
-          <div className="flex-1 rounded-full border border-border px-3 py-2 text-xs text-muted">
+        <div className="flex items-center gap-2 border-t border-border bg-surface-elevated px-3 py-2.5">
+          <span className="shrink-0 text-sm leading-none text-muted">+</span>
+          <div className="min-w-0 flex-1 rounded-sm border border-border px-2.5 py-1.5 text-[11px] text-muted">
             Ask about a model or document…
           </div>
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-burgundy text-[10px] text-background">
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-burgundy text-[9px] text-background">
             ●
           </span>
         </div>
@@ -146,30 +160,35 @@ export function SocidaProblemVisual({ caption }: { caption?: string }) {
           A salesperson speaking with a customer could not pause to search across
           portals, product sheets, and team chats.
         </p>
-        <div className="mt-6 flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center">
+
+        <div className="mt-8 flex flex-wrap items-center gap-2.5">
           {sources.map((source) => (
             <span
               key={source}
-              className="rounded-sm border border-border px-3 py-1.5 text-sm text-muted"
+              className="rounded-sm border border-border px-3.5 py-2 text-sm text-muted"
             >
               {source}
             </span>
           ))}
-          <span className="hidden text-burgundy md:inline" aria-hidden="true">
-            →
-          </span>
-          <span className="rounded-sm bg-navy px-3 py-1.5 text-sm text-background">
-            No single point of access
+          <span className="inline-flex items-center gap-2.5">
+            <span className="text-burgundy" aria-hidden="true">
+              →
+            </span>
+            <span className="rounded-sm bg-navy px-3.5 py-2 text-sm text-background">
+              No single point of access
+            </span>
           </span>
         </div>
-        <div className="mt-6 rounded-sm border border-burgundy/25 bg-burgundy/[0.04] px-4 py-3">
+
+        <div className="mt-7 border-t border-border pt-5">
           <p className="text-sm text-navy">
             ~300 employees · 7 brand knowledge bases · WhatsApp already in daily
             use
           </p>
-          <p className="mt-1 text-sm text-muted">
-            The product had to meet people in-channel — not add another portal to
-            search during a live customer moment.
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted">
+            The solution needed to work inside WhatsApp, where employees were
+            already communicating, rather than require another system during
+            customer conversations.
           </p>
         </div>
       </Panel>
@@ -183,7 +202,7 @@ export function SocidaApproachVisual({ caption }: { caption?: string }) {
     {
       number: "01",
       title: "Meet employees in WhatsApp",
-      body: "The channel already used daily for coordination became the front door for knowledge, documents, and training—without another login.",
+      body: "The channel already used daily for coordination became the front door for knowledge, documents, and training, without another login.",
     },
     {
       number: "02",
@@ -257,52 +276,74 @@ export function SocidaJourneyVisual({ caption }: { caption?: string }) {
     {
       number: "01",
       title: "Ask",
-      body: "An employee asks about a model, financing option, procedure, or customer situation.",
+      body: "Employee asks by text or voice about a model, financing option, procedure, or customer situation.",
+      role: "Employee",
     },
     {
       number: "02",
-      title: "Learn",
-      body: "The assistant answers from the company’s approved automotive and operating knowledge.",
+      title: "Answer",
+      body: "Assistant responds from approved automotive and operating knowledge.",
+      role: "Employee",
     },
     {
       number: "03",
-      title: "Practise",
-      body: "A quiz, prompt, or role-specific example helps turn the answer into a repeatable skill.",
+      title: "Apply",
+      body: "Relevant document or next step is shared in-channel during the shift.",
+      role: "Employee",
     },
     {
       number: "04",
-      title: "Apply",
-      body: "The employee receives the relevant document or next step directly in WhatsApp.",
+      title: "Reinforce",
+      body: "Quiz, prompt, or onboarding turns the answer into a repeatable skill.",
+      role: "Employee",
+    },
+    {
+      number: "05",
+      title: "Observe",
+      body: "Managers see recurring demand topics and knowledge gaps.",
+      role: "Manager",
+    },
+    {
+      number: "06",
+      title: "Update",
+      body: "Sources are corrected so answers stay controlled over time.",
+      role: "Manager",
     },
   ];
 
   return (
     <figure>
       <Panel dark>
-        <div className="flex flex-wrap items-end justify-between gap-3 border-b border-background/15 pb-4">
+        <div className="flex flex-wrap items-end justify-between gap-3 border-b border-background/15 pb-5">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-soft">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-burgundy-on-dark">
               Company knowledge · WhatsApp
             </p>
-            <p className="mt-2 font-serif text-2xl text-background">
-              Employee journey
+            <p className="mt-2 font-serif text-2xl text-background md:text-[1.75rem]">
+              Operating loop
             </p>
           </div>
-          <p className="text-xs text-background/60">employee view</p>
+          <p className="pb-0.5 text-xs text-background/55">employee + manager</p>
         </div>
-        <ol className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+
+        <ol className="mt-6 grid gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3">
           {steps.map((step) => (
             <li
               key={step.number}
-              className="rounded-sm border border-background/15 bg-background/5 p-4"
+              className="flex h-full flex-col rounded-sm border border-background/12 bg-background/[0.04] p-4 md:p-5"
             >
-              <span className="inline-flex rounded-sm bg-burgundy px-2 py-0.5 text-[11px] tracking-[0.14em] text-background">
-                {step.number}
-              </span>
-              <h3 className="mt-3 font-serif text-xl text-background">
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-burgundy-on-dark">
+                  {step.number}
+                </p>
+                <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-background/70">
+                  {step.role}
+                </span>
+              </div>
+              <h3 className="mt-3.5 font-serif text-xl text-background">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-background/70">
+              <p className="mt-2.5 flex-1 text-sm leading-relaxed text-background/80">
                 {step.body}
               </p>
             </li>
@@ -341,11 +382,11 @@ export function SocidaGovernanceVisual({ caption }: { caption?: string }) {
 
   return (
     <figure>
-      <Panel>
-        <div className="flex flex-wrap items-start justify-between gap-3">
+      <Panel className="!p-0 overflow-hidden">
+        <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border px-5 py-5 md:px-7 md:py-6">
           <div>
             <p className="font-serif text-2xl text-navy">Document control</p>
-            <p className="mt-1 text-sm text-muted">
+            <p className="mt-1.5 text-sm text-muted">
               Brand · access · indexing status
             </p>
           </div>
@@ -354,23 +395,53 @@ export function SocidaGovernanceVisual({ caption }: { caption?: string }) {
           </span>
         </div>
 
-        <div className="mt-6 overflow-x-auto">
-          <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+        {/* Mobile: stacked rows — no clipped table columns */}
+        <ul className="md:hidden">
+          {rows.map((row) => (
+            <li
+              key={row.document}
+              className="flex items-start justify-between gap-4 border-b border-border px-5 py-5 last:border-b-0"
+            >
+              <div className="min-w-0">
+                <p className="text-sm text-navy">{row.document}</p>
+                <p className="mt-1 text-xs leading-relaxed text-muted">
+                  {row.brand} · {row.access}
+                </p>
+              </div>
+              <span
+                className={`shrink-0 rounded-sm px-2 py-0.5 text-xs ${
+                  row.tone === "ready"
+                    ? "bg-burgundy/10 text-burgundy"
+                    : "border border-border-strong text-muted"
+                }`}
+              >
+                {row.status}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Desktop: editorial table */}
+        <div className="hidden md:block">
+          <table className="w-full border-collapse text-left text-sm">
             <thead>
               <tr className="border-b border-border text-[11px] uppercase tracking-[0.14em] text-muted">
-                <th className="pb-3 font-medium">Document</th>
-                <th className="pb-3 font-medium">Brand</th>
-                <th className="pb-3 font-medium">Access</th>
-                <th className="pb-3 font-medium">Status</th>
+                <th className="px-7 pb-3 pt-5 font-medium">Document</th>
+                <th className="px-4 pb-3 pt-5 font-medium">Brand</th>
+                <th className="px-4 pb-3 pt-5 font-medium">Access</th>
+                <th className="px-7 pb-3 pt-5 font-medium">Status</th>
               </tr>
             </thead>
             <tbody>
               {rows.map((row) => (
-                <tr key={row.document} className="border-b border-border/70">
-                  <td className="py-3 text-navy">{row.document}</td>
-                  <td className="py-3 text-muted">{row.brand}</td>
-                  <td className="py-3 text-muted">{row.access}</td>
-                  <td className="py-3">
+                <tr
+                  key={row.document}
+                  className="border-b border-border/70 last:border-b-0"
+                >
+                  <td className="px-7 py-3.5 text-navy">{row.document}</td>
+                  <td className="px-4 py-3.5 text-muted">{row.brand}</td>
+                  <td className="px-4 py-3.5 text-muted">{row.access}</td>
+                  <td className="px-7 py-3.5">
                     <span
                       className={`rounded-sm px-2 py-0.5 text-xs ${
                         row.tone === "ready"
@@ -385,19 +456,6 @@ export function SocidaGovernanceVisual({ caption }: { caption?: string }) {
               ))}
             </tbody>
           </table>
-        </div>
-
-        <div className="mt-5 flex flex-wrap gap-2">
-          {["Approved sources", "Role-based visibility", "Human-managed updates"].map(
-            (tag) => (
-              <span
-                key={tag}
-                className="rounded-sm border border-border px-2.5 py-1 text-xs text-muted"
-              >
-                {tag}
-              </span>
-            ),
-          )}
         </div>
       </Panel>
       {caption ? <Caption>{caption}</Caption> : null}
@@ -540,34 +598,37 @@ export function SocidaOutcomeVisual({ caption }: { caption?: string }) {
 
   return (
     <figure>
-      <div className="grid gap-4 md:grid-cols-2">
-        <Panel>
+      <div className="grid gap-4 md:grid-cols-2 md:items-stretch">
+        <Panel className="h-full">
           <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
             Before
           </p>
-          <ul className="mt-4 space-y-3">
+          <ul className="mt-5 space-y-4">
             {before.map((item) => (
-              <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted">
-                <span className="mt-1 text-burgundy" aria-hidden="true">
-                  —
+              <li
+                key={item}
+                className="flex gap-3 text-sm leading-relaxed text-muted"
+              >
+                <span className="mt-1.5 text-burgundy" aria-hidden="true">
+                  ·
                 </span>
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         </Panel>
-        <Panel dark>
-          <p className="text-[11px] uppercase tracking-[0.18em] text-background/55">
+        <Panel dark className="h-full">
+          <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-burgundy-on-dark">
             After
           </p>
-          <ul className="mt-4 space-y-3">
+          <ul className="mt-5 space-y-4">
             {after.map((item) => (
               <li
                 key={item}
                 className="flex gap-3 text-sm leading-relaxed text-background/85"
               >
-                <span className="mt-1 text-burgundy-soft" aria-hidden="true">
-                  —
+                <span className="mt-1.5 text-burgundy-on-dark" aria-hidden="true">
+                  ·
                 </span>
                 <span>{item}</span>
               </li>

@@ -78,14 +78,14 @@ function InsightCard({
 export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
   const frontlineUpdates = [
     "Customers keep asking about insurance covering replacement parts.",
-    "CRM was slow again this morning — team worked around it.",
+    "CRM was slow again this morning: team worked around it.",
     "Two call-offs at checkout; queue building before peak.",
   ];
 
   return (
-    <figure>
-      <Panel className="!p-0 overflow-hidden">
-        <div className="border-b border-border px-5 py-4 md:px-7">
+    <figure className="@container min-w-0">
+      <Panel className="!p-0 overflow-visible">
+        <div className="border-b border-border px-4 py-4 @[28rem]:px-5 @[42rem]:px-7">
           <SectionLabel
             eyebrow="Operating loop"
             title="Frontline updates → manager actions"
@@ -93,12 +93,13 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
           />
         </div>
 
-        <div className="grid gap-0 lg:grid-cols-12">
-          <div className="border-b border-border p-5 lg:col-span-4 lg:border-b-0 lg:border-r md:p-6">
+        {/* Stack until the figure itself is wide enough — homepage covers are ~half page */}
+        <div className="grid gap-0 @[42rem]:grid-cols-12">
+          <div className="border-b border-border p-4 @[28rem]:p-5 @[42rem]:col-span-4 @[42rem]:border-b-0 @[42rem]:border-r @[42rem]:p-6">
             <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
               Example frontline updates
             </p>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-3 space-y-2 @[28rem]:mt-4 @[28rem]:space-y-2.5">
               {frontlineUpdates.map((update) => (
                 <li
                   key={update}
@@ -108,72 +109,53 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-xs text-muted">
+            <p className="mt-3 text-xs leading-relaxed text-muted @[28rem]:mt-4">
               2–3 shift-close questions · no employee app required
             </p>
           </div>
 
-          <div className="relative flex flex-col items-center justify-center border-b border-border bg-surface p-6 lg:col-span-3 lg:border-b-0 lg:border-r">
+          <div className="relative flex flex-col items-center justify-center border-b border-border bg-surface px-4 py-5 @[28rem]:p-6 @[42rem]:col-span-3 @[42rem]:border-b-0 @[42rem]:border-r">
             <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
               Synthesis
             </p>
-            <div className="relative my-6 flex h-28 w-full items-center justify-center">
+            <div className="relative my-4 flex h-16 w-full max-w-[12rem] items-center justify-center @[42rem]:my-6 @[42rem]:h-28">
               <span
-                className="absolute h-20 w-20 rounded-full border border-burgundy/20"
+                className="absolute h-14 w-14 rounded-full border border-burgundy/20 @[42rem]:h-20 @[42rem]:w-20"
                 aria-hidden="true"
               />
               <span
-                className="absolute h-14 w-14 rounded-full border border-burgundy/35"
+                className="absolute h-9 w-9 rounded-full border border-burgundy/35 @[42rem]:h-14 @[42rem]:w-14"
                 aria-hidden="true"
               />
               <span
-                className="relative h-4 w-4 rounded-full bg-burgundy shadow-[0_0_24px_rgba(111,44,58,0.45)]"
+                className="relative h-3.5 w-3.5 rounded-full bg-burgundy shadow-[0_0_24px_rgba(111,44,58,0.45)] @[42rem]:h-4 @[42rem]:w-4"
                 aria-hidden="true"
               />
-              <svg
-                className="absolute inset-0 h-full w-full"
-                aria-hidden="true"
-              >
-                <path
-                  d="M8 50 C40 30, 60 70, 96 50"
-                  fill="none"
-                  stroke="color-mix(in srgb, var(--burgundy) 45%, transparent)"
-                  strokeWidth="1.5"
-                  strokeDasharray="4 4"
-                />
-                <path
-                  d="M96 50 C132 30, 152 70, 184 50"
-                  fill="none"
-                  stroke="color-mix(in srgb, var(--burgundy) 45%, transparent)"
-                  strokeWidth="1.5"
-                  strokeDasharray="4 4"
-                />
-              </svg>
             </div>
-            <p className="text-center text-xs text-muted">
+            <p className="max-w-[14rem] text-center text-xs leading-relaxed text-muted">
               Patterns grouped · owners assigned · exceptions flagged
             </p>
           </div>
 
-          <div className="bg-navy p-5 text-background md:p-7 lg:col-span-5">
-            <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy-soft">
+          <div className="bg-navy p-4 text-background @[28rem]:p-5 @[42rem]:col-span-5 @[42rem]:p-7">
+            <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy-on-dark">
               Manager-ready
             </p>
-            <div className="mt-4 rounded-sm border border-background/15 bg-background/5 p-4">
+            <div className="mt-3 rounded-sm border border-background/15 bg-background/5 p-3.5 @[28rem]:mt-4 @[28rem]:p-4">
               <span className="rounded-sm bg-burgundy px-2 py-0.5 text-[10px] uppercase tracking-[0.12em]">
                 Staffing risk
               </span>
-              <p className="mt-3 font-serif text-xl leading-snug text-background">
-                Branch 4 thin next Friday — 3 overlapping leave requests
+              <p className="mt-3 font-serif text-lg leading-snug text-background @[42rem]:text-xl">
+                Branch 4 thin next Friday: 3 overlapping leave requests
               </p>
-              <dl className="mt-4 space-y-2 text-sm">
+              <dl className="mt-3 space-y-2 text-sm @[28rem]:mt-4">
                 <div className="flex justify-between gap-3 border-b border-background/10 pb-2">
                   <dt className="text-background/55">Owner</dt>
                   <dd>HR Ops</dd>
                 </div>
                 <div className="flex justify-between gap-3">
-                  <dt className="text-background/55">Next action</dt>
-                  <dd className="text-burgundy-soft">
+                  <dt className="shrink-0 text-background/55">Next action</dt>
+                  <dd className="text-right text-burgundy-on-dark">
                     Confirm shift coverage by Wednesday
                   </dd>
                 </div>
@@ -186,7 +168,7 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
               ].map((item) => (
                 <p
                   key={item}
-                  className="rounded-sm border border-background/10 px-3 py-2 text-xs text-background/70"
+                  className="rounded-sm border border-background/10 px-3 py-2 text-xs leading-relaxed text-background/70"
                 >
                   {item}
                 </p>
@@ -200,7 +182,8 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
   );
 }
 
-/** Before / After — typical corporate tools vs Third Eye (landing-page pain pattern). */
+
+/** Before / After: typical corporate tools vs Third Eye (landing-page pain pattern). */
 export function ThirdEyeProblemVisual({ caption }: { caption?: string }) {
   const before = [
     "Updates scattered across WhatsApp, spreadsheets and email",
@@ -280,7 +263,7 @@ export function ThirdEyeProblemVisual({ caption }: { caption?: string }) {
   );
 }
 
-/** Daily operating signal — WhatsApp in, brief out (Sarah / insurance pattern). */
+/** Daily operating signal: WhatsApp in, brief out (Sarah / insurance pattern). */
 export function ThirdEyeApproachVisual({ caption }: { caption?: string }) {
   const briefItems = [
     {
@@ -307,7 +290,7 @@ export function ThirdEyeApproachVisual({ caption }: { caption?: string }) {
           <SectionLabel
             eyebrow="Daily operating signal"
             title="WhatsApp in, operating signals out"
-            subtitle="Risk, ownership, and next action — not a transcript replay."
+            subtitle="Risk, ownership, and next action, not a transcript replay."
           />
         </div>
 
@@ -325,7 +308,7 @@ export function ThirdEyeApproachVisual({ caption }: { caption?: string }) {
                 </div>
                 <div className="ml-auto max-w-[88%] rounded-sm rounded-tr-none border border-emerald-900/10 bg-emerald-950/[0.05] px-3 py-2.5">
                   <p className="text-[12px] leading-relaxed text-navy">
-                    Insurance — whether it covers replacement parts on this
+                    Insurance: whether it covers replacement parts on this
                     model.
                   </p>
                   <p className="mt-1 text-right text-[10px] text-muted">
@@ -380,13 +363,13 @@ export function ThirdEyeApproachVisual({ caption }: { caption?: string }) {
   );
 }
 
-/** Daily manager outputs — pilot format pattern. */
+/** Daily manager outputs: pilot format pattern. */
 export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
   const outputs = [
     {
       number: "01",
       title: "WhatsApp pulse",
-      body: "2–3 shift-close questions — lightweight, repeatable, no new employee app.",
+      body: "2–3 shift-close questions: lightweight, repeatable, no new employee app.",
     },
     {
       number: "02",
@@ -396,7 +379,7 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
     {
       number: "03",
       title: "Morning brief",
-      body: "Issues, quotes, and trends grouped across branches — not message dumps.",
+      body: "Issues, quotes, and trends grouped across branches, not message dumps.",
     },
     {
       number: "04",
@@ -411,14 +394,14 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
         <div className="border-b border-background/15 px-5 py-4 md:px-7">
           <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-soft">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
                 Pilot format
               </p>
               <h3 className="mt-2 font-serif text-2xl text-background md:text-3xl">
                 Manager visibility in days, not quarters
               </h3>
               <p className="mt-2 text-sm text-background/65">
-                Best for 20–50 frontline employees across 2–5 sites — WhatsApp
+                Best for 20–50 frontline employees across 2–5 sites: WhatsApp
                 check-ins plus mobile web fallback.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -444,7 +427,7 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
               key={output.number}
               className="rounded-sm border border-background/15 bg-background/5 p-4"
             >
-              <span className="text-[11px] uppercase tracking-[0.14em] text-burgundy-soft">
+              <span className="text-[11px] uppercase tracking-[0.14em] text-burgundy-on-dark">
                 {output.number}
               </span>
               <h4 className="mt-2 font-serif text-xl text-background">
@@ -477,13 +460,13 @@ export function ThirdEyeJourneyVisual({ caption }: { caption?: string }) {
             number: "02",
             label: "Synthesise",
             title: "Repeated signals grouped automatically",
-            body: "Themes like insurance questions, staffing pressure or SOP drift surface across sites — not one message at a time.",
+            body: "Themes like insurance questions, staffing pressure or SOP drift surface across sites, not one message at a time.",
           },
           {
             number: "03",
             label: "Brief",
             title: "Morning brief with owners and context",
-            body: "Managers see issues, quotes, trends and affected branches — with explicit next actions, not inbox archaeology.",
+            body: "Managers see issues, quotes, trends and affected branches: with explicit next actions, not inbox archaeology.",
           },
           {
             number: "04",
@@ -498,7 +481,7 @@ export function ThirdEyeJourneyVisual({ caption }: { caption?: string }) {
   );
 }
 
-/** Manager-level insight cards — staffing, trend, training gap pattern. */
+/** Manager-level insight cards: staffing, trend, training gap pattern. */
 export function ThirdEyeBriefVisual({ caption }: { caption?: string }) {
   return (
     <figure>
@@ -507,7 +490,7 @@ export function ThirdEyeBriefVisual({ caption }: { caption?: string }) {
           <SectionLabel
             eyebrow="Manager-level insights"
             title="Insights you can act on today"
-            subtitle="Issue, affected branches, owner, and next action — surfaced each morning."
+            subtitle="Issue, affected branches, owner and next action, surfaced each morning."
             badge="Daily brief pattern"
           />
         </div>
@@ -542,23 +525,23 @@ export function ThirdEyeBriefVisual({ caption }: { caption?: string }) {
   );
 }
 
-/** Institutional memory — knowledge compounds over time. */
+/** Institutional memory: knowledge compounds over time. */
 export function ThirdEyeOutcomeVisual({ caption }: { caption?: string }) {
   const cards = [
     {
       label: "Living knowledge base",
       title: "Institutional knowledge, stored",
-      body: "Frontline reality captured continuously into a searchable record — not lost in chat threads or one person's memory. Compounds every week.",
+      body: "Frontline reality captured continuously into a searchable record, not lost in chat threads or one person's memory. Compounds every week.",
     },
     {
       label: "Turnover-proof",
       title: "People leave. The knowledge stays.",
-      body: "When someone moves on, what they knew is already part of the record your team can draw on — fewer single points of failure.",
+      body: "When someone moves on, what they knew is already part of the record your team can draw on: fewer single points of failure.",
     },
     {
       label: "Faster onboarding",
       title: "Ramp-up from this week's reality",
-      body: "New joiners learn from a source of truth that updates as the floor changes — not last year's manual.",
+      body: "New joiners learn from a source of truth that updates as the floor changes, not last year's manual.",
     },
   ];
 

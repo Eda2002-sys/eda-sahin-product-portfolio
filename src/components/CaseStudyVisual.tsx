@@ -1,4 +1,3 @@
-import { CaseStudyMedia } from "@/components/CaseStudyMedia";
 import {
   AnalystAiApproachVisual,
   AnalystAiBuildVisual,
@@ -8,15 +7,6 @@ import {
   AnalystAiProblemVisual,
   AnalystAiWorkspaceVisual,
 } from "@/components/case-studies/AnalystAiInfographics";
-import {
-  ClinicalDocsApproachVisual,
-  ClinicalDocsBuildVisual,
-  ClinicalDocsHeroVisual,
-  ClinicalDocsJourneyVisual,
-  ClinicalDocsOutcomeVisual,
-  ClinicalDocsProblemVisual,
-  ClinicalDocsReviewVisual,
-} from "@/components/case-studies/ClinicalDocsInfographics";
 import {
   CreApproachVisual,
   CreBuildVisual,
@@ -84,6 +74,7 @@ import {
   ThirdEyeProblemVisual,
 } from "@/components/case-studies/ThirdEyeInfographics";
 import type { ProjectVisual, ProjectVisualComponent } from "@/data/projects";
+import { CaseStudyMedia } from "@/components/CaseStudyMedia";
 
 const componentMap: Record<
   ProjectVisualComponent,
@@ -141,13 +132,6 @@ const componentMap: Record<
   "third-eye-journey": ThirdEyeJourneyVisual,
   "third-eye-brief": ThirdEyeBriefVisual,
   "third-eye-outcome": ThirdEyeOutcomeVisual,
-  "clinical-hero": ClinicalDocsHeroVisual,
-  "clinical-problem": ClinicalDocsProblemVisual,
-  "clinical-approach": ClinicalDocsApproachVisual,
-  "clinical-build": ClinicalDocsBuildVisual,
-  "clinical-journey": ClinicalDocsJourneyVisual,
-  "clinical-review": ClinicalDocsReviewVisual,
-  "clinical-outcome": ClinicalDocsOutcomeVisual,
   "analystai-hero": AnalystAiHeroVisual,
   "analystai-problem": AnalystAiProblemVisual,
   "analystai-approach": AnalystAiApproachVisual,

@@ -50,14 +50,14 @@ export function RegulatoryHeroVisual({ caption }: { caption?: string }) {
       <Panel dark>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-soft">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               Regulatory review
             </p>
             <h3 className="mt-2 font-serif text-2xl text-background md:text-3xl">
               From source change to owned work
             </h3>
           </div>
-          <span className="rounded-sm border border-burgundy/45 px-2.5 py-1 text-xs text-burgundy-soft">
+          <span className="rounded-sm border border-burgundy/45 px-2.5 py-1 text-xs text-burgundy-on-dark">
             Updates
           </span>
         </div>
@@ -70,7 +70,7 @@ export function RegulatoryHeroVisual({ caption }: { caption?: string }) {
             >
               <div className="flex items-start gap-3">
                 <span
-                  className="mt-1.5 h-2 w-2 rounded-full bg-burgundy-soft"
+                  className="mt-1.5 h-2 w-2 rounded-full bg-burgundy-on-dark"
                   aria-hidden="true"
                 />
                 <div>
@@ -171,7 +171,7 @@ export function RegulatoryApproachVisual({ caption }: { caption?: string }) {
       <div className="grid gap-4 md:grid-cols-3">
         {cards.map((card, index) => (
           <Panel key={card.title} dark className="h-full">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-soft">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               0{index + 1}
             </p>
             <h3 className="mt-3 font-serif text-xl text-background md:text-2xl">
@@ -446,9 +446,7 @@ export function RegulatoryOutcomeVisual({ caption }: { caption?: string }) {
           <ul className="mt-4 space-y-3">
             {before.map((item) => (
               <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted">
-                <span className="mt-1 text-burgundy" aria-hidden="true">
-                  —
-                </span>
+                <span className="mt-1 text-burgundy" aria-hidden="true">·</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -464,9 +462,7 @@ export function RegulatoryOutcomeVisual({ caption }: { caption?: string }) {
                 key={item}
                 className="flex gap-3 text-sm leading-relaxed text-background/85"
               >
-                <span className="mt-1 text-burgundy-soft" aria-hidden="true">
-                  —
-                </span>
+                <span className="mt-1 text-burgundy-on-dark" aria-hidden="true">·</span>
                 <span>{item}</span>
               </li>
             ))}

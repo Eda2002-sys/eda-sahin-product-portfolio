@@ -32,14 +32,14 @@ export function OvernightHeroVisual({ caption }: { caption?: string }) {
       <Panel dark className="overflow-hidden">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-soft">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               Morning markets
             </p>
             <h3 className="mt-2 font-serif text-3xl text-background">
               Overnight briefing
             </h3>
           </div>
-          <span className="rounded-sm border border-burgundy/50 px-2.5 py-1 text-xs text-burgundy-soft">
+          <span className="rounded-sm border border-burgundy/50 px-2.5 py-1 text-xs text-burgundy-on-dark">
             Review ready
           </span>
         </div>
@@ -70,7 +70,7 @@ export function OvernightHeroVisual({ caption }: { caption?: string }) {
             05:55 source cutoff
           </span>
           <span aria-hidden="true">→</span>
-          <span className="rounded-sm border border-burgundy/40 bg-burgundy/15 px-2 py-1 text-burgundy-soft">
+          <span className="rounded-sm border border-burgundy/40 bg-burgundy/15 px-2 py-1 text-burgundy-on-dark">
             06:30 review ready
           </span>
         </div>
@@ -86,7 +86,7 @@ export function OvernightHeroVisual({ caption }: { caption?: string }) {
               <path
                 d="M0 70 C40 68, 55 40, 90 48 C125 56, 140 22, 175 30 C210 38, 230 18, 260 28 C285 35, 300 20, 320 24"
                 fill="none"
-                stroke="var(--burgundy-soft)"
+                stroke="var(--burgundy-on-dark)"
                 strokeWidth="2.5"
               />
             </svg>
@@ -97,7 +97,7 @@ export function OvernightHeroVisual({ caption }: { caption?: string }) {
                 key={item}
                 className="flex items-center gap-3 rounded-sm border border-background/15 bg-background/5 px-3 py-3"
               >
-                <span className="text-[11px] tracking-[0.14em] text-burgundy-soft">
+                <span className="text-[11px] tracking-[0.14em] text-burgundy-on-dark">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="text-sm text-background">{item}</span>
@@ -176,7 +176,7 @@ export function OvernightApproachVisual({ caption }: { caption?: string }) {
       <div className="grid gap-4 md:grid-cols-3">
         {cards.map((card, index) => (
           <Panel key={card.title} dark className="h-full">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-soft">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               0{index + 1}
             </p>
             <h3 className="mt-3 font-serif text-xl text-background md:text-2xl">
@@ -322,7 +322,7 @@ export function OvernightReportVisual({ caption }: { caption?: string }) {
       <Panel className="!p-0 overflow-hidden">
         <div className="grid lg:grid-cols-12">
           <aside className="border-b border-border bg-navy p-5 text-background lg:col-span-3 lg:border-b-0 lg:border-r md:p-6">
-            <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy-soft">
+            <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy-on-dark">
               Morning markets
             </p>
             <p className="mt-3 text-sm text-background/70">
@@ -411,7 +411,7 @@ export function OvernightReportVisual({ caption }: { caption?: string }) {
 
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               <div className="rounded-sm bg-navy p-4 text-background">
-                <p className="text-[11px] uppercase tracking-[0.14em] text-burgundy-soft">
+                <p className="text-[11px] uppercase tracking-[0.14em] text-burgundy-on-dark">
                   Market read
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-background/80">
@@ -466,9 +466,7 @@ export function OvernightOutcomeVisual({ caption }: { caption?: string }) {
           <ul className="mt-4 space-y-3">
             {before.map((item) => (
               <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted">
-                <span className="mt-1 text-burgundy" aria-hidden="true">
-                  —
-                </span>
+                <span className="mt-1 text-burgundy" aria-hidden="true">·</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -484,9 +482,7 @@ export function OvernightOutcomeVisual({ caption }: { caption?: string }) {
                 key={item}
                 className="flex gap-3 text-sm leading-relaxed text-background/85"
               >
-                <span className="mt-1 text-burgundy-soft" aria-hidden="true">
-                  —
-                </span>
+                <span className="mt-1 text-burgundy-on-dark" aria-hidden="true">·</span>
                 <span>{item}</span>
               </li>
             ))}

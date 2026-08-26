@@ -41,7 +41,7 @@ export function CreHeroVisual({ caption }: { caption?: string }) {
         </div>
 
         <div className="relative mt-5 h-48 overflow-hidden rounded-sm border border-background/15 bg-[linear-gradient(0deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px]">
-          <div className="absolute left-[28%] top-[42%] h-3 w-3 rounded-full bg-burgundy-soft ring-4 ring-burgundy/30" />
+          <div className="absolute left-[28%] top-[42%] h-3 w-3 rounded-full bg-burgundy-on-dark ring-4 ring-burgundy/30" />
           <div className="absolute left-[48%] top-[36%] h-3 w-3 rounded-full bg-background/50" />
           <div className="absolute left-[62%] top-[58%] h-3 w-3 rounded-full bg-background/50" />
           <div className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-burgundy text-xs text-background">
@@ -60,7 +60,7 @@ export function CreHeroVisual({ caption }: { caption?: string }) {
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="rounded-sm border border-burgundy/40 px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-burgundy-soft">
+            <span className="rounded-sm border border-burgundy/40 px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-burgundy-on-dark">
               Map ↔ table synced
             </span>
             <span className="rounded-sm bg-burgundy px-2.5 py-1 text-xs text-background">
@@ -95,7 +95,7 @@ export function CreApproachVisual({ caption }: { caption?: string }) {
       <div className="grid gap-4 md:grid-cols-3">
         {cards.map((card, index) => (
           <Panel key={card.title} dark className="h-full">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-soft">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               0{index + 1}
             </p>
             <h3 className="mt-3 font-serif text-xl text-background md:text-2xl">
@@ -496,9 +496,7 @@ export function CreOutcomeVisual({ caption }: { caption?: string }) {
           <ul className="mt-4 space-y-3">
             {before.map((item) => (
               <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted">
-                <span className="mt-1 text-burgundy" aria-hidden="true">
-                  —
-                </span>
+                <span className="mt-1 text-burgundy" aria-hidden="true">·</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -514,9 +512,7 @@ export function CreOutcomeVisual({ caption }: { caption?: string }) {
                 key={item}
                 className="flex gap-3 text-sm leading-relaxed text-background/85"
               >
-                <span className="mt-1 text-burgundy-soft" aria-hidden="true">
-                  —
-                </span>
+                <span className="mt-1 text-burgundy-on-dark" aria-hidden="true">·</span>
                 <span>{item}</span>
               </li>
             ))}

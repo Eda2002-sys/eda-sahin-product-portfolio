@@ -7,10 +7,7 @@ function EducationNotes({ notes }: { notes: ResumeEducationNote[] }) {
   return (
     <ul className="space-y-2">
       {notes.map((note) => (
-        <li key={note.text} className="flex gap-2 text-sm leading-relaxed text-muted">
-          <span className="shrink-0 text-burgundy" aria-hidden="true">
-            —
-          </span>
+        <li key={note.text} className="text-sm leading-relaxed text-muted">
           <span className="min-w-0 break-words">
             {note.href ? (
               <a
@@ -91,12 +88,12 @@ export function Education() {
       className="scroll-mt-24 border-y border-border bg-surface"
       aria-labelledby="education-heading"
     >
-      <div className="container-page py-16 md:py-28">
+      <div className="container-page section-space">
         <SectionHeading
           id="education-heading"
           eyebrow="Education"
-          title="Business foundation, scholarship boarding school"
-          description="Koç University for business administration; Darüşşafaka for secondary school — with a few milestones worth keeping on the record."
+          title="Formal training and early milestones."
+          description="Koç University for business administration; Darüşşafaka on scholarship."
         />
 
         <ol className="mt-10 space-y-0 md:mt-14">
@@ -140,9 +137,7 @@ export function Education() {
                 <div className="min-w-0 md:col-span-5">
                   {item.notes?.length ? (
                     <EducationNotes notes={item.notes} />
-                  ) : (
-                    <p className="text-sm text-muted">—</p>
-                  )}
+                  ) : null}
                 </div>
               </li>
             );

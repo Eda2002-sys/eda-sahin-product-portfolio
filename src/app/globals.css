@@ -3,9 +3,13 @@
 :root {
   --background: #f7f4ef;
   --foreground: #1a1f2e;
-  --muted: #6b6f7a;
+  /* Darker muted for readable secondary text on ivory */
+  --muted: #555963;
   --burgundy: #6f2c3a;
+  /* Mid burgundy for light surfaces / button hover (not for navy text) */
   --burgundy-soft: #8a3d4d;
+  /* Readable rose on navy — brighter than before for small labels */
+  --burgundy-on-dark: #e8b4bc;
   --border: #e4ddd3;
   --border-strong: #d2c8bb;
   --surface: #fbf9f5;
@@ -19,6 +23,7 @@
   --color-muted: var(--muted);
   --color-burgundy: var(--burgundy);
   --color-burgundy-soft: var(--burgundy-soft);
+  --color-burgundy-on-dark: var(--burgundy-on-dark);
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
   --color-surface: var(--surface);
@@ -88,12 +93,51 @@ body {
   background-size: 100% 1px;
 }
 
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  /* Darker than brand burgundy so small caps stay readable on ivory */
+  color: #54222e;
+}
+
+.eyebrow-muted {
+  color: var(--navy);
+  opacity: 0.75;
+}
+
+.eyebrow-navy {
+  color: var(--navy);
+}
+
+/*
+  Burgundy (#6f2c3a) / soft (#8a3d4d) fail WCAG on navy (#1a1f2e).
+  Prefer text-burgundy-on-dark on dark panels; this also remaps leftover
+  burgundy / burgundy-soft text nested under .bg-navy.
+*/
+.bg-navy.text-burgundy,
+.bg-navy.text-burgundy-soft,
+.bg-navy :is(.text-burgundy, .text-burgundy-soft) {
+  color: var(--burgundy-on-dark);
+}
+
+.section-space {
+  padding-block: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-space {
+    padding-block: 6rem;
+  }
+}
+
 .section-divider {
   border: 0;
   border-top: 1px solid var(--border);
 }
 
-/* Homepage project cover — full infographic visible, no crop */
+/* Homepage project cover: full infographic visible, no crop */
 .project-cover-shell {
   width: 100%;
   min-width: 0;
@@ -114,29 +158,50 @@ body {
 .project-cover-shell--phone {
   display: flex;
   justify-content: center;
-  padding: 1.75rem 1.25rem 2rem;
+  align-items: flex-start;
+  padding: 0.5rem 0.75rem 1rem;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .project-cover-shell--wide {
   padding: 0.875rem;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
 }
 
 @media (min-width: 768px) {
   .project-cover-shell--wide {
     padding: 1rem 1.125rem 1.25rem;
-    overflow-x: visible;
   }
 }
 
-.group:hover .project-cover-shell,
-.group:focus-visible .project-cover-shell {
+@media (max-width: 767px) {
+  .project-cover-shell--wide {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.group:hover .project-cover-shell:not(.project-cover-shell--phone),
+.group:focus-visible .project-cover-shell:not(.project-cover-shell--phone) {
   box-shadow:
     0 1px 0 color-mix(in srgb, var(--burgundy) 18%, transparent),
     0 22px 52px -28px color-mix(in srgb, var(--burgundy) 22%, transparent);
   transform: translateY(-2px);
+}
+
+.group:hover .project-cover-shell--phone,
+.group:focus-visible .project-cover-shell--phone {
+  box-shadow: none;
+  transform: none;
+}
+
+.project-cover-visual {
+  min-width: 0;
+  width: 100%;
+  container-type: inline-size;
 }
 
 .project-cover-visual figure {
@@ -149,43 +214,12 @@ body {
   box-shadow: none;
 }
 
-@media (max-width: 639px) {
-  .project-cover-visual {
-    font-size: 0.92rem;
-  }
-
+/* Soften density on very narrow covers without crushing padding into overflow */
+@container (max-width: 28rem) {
   .project-cover-visual .font-serif.text-2xl,
-  .project-cover-visual .font-serif.text-3xl {
+  .project-cover-visual .font-serif.text-3xl,
+  .project-cover-visual .font-serif.text-xl {
     font-size: 1.15rem;
     line-height: 1.35;
-  }
-
-  .project-cover-visual .text-sm {
-    font-size: 0.75rem;
-    line-height: 1.45;
-  }
-
-  .project-cover-visual .text-xs,
-  .project-cover-visual .text-\[11px\],
-  .project-cover-visual .text-\[10px\] {
-    font-size: 0.625rem;
-  }
-
-  .project-cover-visual .p-5,
-  .project-cover-visual .md\:p-7,
-  .project-cover-visual .md\:p-6,
-  .project-cover-visual .p-4 {
-    padding: 0.65rem !important;
-  }
-
-  .project-cover-visual .gap-4,
-  .project-cover-visual .gap-3 {
-    gap: 0.5rem;
-  }
-
-  .project-cover-visual .mt-5,
-  .project-cover-visual .mt-6,
-  .project-cover-visual .mt-4 {
-    margin-top: 0.65rem;
   }
 }

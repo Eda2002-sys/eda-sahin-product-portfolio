@@ -9,13 +9,25 @@ export const metadata: Metadata = {
   title: "Resume — Eda Sahin",
   description:
     "Resume for Eda Sahin — Chief of Staff across AI products and M&A technology.",
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
 };
 
 export default function ResumePage() {
   return (
     <div className="border-b border-border">
       <div className="container-page py-16 md:py-24">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <Link
+          href="/"
+          className="link-underline inline-flex text-sm text-burgundy"
+        >
+          ← Back to portfolio
+        </Link>
+
+        <div className="mt-8 flex flex-col gap-6 sm:mt-10 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-[11px] uppercase tracking-[0.2em] text-burgundy">
               Resume
@@ -43,13 +55,6 @@ export default function ResumePage() {
         <div className="mt-10">
           <ResumeCv />
         </div>
-
-        <Link
-          href="/"
-          className="link-underline mt-12 inline-flex text-sm text-burgundy"
-        >
-          ← Back to portfolio
-        </Link>
       </div>
     </div>
   );

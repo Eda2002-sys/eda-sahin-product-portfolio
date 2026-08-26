@@ -31,9 +31,9 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```text
 src/
-  app/                 # App Router pages (home, case studies, reviews, resume)
+  app/                 # App Router pages (home, case studies, resume)
   components/          # Reusable UI sections
-  data/                # Editable content objects (projects, experience, skills, reviews)
+  data/                # Editable content objects (projects, experience, skills)
 public/                # Static assets (add screenshots + resume.pdf here)
 ```
 
@@ -42,7 +42,6 @@ public/                # Static assets (add screenshots + resume.pdf here)
 Most copy lives in reusable data files:
 
 - `src/data/projects.ts` — selected work + case study bodies
-- `src/data/reviews.ts` — Critical Strike & Polygun Arena findings
 - `src/data/experience.ts` — timeline
 - `src/data/skills.ts` — capabilities + “How I work”
 - `src/data/site.ts` — name, links, resume path, SEO strings
@@ -77,6 +76,4 @@ Optional: set the production domain, then update `metadataBase` in `src/app/layo
 ## Notes
 
 - Case studies: `/work/[slug]`
-- Product reviews: `/work/product-reviews`
 - No invented metrics — qualitative product value only
-- Independent gaming reviews are clearly labelled as product-sense case studies

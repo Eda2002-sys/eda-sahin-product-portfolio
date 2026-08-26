@@ -40,17 +40,17 @@ export function SectionLabel({
   dark?: boolean;
 }) {
   return (
-    <div className="flex flex-wrap items-start justify-between gap-3">
-      <div>
+    <div className="@container flex flex-wrap items-start justify-between gap-3">
+      <div className="min-w-0">
         <p
           className={`text-[11px] uppercase tracking-[0.18em] ${
-            dark ? "text-burgundy-soft" : "text-burgundy"
+            dark ? "text-burgundy-on-dark" : "text-burgundy"
           }`}
         >
           {eyebrow}
         </p>
         <h3
-          className={`mt-2 font-serif text-2xl md:text-3xl ${
+          className={`mt-2 font-serif text-xl leading-snug @[22rem]:text-2xl @[36rem]:text-3xl ${
             dark ? "text-background" : "text-navy"
           }`}
         >
@@ -58,7 +58,7 @@ export function SectionLabel({
         </h3>
         {subtitle ? (
           <p
-            className={`mt-2 text-sm ${dark ? "text-background/65" : "text-muted"}`}
+            className={`mt-2 text-sm leading-relaxed ${dark ? "text-background/65" : "text-muted"}`}
           >
             {subtitle}
           </p>
@@ -68,7 +68,7 @@ export function SectionLabel({
         <span
           className={`rounded-sm px-2.5 py-1 text-xs ${
             dark
-              ? "border border-burgundy/45 text-burgundy-soft"
+              ? "border border-burgundy-on-dark/45 text-burgundy-on-dark"
               : "border border-border text-muted"
           }`}
         >
@@ -186,7 +186,7 @@ export function ApproachCards({
         <Panel key={card.title} dark={dark} className="h-full">
           <p
             className={`text-[11px] uppercase tracking-[0.18em] ${
-              dark ? "text-burgundy-soft" : "text-burgundy"
+              dark ? "text-burgundy-on-dark" : "text-burgundy"
             }`}
           >
             0{index + 1}
@@ -230,11 +230,8 @@ export function BeforeAfter({
         </p>
         <ul className="mt-4 space-y-3">
           {before.map((item) => (
-            <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted">
-              <span className="mt-1 text-burgundy" aria-hidden="true">
-                —
-              </span>
-              <span>{item}</span>
+            <li key={item} className="text-sm leading-relaxed text-muted">
+              {item}
             </li>
           ))}
         </ul>
@@ -247,12 +244,9 @@ export function BeforeAfter({
           {after.map((item) => (
             <li
               key={item}
-              className="flex gap-3 text-sm leading-relaxed text-background/85"
+              className="text-sm leading-relaxed text-background/85"
             >
-              <span className="mt-1 text-burgundy-soft" aria-hidden="true">
-                —
-              </span>
-              <span>{item}</span>
+              {item}
             </li>
           ))}
         </ul>
@@ -292,7 +286,7 @@ export function JourneySteps({
         >
           <p
             className={`text-[11px] uppercase tracking-[0.18em] ${
-              dark ? "text-burgundy-soft" : "text-burgundy"
+              dark ? "text-burgundy-on-dark" : "text-burgundy"
             }`}
           >
             {step.number}

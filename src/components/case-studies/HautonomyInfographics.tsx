@@ -29,19 +29,19 @@ function Panel({
 /** Hero: clinical document → structured record (sanitized editorial mock). */
 export function HautonomyHeroVisual({ caption }: { caption?: string }) {
   return (
-    <figure>
-      <Panel className="overflow-hidden !p-0">
-        <div className="border-b border-border bg-surface px-5 py-4 md:px-7">
+    <figure className="@container min-w-0">
+      <Panel className="overflow-visible !p-0">
+        <div className="border-b border-border bg-surface px-4 py-4 @[28rem]:px-5 @[42rem]:px-7">
           <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
             Lab ingestion
           </p>
-          <p className="mt-2 font-serif text-2xl text-navy md:text-3xl">
+          <p className="mt-2 font-serif text-xl text-navy @[28rem]:text-2xl @[42rem]:text-3xl">
             From clinical document to review-ready record
           </p>
         </div>
 
-        <div className="grid gap-0 lg:grid-cols-2">
-          <div className="border-b border-border p-5 md:p-7 lg:border-b-0 lg:border-r">
+        <div className="grid gap-0 @[36rem]:grid-cols-2">
+          <div className="border-b border-border p-4 @[28rem]:p-5 @[36rem]:border-b-0 @[36rem]:border-r @[42rem]:p-7">
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-sm font-medium text-navy">Clinical document</p>
@@ -68,7 +68,7 @@ export function HautonomyHeroVisual({ caption }: { caption?: string }) {
             </div>
           </div>
 
-          <div className="bg-navy p-5 text-background md:p-7">
+          <div className="bg-navy p-4 text-background @[28rem]:p-5 @[42rem]:p-7">
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-sm font-medium">Structured record</p>
@@ -94,8 +94,8 @@ export function HautonomyHeroVisual({ caption }: { caption?: string }) {
                 </div>
               ))}
             </dl>
-            <p className="mt-5 text-xs text-background/60">
-              Extraction structures information — clinical judgment stays human.
+            <p className="mt-5 text-xs leading-relaxed text-background/60">
+              Extraction structures information: clinical judgment stays human.
             </p>
           </div>
         </div>
@@ -165,7 +165,7 @@ export function HautonomyApproachVisual({ caption }: { caption?: string }) {
       <div className="grid gap-4 md:grid-cols-3">
         {cards.map((card, index) => (
           <Panel key={card.title} dark className="h-full">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-soft">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               0{index + 1}
             </p>
             <h3 className="mt-3 font-serif text-xl text-background md:text-2xl">
@@ -273,7 +273,7 @@ export function HautonomyJourneyVisual({ caption }: { caption?: string }) {
   );
 }
 
-/** Sanitized review workspace — inspired by product, no real patient data. */
+/** Sanitized review workspace: inspired by product, no real patient data. */
 export function HautonomyReviewVisual({ caption }: { caption?: string }) {
   const stepper = [
     "Upload",
@@ -330,7 +330,7 @@ export function HautonomyReviewVisual({ caption }: { caption?: string }) {
           </div>
           <p className="mt-3 text-sm text-muted">
             Approved intake:{" "}
-            <span className="text-navy">approved-lab-report.pdf</span> — original
+            <span className="text-navy">approved-lab-report.pdf</span>: original
             stays in the workflow.
           </p>
         </div>
@@ -396,11 +396,7 @@ export function HautonomyReviewVisual({ caption }: { caption?: string }) {
                     </div>
                     <span
                       className={`text-[10px] uppercase tracking-[0.12em] ${
-                        marker.tone === "ok"
-                          ? "text-muted"
-                          : marker.tone === "conflict"
-                            ? "text-burgundy"
-                            : "text-burgundy-soft"
+                        marker.tone === "ok" ? "text-muted" : "text-burgundy"
                       }`}
                     >
                       {marker.status}
@@ -412,7 +408,7 @@ export function HautonomyReviewVisual({ caption }: { caption?: string }) {
           </div>
 
           <div className="bg-navy p-5 text-background lg:col-span-4 md:p-6">
-            <p className="text-[11px] uppercase tracking-[0.14em] text-burgundy-soft">
+            <p className="text-[11px] uppercase tracking-[0.14em] text-burgundy-on-dark">
               Reviewer decision
             </p>
             <p className="mt-2 font-serif text-2xl">LDL Cholesterol</p>
@@ -445,7 +441,7 @@ export function HautonomyReviewVisual({ caption }: { caption?: string }) {
   );
 }
 
-/** Program + markers dashboard pattern — sanitized, no real product chrome. */
+/** Program + markers dashboard pattern: sanitized, no real product chrome. */
 export function HautonomyProgramVisual({ caption }: { caption?: string }) {
   const metrics = [
     { label: "LDL-Chol", value: "3.95", unit: "mmol/L", trend: "Improving" },
@@ -474,7 +470,7 @@ export function HautonomyProgramVisual({ caption }: { caption?: string }) {
                 Cholesterol optimisation
               </h3>
               <p className="mt-1 text-sm text-muted">
-                Phase 2 — Active intervention
+                Phase 2: Active intervention
               </p>
             </div>
             <span className="rounded-sm border border-border px-2.5 py-1 text-xs text-muted">
@@ -596,9 +592,7 @@ export function HautonomyOutcomeVisual({ caption }: { caption?: string }) {
           <ul className="mt-4 space-y-3">
             {before.map((item) => (
               <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted">
-                <span className="mt-1 text-burgundy" aria-hidden="true">
-                  —
-                </span>
+                <span className="mt-1 text-burgundy" aria-hidden="true">·</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -614,9 +608,7 @@ export function HautonomyOutcomeVisual({ caption }: { caption?: string }) {
                 key={item}
                 className="flex gap-3 text-sm leading-relaxed text-background/85"
               >
-                <span className="mt-1 text-burgundy-soft" aria-hidden="true">
-                  —
-                </span>
+                <span className="mt-1 text-burgundy-on-dark" aria-hidden="true">·</span>
                 <span>{item}</span>
               </li>
             ))}

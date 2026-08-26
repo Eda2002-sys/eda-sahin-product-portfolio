@@ -39,7 +39,7 @@ export const resumeProfile = {
   pdfPath: "/resume.pdf",
   languages: [
     { language: "Turkish", level: "Native" },
-    { language: "English", level: "B2" },
+    { language: "English", level: "Advanced (Professional)" },
   ],
 } as const;
 
@@ -47,7 +47,7 @@ export const resumeExperience: ResumeRole[] = [
   {
     title: "Chief of Staff",
     company: "AnalystAI",
-    period: "2025–Present",
+    period: "2025–2026",
     website: "www.analystai.ai",
     websiteHref: "https://www.analystai.ai",
     bullets: [
@@ -61,7 +61,7 @@ export const resumeExperience: ResumeRole[] = [
   {
     title: "Chief of Staff",
     company: "GA Capital",
-    period: "2025–Present",
+    period: "2025–2026",
     website: "www.gacapital.ai",
     websiteHref: "https://www.gacapital.ai",
     bullets: [
@@ -99,11 +99,16 @@ export const resumeEducation: ResumeEducation[] = [
   {
     institution: "Koç University",
     period: "2020–2025",
-    detail: "Business Administration",
+    detail: "B.A. Business Administration",
     logo: "/images/koc-university-logo.png",
     logoHref: "https://www.koc.edu.tr/",
     logoHeight: 22,
     logoAspect: 849 / 204,
+    notes: [
+      {
+        text: "Selected coursework: Business Strategy, Consumer Behavior, Marketing Research, E-Commerce Management & Quantitative Methods",
+      },
+    ],
   },
   {
     institution: "Darüşşafaka High School",
@@ -117,7 +122,7 @@ export const resumeEducation: ResumeEducation[] = [
     notes: [
       { text: "IEARN Conference 2017 attendee, Morocco" },
       {
-        text: "Darüşşafaka entrance exam winner — opening ceremony speech",
+        text: "Darüşşafaka entrance exam winner: opening ceremony speech",
         href: "https://www.darussafaka.org/haberler/darussafaka-egitim-kurumlari-torenle-acildi",
       },
       {
