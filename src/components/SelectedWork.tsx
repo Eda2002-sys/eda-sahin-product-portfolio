@@ -12,7 +12,7 @@ function ProjectCard({
   reverse?: boolean;
 }) {
   return (
-    <article className="grid items-start gap-8 border-t border-border py-10 md:gap-12 md:py-16 lg:grid-cols-12 lg:gap-14">
+    <article className="grid items-start gap-8 border-t border-border py-10 transition-colors md:gap-12 md:py-16 lg:grid-cols-12 lg:gap-14">
       <div
         className={`min-w-0 lg:col-span-6 ${reverse ? "lg:order-2" : "lg:order-1"}`}
       >
@@ -23,26 +23,20 @@ function ProjectCard({
         className={`min-w-0 lg:col-span-6 ${reverse ? "lg:order-1" : "lg:order-2"}`}
       >
         <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-4">
-          <span className="font-serif text-3xl text-burgundy md:text-4xl">
-            {project.number}
-          </span>
-          <p className="eyebrow eyebrow-muted">{project.category}</p>
+          <span className="case-subhead text-burgundy">{project.number}</span>
+          <p className="eyebrow eyebrow-tag">{project.category}</p>
         </div>
 
-        <h3 className="mt-3 font-serif text-2xl text-navy sm:mt-4 sm:text-3xl md:text-4xl">
-          {project.title}
-        </h3>
+        <h3 className="case-section mt-3 sm:mt-4">{project.title}</h3>
 
-        <p className="mt-3 text-base leading-relaxed text-muted sm:mt-4 md:text-lg">
-          {project.summary}
-        </p>
+        <p className="case-body mt-3 sm:mt-4">{project.summary}</p>
 
         {project.context ? (
           <ul className="mt-4 flex flex-wrap gap-2 sm:mt-5">
             {project.context.map((item) => (
               <li
                 key={item}
-                className="rounded-sm border border-border-strong bg-surface-elevated px-2.5 py-1 text-xs text-navy"
+                className="rounded-sm border border-border-strong bg-surface-elevated px-2.5 py-1 text-xs text-navy shadow-[0_1px_0_rgba(210,200,187,0.55)]"
               >
                 {item}
               </li>
@@ -52,22 +46,29 @@ function ProjectCard({
 
         <div className="mt-5 sm:mt-6">
           <p className="eyebrow eyebrow-navy">My role</p>
-          <ul className="mt-3 grid gap-1.5 sm:grid-cols-2">
+          <ul className="mt-3 grid gap-x-6 gap-y-2 sm:grid-cols-2">
             {project.roleHighlights.slice(0, 8).map((item) => (
-              <li key={item} className="text-sm leading-relaxed text-navy/80">
-                {item}
+              <li
+                key={item}
+                className="case-meta flex gap-2 text-navy/80"
+              >
+                <span
+                  className="mt-[0.45em] h-1 w-1 shrink-0 rounded-full bg-burgundy"
+                  aria-hidden="true"
+                />
+                <span>{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <p className="mt-5 border-l border-burgundy/40 pl-4 text-sm leading-relaxed text-navy sm:mt-6 md:text-base">
+        <p className="case-pull mt-5 border-l border-burgundy/40 pl-4 sm:mt-6">
           {project.productValue}
         </p>
 
         <Link
           href={project.href}
-          className="link-underline mt-6 inline-flex text-sm text-burgundy sm:mt-8"
+          className="link-underline case-meta mt-6 inline-flex items-center text-burgundy transition-colors hover:text-burgundy-soft sm:mt-8"
         >
           {project.ctaLabel}
           <span aria-hidden="true" className="ml-2">
@@ -88,8 +89,9 @@ export function SelectedWork() {
         <SectionHeading
           id="work-heading"
           eyebrow="Selected work"
-          title="Four products taken from ambiguity to deployment."
-          description="Workforce intelligence, operating intelligence, digital health and investment technology — each case shows how I moved from user and business problems to product logic, testing, QA and delivery."
+          title="Four products. Four different operating problems."
+          description="Workforce intelligence, operating intelligence, digital health and investment technology — showing the product decisions, workflows and QA behind each system."
+          wide
         />
         <div className="mt-2 md:mt-4">
           {flagship.map((project, index) => (
@@ -108,19 +110,18 @@ export function SelectedWork() {
           <SectionHeading
             id="additional-products-heading"
             eyebrow="Additional product experience"
-            title="Other products I tested and helped ship."
-            description="Client and internal AI products shown as breadth, not as full case studies."
+            title="Other products and workflows I worked on."
           />
           <ul className="mt-10 divide-y divide-border border-t border-border md:mt-12">
             {additionalProducts.map((product) => (
               <li
                 key={product.name}
-                className="grid gap-1 py-5 sm:grid-cols-12 sm:items-baseline sm:gap-6 sm:py-6"
+                className="-mx-3 grid gap-1 rounded-sm px-3 py-5 transition-colors hover:bg-surface sm:grid-cols-12 sm:items-baseline sm:gap-6 sm:py-6"
               >
-                <p className="font-serif text-lg text-navy sm:col-span-4 md:text-xl">
+                <p className="case-meta font-medium text-navy sm:col-span-4">
                   {product.name}
                 </p>
-                <p className="text-sm leading-relaxed text-muted sm:col-span-8 md:text-base">
+                <p className="case-meta text-muted sm:col-span-8">
                   {product.summary}
                 </p>
               </li>

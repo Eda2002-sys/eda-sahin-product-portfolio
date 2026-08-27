@@ -30,7 +30,7 @@
   --color-surface-elevated: var(--surface-elevated);
   --color-navy: var(--navy);
   --font-sans: var(--font-dm-sans);
-  --font-serif: var(--font-instrument-serif);
+  --font-serif: var(--font-newsreader);
 }
 
 * {
@@ -43,7 +43,19 @@ html {
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(
+      ellipse 70% 45% at 100% -10%,
+      color-mix(in srgb, var(--burgundy) 5%, transparent),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 55% 40% at -5% 105%,
+      color-mix(in srgb, var(--navy) 4%, transparent),
+      transparent 52%
+    ),
+    var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -111,6 +123,147 @@ body {
   color: var(--navy);
 }
 
+/* Category tags — distinct from navy body, aligned with UI accent */
+.eyebrow-tag {
+  color: color-mix(in srgb, var(--burgundy) 72%, #3a1a22);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Site type scale (premium, one family for content)
+   Face: DM Sans for all content hierarchy.
+   Serif (Newsreader): brand mark only — Header / Footer / portrait name.
+   Hierarchy = size + weight + color, not mixed families in body copy.
+   ───────────────────────────────────────────────────────────── */
+
+.type-display,
+.case-title,
+.hero-title {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+@media (min-width: 768px) {
+  .type-display,
+  .case-title,
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+.type-section,
+.case-section {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+}
+
+@media (min-width: 768px) {
+  .type-section,
+  .case-section {
+    font-size: 2.125rem;
+  }
+}
+
+.type-subhead,
+.case-subhead {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--navy);
+}
+
+@media (min-width: 768px) {
+  .type-subhead,
+  .case-subhead {
+    font-size: 1.0625rem;
+  }
+}
+
+.type-body,
+.case-body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .type-body,
+  .case-body {
+    font-size: 1.0625rem;
+  }
+}
+
+.type-meta,
+.case-meta {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.type-note,
+.case-note {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.type-pull,
+.case-pull {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--navy);
+}
+
+@media (min-width: 768px) {
+  .type-pull,
+  .case-pull {
+    font-size: 1.0625rem;
+  }
+}
+
+.type-closing,
+.case-closing {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+
+@media (min-width: 768px) {
+  .type-closing,
+  .case-closing {
+    font-size: 1.25rem;
+  }
+}
+
+/* Brand mark — Newsreader; content stays DM Sans */
+.type-brand {
+  font-family: var(--font-serif), "Times New Roman", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  font-feature-settings: "kern" 1, "liga" 1;
+  color: var(--navy);
+}
+
 /*
   Burgundy (#6f2c3a) / soft (#8a3d4d) fail WCAG on navy (#1a1f2e).
   Prefer text-burgundy-on-dark on dark panels; this also remaps leftover
@@ -135,6 +288,115 @@ body {
 .section-divider {
   border: 0;
   border-top: 1px solid var(--border);
+}
+
+/* Editorial visual panels used by case-study infographics */
+.visual-panel {
+  border-radius: 0.25rem;
+  border: 1px solid var(--border);
+  background: var(--surface-elevated);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--border-strong) 55%, transparent),
+    0 20px 48px -32px color-mix(in srgb, var(--navy) 26%, transparent);
+}
+
+.visual-panel--dark {
+  border-color: color-mix(in srgb, var(--navy) 88%, #000);
+  background: linear-gradient(165deg, #252a3a 0%, var(--navy) 70%);
+  color: var(--background);
+  box-shadow: 0 24px 52px -30px color-mix(in srgb, var(--navy) 50%, transparent);
+}
+
+.visual-header {
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface-elevated) 70%, var(--surface)),
+    color-mix(in srgb, var(--surface) 85%, var(--background))
+  );
+  padding: 1.15rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .visual-header {
+    padding: 1.35rem 1.75rem;
+  }
+}
+
+.visual-kicker {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #54222e;
+}
+
+.visual-kicker--on-dark {
+  color: var(--burgundy-on-dark);
+}
+
+.visual-inset {
+  border-radius: 0.2rem;
+  border: 1px solid var(--border);
+  background: var(--background);
+}
+
+.visual-inset--soft {
+  background: var(--surface);
+}
+
+.visual-inset--accent {
+  border-color: color-mix(in srgb, var(--burgundy) 28%, var(--border));
+  background: color-mix(in srgb, var(--burgundy) 4%, var(--surface-elevated));
+}
+
+.visual-caption {
+  margin-top: 0.875rem;
+  padding-left: 0.875rem;
+  border-left: 1px solid color-mix(in srgb, var(--burgundy) 35%, transparent);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.case-band {
+  border-bottom: 1px solid var(--border);
+}
+
+.case-band--surface {
+  background: var(--surface);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rise-in-delay-1 {
+  animation-delay: 80ms;
+}
+
+.rise-in-delay-2 {
+  animation-delay: 160ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-in,
+  .rise-in-delay-1,
+  .rise-in-delay-2 {
+    animation: none;
+  }
 }
 
 /* Homepage project cover: full infographic visible, no crop */
@@ -208,18 +470,26 @@ body {
   margin: 0;
 }
 
+.project-cover-visual .visual-panel {
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--border-strong) 50%, transparent);
+}
+
+.project-cover-visual .visual-panel--dark {
+  box-shadow: none;
+}
+
 .project-cover-visual [class*="!p-0"] {
   border: 0;
   background: transparent;
   box-shadow: none;
 }
 
-/* Soften density on very narrow covers without crushing padding into overflow */
+/* Soften density on very narrow covers */
 @container (max-width: 28rem) {
-  .project-cover-visual .font-serif.text-2xl,
-  .project-cover-visual .font-serif.text-3xl,
-  .project-cover-visual .font-serif.text-xl {
-    font-size: 1.15rem;
+  .project-cover-visual .case-section,
+  .project-cover-visual .case-subhead,
+  .project-cover-visual .case-closing {
+    font-size: 1.05rem;
     line-height: 1.35;
   }
 }

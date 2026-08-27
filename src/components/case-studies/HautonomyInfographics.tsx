@@ -1,30 +1,8 @@
-type CaptionProps = { children: React.ReactNode };
-
-function Caption({ children }: CaptionProps) {
-  return <p className="mt-3 text-sm leading-relaxed text-muted">{children}</p>;
-}
-
-function Panel({
-  children,
-  className = "",
-  dark = false,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  dark?: boolean;
-}) {
-  return (
-    <div
-      className={`rounded-sm border p-5 md:p-7 ${
-        dark
-          ? "border-navy bg-navy text-background"
-          : "border-border bg-surface-elevated"
-      } ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
+import {
+  Caption,
+  Panel,
+  VisualHeader,
+} from "@/components/case-studies/InfographicPrimitives";
 
 /** Hero: clinical document → structured record (sanitized editorial mock). */
 export function HautonomyHeroVisual({ caption }: { caption?: string }) {
@@ -35,7 +13,7 @@ export function HautonomyHeroVisual({ caption }: { caption?: string }) {
           <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
             Lab ingestion
           </p>
-          <p className="mt-2 font-serif text-xl text-navy @[28rem]:text-2xl @[42rem]:text-3xl">
+          <p className="case-subhead mt-2">
             From clinical document to review-ready record
           </p>
         </div>
@@ -119,8 +97,8 @@ export function HautonomyProblemVisual({ caption }: { caption?: string }) {
     },
     {
       number: "03",
-      title: "Trends required normalization and review",
-      body: "A longitudinal view was only meaningful after field matching, unit handling, date alignment, exception review, and professional approval.",
+      title: "Longitudinal trends depended on consistent data",
+      body: "Trends only became meaningful after marker matching, unit handling, date alignment and exception review.",
     },
   ];
 
@@ -132,10 +110,10 @@ export function HautonomyProblemVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {card.number}
             </p>
-            <h3 className="mt-3 font-serif text-xl text-navy md:text-2xl">
+            <h3 className="case-subhead mt-3">
               {card.title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted">{card.body}</p>
+            <p className="case-meta mt-3 text-muted">{card.body}</p>
           </Panel>
         ))}
       </div>
@@ -148,15 +126,15 @@ export function HautonomyApproachVisual({ caption }: { caption?: string }) {
   const cards = [
     {
       title: "Keep the original beside the extraction",
-      body: "Reviewers can compare the structured value with the source page, including surrounding labels, units, and reference ranges.",
+      body: "Compare the structured value with the source page — labels, units, and ranges intact.",
     },
     {
       title: "Normalize without erasing context",
-      body: "Canonical marker names and longitudinal organization sit alongside the original label, unit, range, document date, and source.",
+      body: "Canonical names and trends sit beside the original label, unit, range, and document date.",
     },
     {
       title: "Separate processing from clinical judgment",
-      body: "The system structures information; authorized professionals review exceptions and remain responsible for interpretation and care decisions.",
+      body: "The system structures information; clinicians review exceptions and own interpretation.",
     },
   ];
 
@@ -168,10 +146,10 @@ export function HautonomyApproachVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               0{index + 1}
             </p>
-            <h3 className="mt-3 font-serif text-xl text-background md:text-2xl">
+            <h3 className="case-subhead mt-3 !text-background">
               {card.title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-background/70">
+            <p className="case-meta mt-3 text-background/70">
               {card.body}
             </p>
           </Panel>
@@ -214,7 +192,7 @@ export function HautonomyBuildVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {pillar.label}
             </p>
-            <h3 className="mt-3 font-serif text-2xl text-navy">{pillar.title}</h3>
+            <h3 className="case-subhead mt-3">{pillar.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.body}</p>
           </Panel>
         ))}
@@ -263,7 +241,7 @@ export function HautonomyJourneyVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {step.number} · {step.label}
             </p>
-            <h3 className="mt-3 font-serif text-xl text-navy">{step.title}</h3>
+            <h3 className="case-subhead mt-3">{step.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{step.body}</p>
           </Panel>
         ))}
@@ -313,27 +291,27 @@ export function HautonomyReviewVisual({ caption }: { caption?: string }) {
   return (
     <figure>
       <Panel className="!p-0 overflow-hidden">
-        <div className="border-b border-border px-5 py-4 md:px-7">
-          <div className="flex flex-wrap gap-2">
-            {stepper.map((step, index) => (
-              <span
-                key={step}
-                className={`rounded-sm px-2.5 py-1 text-xs ${
-                  index === 3
-                    ? "bg-burgundy text-background"
-                    : "border border-border text-muted"
-                }`}
-              >
-                {index + 1}. {step}
-              </span>
-            ))}
-          </div>
-          <p className="mt-3 text-sm text-muted">
-            Approved intake:{" "}
-            <span className="text-navy">approved-lab-report.pdf</span>: original
-            stays in the workflow.
-          </p>
-        </div>
+        <VisualHeader
+          eyebrow="Review workspace"
+          title="Source beside extraction"
+          subtitle="Conflicts stay visible until a reviewer resolves them."
+          end={
+            <div className="flex flex-wrap gap-2">
+              {stepper.map((step, index) => (
+                <span
+                  key={step}
+                  className={`rounded-sm px-2.5 py-1 text-xs ${
+                    index === 3
+                      ? "bg-burgundy text-background"
+                      : "border border-border text-muted"
+                  }`}
+                >
+                  {index + 1}. {step}
+                </span>
+              ))}
+            </div>
+          }
+        />
 
         <div className="grid gap-0 border-b border-border sm:grid-cols-5">
           {[
@@ -347,7 +325,7 @@ export function HautonomyReviewVisual({ caption }: { caption?: string }) {
               key={label}
               className="border-b border-border px-4 py-3 sm:border-b-0 sm:border-r sm:last:border-r-0"
             >
-              <p className="text-[11px] uppercase tracking-[0.14em] text-muted">
+              <p className="text-[10px] uppercase tracking-[0.12em] text-muted">
                 {label}
               </p>
               <p className="mt-1 text-sm text-navy">{value}</p>
@@ -411,7 +389,7 @@ export function HautonomyReviewVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.14em] text-burgundy-on-dark">
               Reviewer decision
             </p>
-            <p className="mt-2 font-serif text-2xl">LDL Cholesterol</p>
+            <p className="case-subhead mt-2">LDL Cholesterol</p>
             <dl className="mt-5 space-y-3 text-sm">
               {[
                 ["Original label", "LDL-Chol"],
@@ -466,7 +444,7 @@ export function HautonomyProgramVisual({ caption }: { caption?: string }) {
               <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
                 Active program
               </p>
-              <h3 className="mt-2 font-serif text-2xl text-navy">
+              <h3 className="case-subhead mt-2">
                 Cholesterol optimisation
               </h3>
               <p className="mt-1 text-sm text-muted">
@@ -502,7 +480,7 @@ export function HautonomyProgramVisual({ caption }: { caption?: string }) {
                 className="rounded-sm border border-border bg-background p-3"
               >
                 <p className="text-xs text-muted">{metric.label}</p>
-                <p className="mt-1 font-serif text-2xl text-navy">
+                <p className="case-subhead mt-1">
                   {metric.value}
                   <span className="ml-1 text-sm text-muted">{metric.unit}</span>
                 </p>
@@ -572,43 +550,53 @@ export function HautonomyProgramVisual({ caption }: { caption?: string }) {
 
 export function HautonomyOutcomeVisual({ caption }: { caption?: string }) {
   const before = [
-    "Staff manually re-entered values from varied PDF and image layouts.",
-    "Structured records could lose the original label, unit, range, or page context.",
-    "Trend preparation and exception review happened in separate steps.",
+    "Lab data arrived disconnected from source context and program state.",
+    "Phase routing, retesting and re-enrolment were easy to misread across roles.",
+    "Trend preparation and exception review lived in separate steps.",
   ];
   const after = [
-    "Candidate observations are extracted with source context retained.",
-    "Normalized and original values can be reviewed together.",
-    "Approved observations feed a longitudinal view while professional interpretation stays human.",
+    "Source-linked values can be reviewed before they enter programs.",
+    "Lifecycle logic is testable across patient and clinician views together.",
+    "Clinician review surfaces exceptions without claiming clinical judgment.",
   ];
 
   return (
     <figure>
-      <div className="grid gap-4 md:grid-cols-2">
-        <Panel>
-          <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
+      <div className="grid gap-4 md:grid-cols-2 md:items-stretch">
+        <Panel className="h-full">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
             Before
           </p>
-          <ul className="mt-4 space-y-3">
+          <ul className="mt-5 space-y-4">
             {before.map((item) => (
-              <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted">
-                <span className="mt-1 text-burgundy" aria-hidden="true">·</span>
+              <li
+                key={item}
+                className="flex gap-3 text-sm leading-relaxed text-muted"
+              >
+                <span className="mt-1.5 text-[#54222e]" aria-hidden="true">
+                  ·
+                </span>
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         </Panel>
-        <Panel dark>
-          <p className="text-[11px] uppercase tracking-[0.18em] text-background/55">
+        <Panel dark className="h-full">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-burgundy-on-dark">
             After
           </p>
-          <ul className="mt-4 space-y-3">
+          <ul className="mt-5 space-y-4">
             {after.map((item) => (
               <li
                 key={item}
                 className="flex gap-3 text-sm leading-relaxed text-background/85"
               >
-                <span className="mt-1 text-burgundy-on-dark" aria-hidden="true">·</span>
+                <span
+                  className="mt-1.5 text-burgundy-on-dark"
+                  aria-hidden="true"
+                >
+                  ·
+                </span>
                 <span>{item}</span>
               </li>
             ))}

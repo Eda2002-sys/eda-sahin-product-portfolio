@@ -48,7 +48,7 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
         }`}
       >
         <h1
-          className={`font-serif leading-none tracking-tight ${
+          className={`type-brand leading-none tracking-tight ${
             isPrint
               ? "text-[2.6rem] text-[#6f2c3a]"
               : "text-4xl text-burgundy md:text-5xl"

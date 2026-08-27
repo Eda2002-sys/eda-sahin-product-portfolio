@@ -1,54 +1,94 @@
+export type SkillItem = {
+  label: string;
+  /** Short usage example — only on selected capabilities. */
+  proof?: string;
+};
+
 export type SkillGroup = {
   title: string;
-  items: string[];
+  items: SkillItem[];
 };
 
 export const skillGroups: SkillGroup[] = [
   {
     title: "Product",
     items: [
-      "Product Discovery",
-      "Product Analysis",
-      "Feature Prioritisation",
-      "User Journeys",
-      "UX Review",
-      "Product Operations",
-      "Product QA",
-      "Product Requirements",
+      { label: "Product Discovery" },
+      { label: "Product Analysis" },
+      { label: "Feature Prioritisation" },
+      { label: "User Journeys" },
+      {
+        label: "Product Operations",
+        proof:
+          "Kept product behaviour aligned across roles and surfaces — from intake and routing rules to review and handoff points.",
+      },
+      {
+        label: "Product QA",
+        proof:
+          "Tested end-to-end product journeys across patient, admin and WhatsApp flows; documented expected vs actual behaviour and retested fixes with engineering.",
+      },
+      { label: "Requirements" },
     ],
   },
   {
     title: "Execution",
     items: [
-      "Engineering Coordination",
-      "Issue Documentation",
-      "Acceptance Criteria",
-      "Retesting",
-      "Implementation",
-      "Stakeholder Management",
+      {
+        label: "Engineering Coordination",
+        proof:
+          "Turned product and client issues into clear engineering handoffs, then followed them through implementation and retesting.",
+      },
+      {
+        label: "Issue Documentation",
+        proof:
+          "Captured reproducible product issues with context, expected behaviour and priority so engineering could act without re-explaining the problem.",
+      },
+      { label: "Acceptance Criteria" },
+      { label: "Retesting" },
+      { label: "Implementation" },
+      { label: "Stakeholder Management" },
     ],
   },
   {
     title: "AI & Tools",
     items: [
-      "Cursor",
-      "Codex",
-      "Claude Code",
-      "GitHub",
-      "Supabase",
-      "Vercel",
-      "Railway",
-      "ElevenLabs",
+      {
+        label: "Cursor",
+        proof:
+          "Used to inspect product behaviour, work through implementation details with engineering, and validate fixes across live product flows.",
+      },
+      {
+        label: "Codex",
+        proof:
+          "Used alongside product testing to draft and check implementation details, then verify behaviour against the intended workflow.",
+      },
+      { label: "Claude Code" },
+      { label: "GitHub" },
+      { label: "Supabase" },
+      { label: "Vercel" },
+      { label: "Railway" },
+      { label: "ElevenLabs" },
     ],
   },
   {
-    title: "Cross-functional",
+    title: "Operating Range",
     items: [
-      "Founder Support",
-      "Client Management",
-      "Market Research",
-      "Due Diligence",
-      "Cross-functional Execution",
+      { label: "Rapid Learning" },
+      { label: "Ambiguous Problem Solving" },
+      { label: "Multi-workstream Ownership" },
+      { label: "Cross-functional Execution" },
+      {
+        label: "Client Implementation",
+        proof:
+          "Turned client sessions and onboarding friction into product issues and priorities before demos drifted from the shipped product.",
+      },
+      { label: "Founder Support" },
+      { label: "Market Research" },
+      {
+        label: "Due Diligence",
+        proof:
+          "Worked across live M&A processes, data rooms, DDQs and source-linked investment workflows.",
+      },
     ],
   },
 ];
@@ -56,22 +96,22 @@ export const skillGroups: SkillGroup[] = [
 export const howIWorkSteps = [
   {
     number: "01",
-    title: "Understand the user and business problem",
+    title: "Understand the problem",
   },
   {
     number: "02",
-    title: "Map the journey and system behaviour",
+    title: "Map the user and system journey",
   },
   {
     number: "03",
-    title: "Test the real experience",
+    title: "Test the real workflow",
   },
   {
     number: "04",
-    title: "Turn friction into concrete product decisions",
+    title: "Turn friction into product decisions",
   },
   {
     number: "05",
-    title: "Stay with the problem until the solution ships",
+    title: "Follow through to implementation",
   },
 ] as const;

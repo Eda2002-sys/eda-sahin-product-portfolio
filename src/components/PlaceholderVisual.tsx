@@ -29,12 +29,8 @@ export function PlaceholderVisual({
           Visual placeholder
         </p>
         <div>
-          <p className="max-w-md font-serif text-2xl text-navy md:text-3xl">
-            {label}
-          </p>
-          <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted">
-            {note}
-          </p>
+          <p className="case-section max-w-md">{label}</p>
+          <p className="case-meta mt-2 max-w-lg text-muted">{note}</p>
         </div>
       </div>
     </figure>

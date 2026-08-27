@@ -3,16 +3,25 @@ import { siteConfig, socialLinks } from "@/data/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border">
-      <div className="container-page flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between">
-        <Link
-          href="/"
-          className="font-serif text-lg text-navy transition-colors hover:text-burgundy"
-        >
-          {siteConfig.name}
-        </Link>
+    <footer className="border-t border-border bg-surface">
+      <div
+        className="h-px w-full bg-gradient-to-r from-transparent via-burgundy/30 to-transparent"
+        aria-hidden="true"
+      />
+      <div className="container-page flex flex-col gap-6 py-12 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+        <div className="min-w-0">
+          <Link
+            href="/"
+            className="type-brand text-[1.35rem] transition-colors hover:text-burgundy"
+          >
+            {siteConfig.name}
+          </Link>
+          <p className="case-meta mt-2 text-muted">
+            Product · Operations · Founder-facing work
+          </p>
+        </div>
         <nav
-          className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm"
+          className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm"
           aria-label="Social and contact"
         >
           {socialLinks.map((link) => (
@@ -31,7 +40,7 @@ export function Footer() {
             </a>
           ))}
         </nav>
-        <p className="text-sm text-muted">
+        <p className="case-meta text-muted sm:text-right">
           {siteConfig.location}
           <span className="mx-2 text-border-strong" aria-hidden="true">
             ·

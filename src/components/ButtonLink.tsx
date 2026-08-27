@@ -16,13 +16,13 @@ export function ButtonLink({
   external = false,
 }: ButtonLinkProps) {
   const base =
-    "inline-flex items-center justify-center rounded-sm px-5 py-2.5 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy";
+    "case-meta inline-flex items-center justify-center rounded-sm px-5 py-2.5 transition-[color,background-color,border-color,transform] duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy";
 
   const styles = {
     primary:
-      "bg-burgundy text-background hover:bg-burgundy-soft",
+      "bg-burgundy text-background hover:bg-burgundy-soft active:translate-y-px",
     secondary:
-      "border border-border-strong text-navy hover:border-burgundy hover:text-burgundy",
+      "border border-border-strong text-navy hover:border-burgundy hover:text-burgundy active:translate-y-px",
     ghost:
       "text-navy link-underline px-0 py-0 rounded-none",
   }[variant];

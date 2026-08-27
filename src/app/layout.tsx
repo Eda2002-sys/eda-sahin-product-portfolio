@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Instrument_Serif } from "next/font/google";
+import { DM_Sans, Newsreader } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/data/site";
@@ -11,10 +11,10 @@ const sans = DM_Sans({
   display: "swap",
 });
 
-const serif = Instrument_Serif({
+const serif = Newsreader({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-instrument-serif",
+  weight: ["400", "500"],
+  variable: "--font-newsreader",
   display: "swap",
 });
 

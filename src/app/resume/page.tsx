@@ -29,13 +29,9 @@ export default function ResumePage() {
 
         <div className="mt-8 flex flex-col gap-6 sm:mt-10 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-burgundy">
-              Resume
-            </p>
-            <h1 className="mt-4 font-serif text-4xl text-navy md:text-5xl">
-              {resumeProfile.name}
-            </h1>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
+            <p className="eyebrow">Resume</p>
+            <h1 className="case-title mt-4">{resumeProfile.name}</h1>
+            <p className="case-body mt-4 max-w-2xl">
               Chief of Staff across AI products and M&A technology. Istanbul.
             </p>
           </div>

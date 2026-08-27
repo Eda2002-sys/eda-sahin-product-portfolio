@@ -53,7 +53,7 @@ export function RegulatoryHeroVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               Regulatory review
             </p>
-            <h3 className="mt-2 font-serif text-2xl text-background md:text-3xl">
+            <h3 className="mt-2 text-2xl text-background md:text-3xl">
               From source change to owned work
             </h3>
           </div>
@@ -138,7 +138,7 @@ export function RegulatoryProblemVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {card.number}
             </p>
-            <h3 className="mt-3 font-serif text-xl text-navy md:text-2xl">
+            <h3 className="mt-3 text-xl text-navy md:text-2xl">
               {card.title}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{card.body}</p>
@@ -174,7 +174,7 @@ export function RegulatoryApproachVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               0{index + 1}
             </p>
-            <h3 className="mt-3 font-serif text-xl text-background md:text-2xl">
+            <h3 className="mt-3 text-xl text-background md:text-2xl">
               {card.title}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-background/70">
@@ -220,7 +220,7 @@ export function RegulatoryBuildVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {pillar.label}
             </p>
-            <h3 className="mt-3 font-serif text-2xl text-navy">{pillar.title}</h3>
+            <h3 className="mt-3 text-2xl text-navy">{pillar.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.body}</p>
           </Panel>
         ))}
@@ -269,7 +269,7 @@ export function RegulatoryJourneyVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {step.number} · {step.label}
             </p>
-            <h3 className="mt-3 font-serif text-xl text-navy">{step.title}</h3>
+            <h3 className="mt-3 text-xl text-navy">{step.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{step.body}</p>
           </Panel>
         ))}
@@ -312,7 +312,7 @@ export function RegulatoryMonitorVisual({ caption }: { caption?: string }) {
               <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
                 Regulatory change monitor
               </p>
-              <h3 className="mt-2 font-serif text-2xl text-navy md:text-3xl">
+              <h3 className="mt-2 text-2xl text-navy md:text-3xl">
                 New regulation → business impact → review owner
               </h3>
             </div>
@@ -359,7 +359,7 @@ export function RegulatoryMonitorVisual({ caption }: { caption?: string }) {
                 Human review required
               </span>
             </div>
-            <h4 className="mt-3 font-serif text-2xl text-navy">
+            <h4 className="mt-3 text-2xl text-navy">
               Amendments to China’s Cybersecurity Law
             </h4>
 

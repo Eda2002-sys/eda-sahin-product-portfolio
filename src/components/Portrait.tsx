@@ -19,23 +19,25 @@ export function Portrait({
   priority = false,
 }: PortraitProps) {
   return (
-    <figure
-      className={`relative overflow-hidden rounded-sm border border-border bg-surface ${sizeClasses[size]} ${className}`}
-    >
-      <Image
-        src={siteConfig.portraitPath}
-        alt={`${siteConfig.name}, product and operations portfolio portrait`}
-        fill
-        priority={priority}
-        sizes={
-          size === "compact"
-            ? "128px"
-            : size === "hero"
-              ? "(max-width: 768px) 288px, 320px"
-              : "(max-width: 768px) 384px, 420px"
-        }
-        className="object-cover object-[center_18%] transition-transform duration-500 ease-out hover:scale-[1.02]"
-      />
+    <figure className={`min-w-0 ${className}`}>
+      <div
+        className={`relative overflow-hidden rounded-sm border border-border-strong bg-surface shadow-[0_18px_40px_-28px_rgba(26,31,46,0.35)] ${sizeClasses[size]}`}
+      >
+        <Image
+          src={siteConfig.portraitPath}
+          alt={`${siteConfig.name}, product and operations portfolio portrait`}
+          fill
+          priority={priority}
+          sizes={
+            size === "compact"
+              ? "128px"
+              : size === "hero"
+                ? "(max-width: 768px) 288px, 320px"
+                : "(max-width: 768px) 384px, 420px"
+          }
+          className="object-cover object-[center_18%] transition-transform duration-500 ease-out hover:scale-[1.02]"
+        />
+      </div>
     </figure>
   );
 }

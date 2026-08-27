@@ -4,6 +4,7 @@ import {
   Panel,
   PillRow,
   SectionLabel,
+  VisualHeader,
 } from "@/components/case-studies/InfographicPrimitives";
 
 function InsightCard({
@@ -36,7 +37,7 @@ function InsightCard({
 
   return (
     <div
-      className={`rounded-sm border border-border bg-background p-4 shadow-[0_8px_30px_-20px_rgba(26,31,46,0.25)] border-l-[3px] ${border}`}
+      className={`visual-panel border-l-[3px] bg-background p-4 ${border}`}
     >
       <div className="flex items-center gap-2">
         <span className={`h-1.5 w-1.5 rounded-full ${dot}`} aria-hidden="true" />
@@ -85,90 +86,96 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
   return (
     <figure className="@container min-w-0">
       <Panel className="!p-0 overflow-visible">
-        <div className="border-b border-border px-4 py-4 @[28rem]:px-5 @[42rem]:px-7">
-          <SectionLabel
-            eyebrow="Operating loop"
-            title="Frontline updates → manager actions"
-            subtitle="How Third Eye turns WhatsApp check-ins into daily briefs, follow-ups and training signals."
-          />
+        <div className="border-b border-border px-4 py-3 @[42rem]:px-6 @[42rem]:py-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#54222e]">
+            Operating loop
+          </p>
+          <h3 className="case-subhead mt-1.5">
+            Frontline updates → manager actions
+          </h3>
+          <p className="mt-1.5 hidden text-sm text-muted @[42rem]:block">
+            WhatsApp check-ins become daily briefs, signals and next actions.
+          </p>
         </div>
 
-        {/* Stack until the figure itself is wide enough — homepage covers are ~half page */}
+        {/* Stack on homepage covers; 3-col only when the figure itself is wide */}
         <div className="grid gap-0 @[42rem]:grid-cols-12">
-          <div className="border-b border-border p-4 @[28rem]:p-5 @[42rem]:col-span-4 @[42rem]:border-b-0 @[42rem]:border-r @[42rem]:p-6">
-            <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
-              Example frontline updates
+          <div className="border-b border-border p-3.5 @[42rem]:col-span-4 @[42rem]:border-b-0 @[42rem]:border-r @[42rem]:p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#54222e]">
+              Frontline updates
             </p>
-            <ul className="mt-3 space-y-2 @[28rem]:mt-4 @[28rem]:space-y-2.5">
-              {frontlineUpdates.map((update) => (
+            <ul className="mt-2.5 space-y-1.5 @[42rem]:mt-3 @[42rem]:space-y-2">
+              {frontlineUpdates.map((update, index) => (
                 <li
                   key={update}
-                  className="rounded-sm border border-emerald-900/10 bg-emerald-950/[0.04] px-3 py-2.5 text-[13px] leading-relaxed text-navy"
+                  className={`rounded-sm border border-emerald-900/10 bg-emerald-950/[0.04] px-2.5 py-2 text-[12px] leading-snug text-navy @[42rem]:px-3 @[42rem]:py-2.5 @[42rem]:text-[13px] @[42rem]:leading-relaxed ${
+                    index === 2 ? "hidden @[42rem]:block" : ""
+                  }`}
                 >
                   {update}
                 </li>
               ))}
             </ul>
-            <p className="mt-3 text-xs leading-relaxed text-muted @[28rem]:mt-4">
-              2–3 shift-close questions · no employee app required
+            <p className="mt-2 text-[11px] leading-snug text-muted @[42rem]:mt-3">
+              2–3 shift-close questions · no new app
             </p>
           </div>
 
-          <div className="relative flex flex-col items-center justify-center border-b border-border bg-surface px-4 py-5 @[28rem]:p-6 @[42rem]:col-span-3 @[42rem]:border-b-0 @[42rem]:border-r">
-            <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
+          <div className="flex flex-row items-center gap-3 border-b border-border bg-surface px-3.5 py-3 @[42rem]:col-span-3 @[42rem]:flex-col @[42rem]:justify-center @[42rem]:gap-0 @[42rem]:border-b-0 @[42rem]:border-r @[42rem]:px-4 @[42rem]:py-5">
+            <p className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#54222e] @[42rem]:text-[11px]">
               Synthesis
             </p>
-            <div className="relative my-4 flex h-16 w-full max-w-[12rem] items-center justify-center @[42rem]:my-6 @[42rem]:h-28">
+            <div className="relative flex h-10 w-10 shrink-0 items-center justify-center @[42rem]:my-4 @[42rem]:h-16 @[42rem]:w-16">
               <span
-                className="absolute h-14 w-14 rounded-full border border-burgundy/20 @[42rem]:h-20 @[42rem]:w-20"
+                className="absolute inset-0 rounded-full border border-burgundy/25"
                 aria-hidden="true"
               />
               <span
-                className="absolute h-9 w-9 rounded-full border border-burgundy/35 @[42rem]:h-14 @[42rem]:w-14"
+                className="absolute inset-2 rounded-full border border-burgundy/40 @[42rem]:inset-3"
                 aria-hidden="true"
               />
               <span
-                className="relative h-3.5 w-3.5 rounded-full bg-burgundy shadow-[0_0_24px_rgba(111,44,58,0.45)] @[42rem]:h-4 @[42rem]:w-4"
+                className="relative h-2.5 w-2.5 rounded-full bg-burgundy @[42rem]:h-3.5 @[42rem]:w-3.5"
                 aria-hidden="true"
               />
             </div>
-            <p className="max-w-[14rem] text-center text-xs leading-relaxed text-muted">
+            <p className="min-w-0 text-[11px] leading-snug text-muted @[42rem]:max-w-[12rem] @[42rem]:text-center @[42rem]:text-xs">
               Patterns grouped · owners assigned · exceptions flagged
             </p>
           </div>
 
-          <div className="bg-navy p-4 text-background @[28rem]:p-5 @[42rem]:col-span-5 @[42rem]:p-7">
-            <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy-on-dark">
+          <div className="bg-navy p-3.5 text-background @[42rem]:col-span-5 @[42rem]:p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-burgundy-on-dark">
               Manager-ready
             </p>
-            <div className="mt-3 rounded-sm border border-background/15 bg-background/5 p-3.5 @[28rem]:mt-4 @[28rem]:p-4">
-              <span className="rounded-sm bg-burgundy px-2 py-0.5 text-[10px] uppercase tracking-[0.12em]">
+            <div className="mt-2.5 rounded-sm border border-background/15 bg-background/5 p-3 @[42rem]:mt-3 @[42rem]:p-3.5">
+              <span className="rounded-sm bg-burgundy px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.12em]">
                 Staffing risk
               </span>
-              <p className="mt-3 font-serif text-lg leading-snug text-background @[42rem]:text-xl">
+              <p className="mt-2 text-base leading-snug text-background @[42rem]:mt-2.5 @[42rem]:text-lg">
                 Branch 4 thin next Friday: 3 overlapping leave requests
               </p>
-              <dl className="mt-3 space-y-2 text-sm @[28rem]:mt-4">
-                <div className="flex justify-between gap-3 border-b border-background/10 pb-2">
-                  <dt className="text-background/55">Owner</dt>
+              <dl className="mt-2.5 space-y-1.5 text-[13px] @[42rem]:mt-3 @[42rem]:space-y-2 @[42rem]:text-sm">
+                <div className="flex justify-between gap-3 border-b border-background/10 pb-1.5">
+                  <dt className="text-background/60">Owner</dt>
                   <dd>HR Ops</dd>
                 </div>
                 <div className="flex justify-between gap-3">
-                  <dt className="shrink-0 text-background/55">Next action</dt>
-                  <dd className="text-right text-burgundy-on-dark">
-                    Confirm shift coverage by Wednesday
+                  <dt className="shrink-0 text-background/60">Next action</dt>
+                  <dd className="text-right font-medium text-burgundy-on-dark">
+                    Confirm coverage by Wednesday
                   </dd>
                 </div>
               </dl>
             </div>
-            <div className="mt-3 space-y-2">
+            <div className="mt-2 hidden space-y-1.5 @[42rem]:mt-2.5 @[42rem]:block">
               {[
                 "Insurance questions increased · 21 mentions",
                 "Warranty procedure training gap · 9 new joiners",
               ].map((item) => (
                 <p
                   key={item}
-                  className="rounded-sm border border-background/10 px-3 py-2 text-xs leading-relaxed text-background/70"
+                  className="rounded-sm border border-background/10 px-2.5 py-1.5 text-[11px] leading-snug text-background/75"
                 >
                   {item}
                 </p>
@@ -181,6 +188,7 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
     </figure>
   );
 }
+
 
 
 /** Before / After: typical corporate tools vs Third Eye (landing-page pain pattern). */
@@ -199,31 +207,17 @@ export function ThirdEyeProblemVisual({ caption }: { caption?: string }) {
   return (
     <figure>
       <Panel className="!p-0 overflow-hidden">
-        <div className="border-b border-border px-5 py-4 md:px-7">
-          <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
-            The pain
-          </p>
-          <h3 className="mt-2 font-serif text-2xl text-navy md:text-3xl">
-            Too many updates. Not enough visibility.
-          </h3>
-          <p className="mt-2 text-sm text-muted">
-            Teams are talking. Operating signal is missing.
-          </p>
-        </div>
-
         <div className="grid md:grid-cols-2">
           <div className="border-b border-border bg-surface/60 p-5 md:border-b-0 md:border-r md:p-7">
             <p className="text-[11px] uppercase tracking-[0.14em] text-muted">
               Before
             </p>
-            <p className="mt-2 font-serif text-xl text-navy">
-              Typical corporate tools
-            </p>
+            <p className="case-subhead mt-2">Typical corporate tools</p>
             <ul className="mt-5 space-y-3">
               {before.map((item) => (
                 <li
                   key={item}
-                  className="flex gap-3 rounded-sm border border-border bg-background/60 px-3 py-2.5 text-sm text-muted"
+                  className="case-meta flex gap-3 rounded-sm border border-border bg-background/60 px-3 py-2.5 text-muted"
                 >
                   <span className="text-burgundy/70" aria-hidden="true">
                     −
@@ -241,12 +235,12 @@ export function ThirdEyeProblemVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.14em] text-muted">
               After
             </p>
-            <p className="mt-2 font-serif text-xl text-navy">Manager-ready loop</p>
+            <p className="case-subhead mt-2">Manager-ready loop</p>
             <ul className="mt-5 space-y-3">
               {after.map((item) => (
                 <li
                   key={item}
-                  className="flex gap-3 rounded-sm border border-border bg-background px-3 py-2.5 text-sm text-navy shadow-[0_6px_20px_-16px_rgba(26,31,46,0.35)]"
+                  className="case-meta flex gap-3 rounded-sm border border-border bg-background px-3 py-2.5 text-navy shadow-[0_6px_20px_-16px_rgba(26,31,46,0.35)]"
                 >
                   <span className="text-burgundy" aria-hidden="true">
                     +
@@ -397,7 +391,7 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
               <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
                 Pilot format
               </p>
-              <h3 className="mt-2 font-serif text-2xl text-background md:text-3xl">
+              <h3 className="case-subhead mt-2 !text-background">
                 Manager visibility in days, not quarters
               </h3>
               <p className="mt-2 text-sm text-background/65">
@@ -430,7 +424,7 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
               <span className="text-[11px] uppercase tracking-[0.14em] text-burgundy-on-dark">
                 {output.number}
               </span>
-              <h4 className="mt-2 font-serif text-xl text-background">
+              <h4 className="case-subhead mt-2 !text-background">
                 {output.title}
               </h4>
               <p className="mt-2 text-sm leading-relaxed text-background/65">
@@ -525,56 +519,63 @@ export function ThirdEyeBriefVisual({ caption }: { caption?: string }) {
   );
 }
 
-/** Institutional memory: knowledge compounds over time. */
+/** Outcome: scattered updates → daily operating rhythm. */
 export function ThirdEyeOutcomeVisual({ caption }: { caption?: string }) {
-  const cards = [
-    {
-      label: "Living knowledge base",
-      title: "Institutional knowledge, stored",
-      body: "Frontline reality captured continuously into a searchable record, not lost in chat threads or one person's memory. Compounds every week.",
-    },
-    {
-      label: "Turnover-proof",
-      title: "People leave. The knowledge stays.",
-      body: "When someone moves on, what they knew is already part of the record your team can draw on: fewer single points of failure.",
-    },
-    {
-      label: "Faster onboarding",
-      title: "Ramp-up from this week's reality",
-      body: "New joiners learn from a source of truth that updates as the floor changes, not last year's manual.",
-    },
+  const before = [
+    "Updates spread across chats and informal reporting",
+    "Managers manually reconstructed what mattered",
+    "Recurring problems surfaced late",
+  ];
+  const after = [
+    "Lightweight WhatsApp check-ins",
+    "Repeated signals grouped into a daily brief",
+    "Owners and next actions surfaced for managers",
+    "Follow-ups looped back into operations",
   ];
 
   return (
     <figure>
-      <Panel>
-        <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
-          Institutional memory
-        </p>
-        <h3 className="mt-2 max-w-2xl font-serif text-2xl text-navy md:text-3xl">
-          Operational memory captured before it walks out the door
-        </h3>
-        <p className="mt-3 max-w-2xl text-sm text-muted">
-          Every check-in builds a searchable record of customer issues,
-          workarounds, branch differences and service recovery patterns.
-        </p>
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {cards.map((card) => (
-            <div
-              key={card.label}
-              className="h-full rounded-sm border border-border bg-background p-5"
-            >
-              <p className="text-[11px] uppercase tracking-[0.14em] text-burgundy">
-                {card.label}
-              </p>
-              <h4 className="mt-3 font-serif text-xl text-navy">{card.title}</h4>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                {card.body}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Panel>
+      <div className="grid gap-4 md:grid-cols-2 md:items-stretch">
+        <Panel className="h-full">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+            Before
+          </p>
+          <ul className="mt-5 space-y-4">
+            {before.map((item) => (
+              <li
+                key={item}
+                className="flex gap-3 text-sm leading-relaxed text-muted"
+              >
+                <span className="mt-1.5 text-[#54222e]" aria-hidden="true">
+                  ·
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </Panel>
+        <Panel dark className="h-full">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-burgundy-on-dark">
+            After
+          </p>
+          <ul className="mt-5 space-y-4">
+            {after.map((item) => (
+              <li
+                key={item}
+                className="flex gap-3 text-sm leading-relaxed text-background/85"
+              >
+                <span
+                  className="mt-1.5 text-burgundy-on-dark"
+                  aria-hidden="true"
+                >
+                  ·
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </Panel>
+      </div>
       {caption ? <Caption>{caption}</Caption> : null}
     </figure>
   );

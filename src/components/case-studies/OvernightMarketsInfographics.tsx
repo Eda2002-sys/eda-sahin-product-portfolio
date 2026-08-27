@@ -35,7 +35,7 @@ export function OvernightHeroVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               Morning markets
             </p>
-            <h3 className="mt-2 font-serif text-3xl text-background">
+            <h3 className="mt-2 text-3xl text-background">
               Overnight briefing
             </h3>
           </div>
@@ -143,7 +143,7 @@ export function OvernightProblemVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {card.number}
             </p>
-            <h3 className="mt-3 font-serif text-xl text-navy md:text-2xl">
+            <h3 className="mt-3 text-xl text-navy md:text-2xl">
               {card.title}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{card.body}</p>
@@ -179,7 +179,7 @@ export function OvernightApproachVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               0{index + 1}
             </p>
-            <h3 className="mt-3 font-serif text-xl text-background md:text-2xl">
+            <h3 className="mt-3 text-xl text-background md:text-2xl">
               {card.title}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-background/70">
@@ -225,7 +225,7 @@ export function OvernightBuildVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {pillar.label}
             </p>
-            <h3 className="mt-3 font-serif text-2xl text-navy">{pillar.title}</h3>
+            <h3 className="mt-3 text-2xl text-navy">{pillar.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.body}</p>
           </Panel>
         ))}
@@ -274,7 +274,7 @@ export function OvernightJourneyVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {step.number} · {step.label}
             </p>
-            <h3 className="mt-3 font-serif text-xl text-navy">{step.title}</h3>
+            <h3 className="mt-3 text-xl text-navy">{step.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{step.body}</p>
           </Panel>
         ))}
@@ -369,7 +369,7 @@ export function OvernightReportVisual({ caption }: { caption?: string }) {
                 <p className="text-[11px] uppercase tracking-[0.16em] text-muted">
                   Daily public-markets report
                 </p>
-                <h3 className="mt-2 font-serif text-2xl text-navy md:text-3xl">
+                <h3 className="mt-2 text-2xl text-navy md:text-3xl">
                   Report preview
                 </h3>
               </div>
@@ -381,7 +381,7 @@ export function OvernightReportVisual({ caption }: { caption?: string }) {
             <p className="mt-5 text-[11px] uppercase tracking-[0.16em] text-burgundy">
               Morning note · public-source walkthrough
             </p>
-            <p className="mt-2 max-w-3xl font-serif text-xl leading-snug text-navy md:text-2xl">
+            <p className="mt-2 max-w-3xl text-xl leading-snug text-navy md:text-2xl">
               Global technology selling crosses regions; Türkiye close requires
               desk review
             </p>

@@ -282,7 +282,7 @@ const html = `<!DOCTYPE html>
       ${experienceBlock(
         "Marketing Specialist",
         "Mentor Özel Ders",
-        "2024–Present",
+        "2024–2025",
         "mentorozelders.com",
         [
           "Dynamic Instagram management and content strategy.",
@@ -311,7 +311,7 @@ const html = `<!DOCTYPE html>
         "B.A. Business Administration",
         [
           {
-            text: "Selected coursework: Business Strategy, Consumer Behavior, Marketing Research, E-Commerce Management & Quantitative Methods",
+            text: "Selected coursework: Business Strategy, Marketing Research, Quantitative Methods",
           },
         ],
       )}
@@ -320,9 +320,8 @@ const html = `<!DOCTYPE html>
         "2016–2020",
         "High School Diploma",
         [
-          { text: "IEARN Conference 2017 attendee, Morocco" },
           { text: "Darüşşafaka entrance exam winner: opening ceremony speech" },
-          { text: "IMA Turkey 2013 Mental Arithmetic Olympics champion" },
+          { text: "IEARN Conference 2017 attendee, Morocco" },
         ],
       )}
     </div>

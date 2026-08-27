@@ -98,7 +98,7 @@ export function CreApproachVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
               0{index + 1}
             </p>
-            <h3 className="mt-3 font-serif text-xl text-background md:text-2xl">
+            <h3 className="mt-3 text-xl text-background md:text-2xl">
               {card.title}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-background/70">
@@ -122,7 +122,7 @@ export function CreWorkspaceVisual({ caption }: { caption?: string }) {
               <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
                 Property intelligence
               </p>
-              <h3 className="mt-2 font-serif text-2xl text-navy md:text-3xl">
+              <h3 className="mt-2 text-2xl text-navy md:text-3xl">
                 Market map and property review
               </h3>
             </div>
@@ -164,7 +164,7 @@ export function CreWorkspaceVisual({ caption }: { caption?: string }) {
           </div>
 
           <div className="p-5 lg:col-span-6 md:p-6">
-            <p className="font-serif text-2xl text-navy">Northside retail parcel</p>
+            <p className="text-2xl text-navy">Northside retail parcel</p>
             <p className="mt-1 text-sm text-muted">Central corridor · Retail</p>
 
             <dl className="mt-5 space-y-2">
@@ -255,7 +255,7 @@ export function CreJourneyVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {step.number} · {step.label}
             </p>
-            <h3 className="mt-3 font-serif text-xl text-navy">{step.title}</h3>
+            <h3 className="mt-3 text-xl text-navy">{step.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{step.body}</p>
           </Panel>
         ))}
@@ -297,7 +297,7 @@ export function CreBuildVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {pillar.label}
             </p>
-            <h3 className="mt-3 font-serif text-2xl text-navy">{pillar.title}</h3>
+            <h3 className="mt-3 text-2xl text-navy">{pillar.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.body}</p>
           </Panel>
         ))}
@@ -348,7 +348,7 @@ export function CreSheetVisual({ caption }: { caption?: string }) {
               <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
                 Properties sheet
               </p>
-              <h3 className="mt-2 font-serif text-2xl text-navy">
+              <h3 className="mt-2 text-2xl text-navy">
                 Structured market records
               </h3>
             </div>
@@ -426,7 +426,7 @@ export function CreInsightsVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
               Insights
             </p>
-            <h3 className="mt-2 font-serif text-2xl text-navy">
+            <h3 className="mt-2 text-2xl text-navy">
               Market pattern review
             </h3>
             <p className="mt-1 text-sm text-muted">

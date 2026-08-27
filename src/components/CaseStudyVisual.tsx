@@ -178,11 +178,15 @@ export function CaseStudyVisualBlock({
   return (
     <div className={`space-y-8 ${className}`}>
       {visuals.map((visual) => (
-        <CaseStudyVisual
-          key={visual.component ?? visual.src ?? visual.alt}
-          visual={visual}
-          priority={visual.placement === "hero"}
-        />
+        <div key={visual.component ?? visual.src ?? visual.alt}>
+          {visual.label ? (
+            <p className="eyebrow mb-4 text-burgundy">{visual.label}</p>
+          ) : null}
+          <CaseStudyVisual
+            visual={visual}
+            priority={visual.placement === "hero"}
+          />
+        </div>
       ))}
     </div>
   );

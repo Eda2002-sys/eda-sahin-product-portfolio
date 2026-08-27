@@ -7,7 +7,7 @@ function EducationNotes({ notes }: { notes: ResumeEducationNote[] }) {
   return (
     <ul className="space-y-2">
       {notes.map((note) => (
-        <li key={note.text} className="text-sm leading-relaxed text-muted">
+        <li key={note.text} className="case-meta text-muted">
           <span className="min-w-0 break-words">
             {note.href ? (
               <a
@@ -89,12 +89,7 @@ export function Education() {
       aria-labelledby="education-heading"
     >
       <div className="container-page section-space">
-        <SectionHeading
-          id="education-heading"
-          eyebrow="Education"
-          title="Formal training and early milestones."
-          description="Koç University for business administration; Darüşşafaka on scholarship."
-        />
+        <SectionHeading id="education-heading" title="Education" />
 
         <ol className="mt-10 space-y-0 md:mt-14">
           {resumeEducation.map((item) => {
@@ -120,18 +115,18 @@ export function Education() {
                         />
                       ) : null}
                       <div className="min-w-0">
-                        <h3 className="font-serif text-xl text-navy sm:text-2xl">
-                          {item.institution}
-                        </h3>
-                        <p className="mt-1 text-sm text-muted">{item.detail}</p>
+                        <h3 className="case-subhead">{item.institution}</h3>
+                        <p className="case-meta mt-1 text-muted">{item.detail}</p>
                       </div>
                     </div>
-                    <p className="shrink-0 text-sm text-muted md:hidden">{item.period}</p>
+                    <p className="case-meta shrink-0 text-muted md:hidden">
+                      {item.period}
+                    </p>
                   </div>
                 </div>
 
                 <div className="hidden md:col-span-2 md:block">
-                  <p className="text-sm text-muted">{item.period}</p>
+                  <p className="case-meta text-muted">{item.period}</p>
                 </div>
 
                 <div className="min-w-0 md:col-span-5">

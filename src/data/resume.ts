@@ -74,7 +74,7 @@ export const resumeExperience: ResumeRole[] = [
   {
     title: "Marketing Specialist",
     company: "Mentor Özel Ders",
-    period: "2024–Present",
+    period: "2024–2025",
     website: "mentorozelders.com",
     websiteHref: "https://mentorozelders.com",
     bullets: [
@@ -106,7 +106,7 @@ export const resumeEducation: ResumeEducation[] = [
     logoAspect: 849 / 204,
     notes: [
       {
-        text: "Selected coursework: Business Strategy, Consumer Behavior, Marketing Research, E-Commerce Management & Quantitative Methods",
+        text: "Selected coursework: Business Strategy, Marketing Research, Quantitative Methods",
       },
     ],
   },
@@ -120,15 +120,11 @@ export const resumeEducation: ResumeEducation[] = [
     logoAspect: 1003 / 479,
     logoContained: true,
     notes: [
-      { text: "IEARN Conference 2017 attendee, Morocco" },
       {
         text: "Darüşşafaka entrance exam winner: opening ceremony speech",
         href: "https://www.darussafaka.org/haberler/darussafaka-egitim-kurumlari-torenle-acildi",
       },
-      {
-        text: "IMA Turkey 2013 Mental Arithmetic Olympics champion",
-        href: "https://www.darussafaka.org/haberler/ima-turkey-2013-mental-aritmetik-olimpiyatlari-nda-birinci-bir-dackali",
-      },
+      { text: "IEARN Conference 2017 attendee, Morocco" },
     ],
   },
 ];

@@ -1,38 +1,14 @@
-type CaptionProps = { children: React.ReactNode };
-
-function Caption({ children }: CaptionProps) {
-  return (
-    <p className="mt-3 text-sm leading-relaxed text-muted">{children}</p>
-  );
-}
-
-function Panel({
-  children,
-  className = "",
-  dark = false,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  dark?: boolean;
-}) {
-  return (
-    <div
-      className={`rounded-sm border p-5 md:p-7 ${
-        dark
-          ? "border-navy bg-navy text-background"
-          : "border-border bg-surface-elevated"
-      } ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
+import {
+  Caption,
+  Panel,
+  VisualHeader,
+} from "@/components/case-studies/InfographicPrimitives";
 
 /** Editorial phone mock: product idea preserved, palette aligned to the portfolio. */
 export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
   return (
-    <figure className="mx-auto w-full max-w-[19.5rem]">
-      <div className="overflow-hidden rounded-[1.35rem] border border-border-strong bg-surface-elevated shadow-[0_20px_48px_-30px_rgba(26,31,46,0.38)]">
+    <figure className="mx-auto w-full max-w-[22rem]">
+      <div className="overflow-hidden rounded-[1.35rem] border border-border-strong bg-surface-elevated shadow-[0_1px_0_rgba(210,200,187,0.7),0_24px_56px_-28px_rgba(26,31,46,0.42)] ring-1 ring-navy/[0.04]">
         <div className="flex items-center gap-3 bg-navy px-3.5 py-3 text-background">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-background/25 text-[11px] tracking-wide">
             CK
@@ -80,8 +56,8 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
 
           <div className="ml-auto max-w-[90%] rounded-sm rounded-tr-none border border-border bg-surface px-2.5 py-2">
             <p className="text-[12px] leading-snug text-navy">
-              Quels sont les modèles disponibles et les options de financement
-              pour cette gamme ?
+              What models are available and what financing options apply to this
+              range?
             </p>
             <p className="mt-1 text-right text-[9px] tabular-nums text-navy/55">
               09:41
@@ -93,8 +69,8 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
               Approved source · Brand A
             </p>
             <p className="mt-1.5 text-[12px] leading-snug text-navy">
-              Voici les modèles et les parcours de financement approuvés: avec
-              les documents et le quiz du jour.
+              Here are the approved models and financing routes, with documents
+              and today&apos;s reinforcement.
             </p>
             <div className="mt-2.5 space-y-1.5 border-t border-border pt-2.5">
               <div className="flex items-center gap-2.5 rounded-sm border border-border px-2 py-1.5">
@@ -110,12 +86,12 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
               </div>
               <div className="flex items-center gap-2.5 rounded-sm border border-border px-2 py-1.5">
                 <span className="shrink-0 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#54222e]">
-                  Quiz
+                  Loop
                 </span>
                 <div className="min-w-0">
-                  <p className="text-[11px] text-navy">Quiz du jour</p>
+                  <p className="text-[11px] text-navy">Daily reinforcement</p>
                   <p className="text-[9px] text-navy/60">
-                    4 questions · models &amp; financing
+                    Models &amp; financing · in progress
                   </p>
                 </div>
               </div>
@@ -153,19 +129,12 @@ export function SocidaProblemVisual({ caption }: { caption?: string }) {
   return (
     <figure>
       <Panel>
-        <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
-          Mid-conversation friction
-        </p>
-        <p className="mt-3 max-w-3xl font-serif text-xl leading-snug text-navy md:text-2xl">
-          A salesperson speaking with a customer could not pause to search across
-          portals, product sheets, and team chats.
-        </p>
-
-        <div className="mt-8 flex flex-wrap items-center gap-2.5">
+        <p className="eyebrow">Mid-conversation friction</p>
+        <div className="mt-6 flex flex-wrap items-center gap-2.5">
           {sources.map((source) => (
             <span
               key={source}
-              className="rounded-sm border border-border px-3.5 py-2 text-sm text-muted"
+              className="case-meta rounded-sm border border-border px-3.5 py-2 text-muted"
             >
               {source}
             </span>
@@ -174,22 +143,10 @@ export function SocidaProblemVisual({ caption }: { caption?: string }) {
             <span className="text-burgundy" aria-hidden="true">
               →
             </span>
-            <span className="rounded-sm bg-navy px-3.5 py-2 text-sm text-background">
+            <span className="case-meta rounded-sm bg-navy px-3.5 py-2 text-background">
               No single point of access
             </span>
           </span>
-        </div>
-
-        <div className="mt-7 border-t border-border pt-5">
-          <p className="text-sm text-navy">
-            ~300 employees · 7 brand knowledge bases · WhatsApp already in daily
-            use
-          </p>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted">
-            The solution needed to work inside WhatsApp, where employees were
-            already communicating, rather than require another system during
-            customer conversations.
-          </p>
         </div>
       </Panel>
       {caption ? <Caption>{caption}</Caption> : null}
@@ -202,7 +159,7 @@ export function SocidaApproachVisual({ caption }: { caption?: string }) {
     {
       number: "01",
       title: "Meet employees in WhatsApp",
-      body: "The channel already used daily for coordination became the front door for knowledge, documents, and training, without another login.",
+      body: "The channel already used daily for coordination became the front door for knowledge, documents, and continuous reinforcement, without another login.",
     },
     {
       number: "02",
@@ -224,7 +181,7 @@ export function SocidaApproachVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {step.number}
             </p>
-            <h3 className="mt-3 font-serif text-2xl text-navy">{step.title}</h3>
+            <h3 className="case-subhead mt-3">{step.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{step.body}</p>
           </Panel>
         ))}
@@ -244,12 +201,12 @@ export function SocidaBuildVisual({ caption }: { caption?: string }) {
     {
       label: "Use",
       title: "WhatsApp as the front door",
-      body: "The employee experience lived in WhatsApp, so learning and knowledge access could happen in the same channel employees already use every day.",
+      body: "The employee experience lived in WhatsApp, so knowledge access and reinforcement could happen in the same channel employees already use every day.",
     },
     {
       label: "Reinforce",
-      title: "Training that keeps moving",
-      body: "Quizzes, onboarding flows, daily prompts, documents, and progress signals turned one training moment into an ongoing learning loop.",
+      title: "An ongoing learning loop",
+      body: "In-channel prompts, practice moments, documents and progress signals turned one answer into continuous reinforcement instead of a one-off training event.",
     },
   ];
 
@@ -261,7 +218,7 @@ export function SocidaBuildVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
               {pillar.label}
             </p>
-            <h3 className="mt-3 font-serif text-2xl text-navy">{pillar.title}</h3>
+            <h3 className="case-subhead mt-3">{pillar.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.body}</p>
           </Panel>
         ))}
@@ -294,19 +251,13 @@ export function SocidaJourneyVisual({ caption }: { caption?: string }) {
     {
       number: "04",
       title: "Reinforce",
-      body: "Quiz, prompt, or onboarding turns the answer into a repeatable skill.",
+      body: "Continuous reinforcement turns the answer into a repeatable skill in the same channel.",
       role: "Employee",
     },
     {
       number: "05",
-      title: "Observe",
-      body: "Managers see recurring demand topics and knowledge gaps.",
-      role: "Manager",
-    },
-    {
-      number: "06",
-      title: "Update",
-      body: "Sources are corrected so answers stay controlled over time.",
+      title: "Improve",
+      body: "Managers see recurring demand and correct sources so answers stay controlled.",
       role: "Manager",
     },
   ];
@@ -319,14 +270,14 @@ export function SocidaJourneyVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-burgundy-on-dark">
               Company knowledge · WhatsApp
             </p>
-            <p className="mt-2 font-serif text-2xl text-background md:text-[1.75rem]">
+            <p className="case-subhead mt-2 !text-background">
               Operating loop
             </p>
           </div>
           <p className="pb-0.5 text-xs text-background/55">employee + manager</p>
         </div>
 
-        <ol className="mt-6 grid gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3">
+        <ol className="mt-6 grid gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-5">
           {steps.map((step) => (
             <li
               key={step.number}
@@ -340,7 +291,7 @@ export function SocidaJourneyVisual({ caption }: { caption?: string }) {
                   {step.role}
                 </span>
               </div>
-              <h3 className="mt-3.5 font-serif text-xl text-background">
+              <h3 className="case-subhead mt-3.5 !text-background">
                 {step.title}
               </h3>
               <p className="mt-2.5 flex-1 text-sm leading-relaxed text-background/80">
@@ -356,106 +307,114 @@ export function SocidaJourneyVisual({ caption }: { caption?: string }) {
 }
 
 export function SocidaGovernanceVisual({ caption }: { caption?: string }) {
-  const rows = [
-    {
-      document: "Vehicle range guide",
-      brand: "Brand A",
-      access: "Sales",
-      status: "Indexed",
-      tone: "ready" as const,
-    },
-    {
-      document: "Financing routes",
-      brand: "Multi-brand",
-      access: "Approved users",
-      status: "Indexed",
-      tone: "ready" as const,
-    },
-    {
-      document: "Service procedure",
-      brand: "Brand B",
-      access: "After-sales",
-      status: "Review",
-      tone: "review" as const,
-    },
-  ];
-
   return (
     <figure>
       <Panel className="!p-0 overflow-hidden">
-        <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border px-5 py-5 md:px-7 md:py-6">
-          <div>
-            <p className="font-serif text-2xl text-navy">Document control</p>
-            <p className="mt-1.5 text-sm text-muted">
-              Brand · access · indexing status
-            </p>
-          </div>
-          <span className="rounded-sm border border-border px-2.5 py-1 text-xs text-muted">
-            Admin view
-          </span>
-        </div>
+        <VisualHeader
+          eyebrow="Product logic"
+          title="From customer question to approved answer"
+          subtitle="Voice or text in WhatsApp → brand context → approved source → usable answer"
+        />
 
-        {/* Mobile: stacked rows — no clipped table columns */}
-        <ul className="md:hidden">
-          {rows.map((row) => (
-            <li
-              key={row.document}
-              className="flex items-start justify-between gap-4 border-b border-border px-5 py-5 last:border-b-0"
-            >
-              <div className="min-w-0">
-                <p className="text-sm text-navy">{row.document}</p>
-                <p className="mt-1 text-xs leading-relaxed text-muted">
-                  {row.brand} · {row.access}
+        <div className="grid gap-0 lg:grid-cols-3">
+          <div className="border-b border-border p-5 lg:border-b-0 lg:border-r md:p-6">
+            <p className="visual-kicker">Employee · WhatsApp</p>
+            <div className="mt-4 space-y-3">
+              <div className="visual-inset visual-inset--soft px-3 py-2.5">
+                <div className="flex items-center gap-2 text-[11px] text-navy/70">
+                  <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-burgundy/15 text-[9px] text-[#54222e]">
+                    ▶
+                  </span>
+                  <span className="h-3 flex-1 rounded-sm bg-border-strong/80" />
+                  <span className="shrink-0 tabular-nums">0:12</span>
+                </div>
+                <p className="mt-2 text-[12px] leading-snug text-navy">
+                  Is there a 24-month financing option for this model?
                 </p>
               </div>
-              <span
-                className={`shrink-0 rounded-sm px-2 py-0.5 text-xs ${
-                  row.tone === "ready"
-                    ? "bg-burgundy/10 text-burgundy"
-                    : "border border-border-strong text-muted"
-                }`}
-              >
-                {row.status}
-              </span>
-            </li>
-          ))}
-        </ul>
+              <div className="visual-inset visual-inset--accent px-3 py-2">
+                <p className="visual-kicker">Context</p>
+                <p className="mt-1 text-[12px] text-navy">
+                  Brand A · Model X · Financing
+                </p>
+              </div>
+              <p className="case-meta text-muted">Checking approved sources…</p>
+            </div>
+          </div>
 
-        {/* Desktop: editorial table */}
-        <div className="hidden md:block">
-          <table className="w-full border-collapse text-left text-sm">
-            <thead>
-              <tr className="border-b border-border text-[11px] uppercase tracking-[0.14em] text-muted">
-                <th className="px-7 pb-3 pt-5 font-medium">Document</th>
-                <th className="px-4 pb-3 pt-5 font-medium">Brand</th>
-                <th className="px-4 pb-3 pt-5 font-medium">Access</th>
-                <th className="px-7 pb-3 pt-5 font-medium">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row) => (
-                <tr
-                  key={row.document}
-                  className="border-b border-border/70 last:border-b-0"
+          <div className="border-b border-border bg-surface/60 p-5 lg:border-b-0 lg:border-r md:p-6">
+            <p className="visual-kicker">Knowledge layer</p>
+            <div className="visual-inset mt-4 p-4">
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="visual-kicker">PDF</p>
+                  <p className="mt-1.5 text-sm font-medium text-navy">
+                    Financing_routes.pdf
+                  </p>
+                </div>
+                <span className="shrink-0 rounded-sm bg-burgundy/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-burgundy">
+                  Approved
+                </span>
+              </div>
+              <dl className="mt-4 space-y-2 border-t border-border pt-3">
+                {[
+                  ["Brand", "Brand A"],
+                  ["Access", "Sales"],
+                  ["Version", "12 Aug 2026"],
+                ].map(([label, value]) => (
+                  <div
+                    key={label}
+                    className="flex items-center justify-between gap-3 text-[12px]"
+                  >
+                    <dt className="text-muted">{label}</dt>
+                    <dd className="text-navy">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-3 border-t border-border pt-3 text-[12px] leading-snug text-muted">
+                Relevant section: “24-month financing available for Model X when
+                eligibility criteria are met.”
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-navy p-5 text-background md:p-6">
+            <p className="visual-kicker visual-kicker--on-dark">
+              Approved answer
+            </p>
+            <p className="mt-4 text-[13px] leading-relaxed text-background/90">
+              Yes — for Model X, the approved 24-month financing route is
+              available when eligibility criteria are met.
+            </p>
+            <p className="mt-4 text-[11px] text-burgundy-on-dark">
+              Source · Financing_routes.pdf · p.4
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {["Open document", "Ask follow-up"].map((action) => (
+                <span
+                  key={action}
+                  className="rounded-sm border border-background/20 px-2.5 py-1 text-[11px] text-background/75"
                 >
-                  <td className="px-7 py-3.5 text-navy">{row.document}</td>
-                  <td className="px-4 py-3.5 text-muted">{row.brand}</td>
-                  <td className="px-4 py-3.5 text-muted">{row.access}</td>
-                  <td className="px-7 py-3.5">
-                    <span
-                      className={`rounded-sm px-2 py-0.5 text-xs ${
-                        row.tone === "ready"
-                          ? "bg-burgundy/10 text-burgundy"
-                          : "border border-border-strong text-muted"
-                      }`}
-                    >
-                      {row.status}
-                    </span>
-                  </td>
-                </tr>
+                  {action}
+                </span>
               ))}
-            </tbody>
-          </table>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-border bg-burgundy/[0.04] px-5 py-4 md:px-7 md:py-5">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="visual-kicker">Recurring demand</p>
+              <p className="case-meta mt-1.5 text-navy">
+                18 financing questions this week · Brand A
+              </p>
+            </div>
+            <div className="case-meta flex flex-wrap gap-x-4 gap-y-1 text-muted">
+              <span>Source owner · Sales Ops</span>
+              <span className="text-burgundy">→ Review financing FAQ</span>
+            </div>
+          </div>
         </div>
       </Panel>
       {caption ? <Caption>{caption}</Caption> : null}
@@ -487,7 +446,7 @@ export function SocidaDemandVisual({ caption }: { caption?: string }) {
             <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
               Demand signal
             </p>
-            <h3 className="mt-2 font-serif text-2xl text-navy md:text-3xl">
+            <h3 className="case-subhead mt-2">
               Workforce questions over time
             </h3>
             <p className="mt-2 text-sm text-muted">
@@ -524,7 +483,7 @@ export function SocidaDemandVisual({ caption }: { caption?: string }) {
               <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
                 Selected spike
               </p>
-              <p className="mt-2 font-serif text-xl text-navy">
+              <p className="case-subhead mt-2">
                 Financing &amp; eligibility leads the day
               </p>
               <ul className="mt-4 space-y-2 text-sm text-muted">
@@ -574,8 +533,8 @@ export function SocidaDemandVisual({ caption }: { caption?: string }) {
             question volume.
           </p>
           <p className="mt-2 text-sm text-muted">
-            Demand becomes an input for training, source updates, and operational
-            follow-up.
+            Demand becomes an input for reinforcement, source updates, and
+            operational follow-up.
           </p>
         </div>
       </Panel>
@@ -591,8 +550,8 @@ export function SocidaOutcomeVisual({ caption }: { caption?: string }) {
     "Managers had little visibility into recurring knowledge gaps",
   ];
   const after = [
-    "Approved answers, documents, and quizzes available in WhatsApp",
-    "One controlled knowledge layer across brands and departments",
+    "Approved answers, documents, and continuous reinforcement in WhatsApp",
+    "Lookup, reinforcement and source improvement in one continuous loop",
     "Managers could reinforce topics, review flags, and update sources",
   ];
 

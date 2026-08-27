@@ -28,7 +28,7 @@ export function ProjectCoverVisual({ project }: { project: Project }) {
           <div
             className={
               isPhone
-                ? "mx-auto w-full max-w-[16.5rem] sm:max-w-[18rem]"
+                ? "mx-auto w-full max-w-[19rem] sm:max-w-[20.5rem]"
                 : "project-cover-visual min-w-0 w-full"
             }
           >

@@ -24,37 +24,37 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b border-border bg-surface-elevated transition-[box-shadow,border-color] duration-200 ${
+      className={`sticky top-0 z-40 border-b bg-surface-elevated/90 backdrop-blur-md transition-[box-shadow,border-color,background-color] duration-200 ${
         scrolled || open
-          ? "border-border-strong shadow-[0_10px_30px_rgba(26,31,46,0.06)]"
-          : ""
+          ? "border-border-strong shadow-[0_12px_32px_rgba(26,31,46,0.07)]"
+          : "border-border"
       }`}
     >
       <div className="container-page flex h-14 items-center justify-between md:h-16">
         <Link
           href="/"
-          className="font-serif text-[1.2rem] tracking-tight text-navy transition-colors hover:text-burgundy md:text-xl"
+          className="type-brand text-[1.4rem] transition-colors hover:text-burgundy md:text-[1.55rem]"
           onClick={() => setOpen(false)}
         >
           {siteConfig.name}
         </Link>
 
         <nav
-          className="hidden items-center gap-1 md:flex"
+          className="hidden items-center gap-0.5 md:flex"
           aria-label="Primary"
         >
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-sm px-3 py-2 text-[13px] tracking-[0.02em] text-muted transition-colors hover:bg-surface hover:text-navy"
+              className="rounded-sm px-3 py-2 case-meta text-muted transition-colors hover:bg-surface hover:text-navy"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href={siteConfig.resumePath}
-            className="ml-2 rounded-sm border border-navy/15 bg-background px-3.5 py-1.5 text-[13px] tracking-[0.02em] text-navy transition-colors hover:border-burgundy hover:text-burgundy"
+            className="ml-2 rounded-sm border border-navy/12 bg-background px-3.5 py-1.5 case-meta text-navy transition-[border-color,color,background-color] hover:border-burgundy hover:bg-surface hover:text-burgundy"
           >
             Resume
           </Link>
@@ -62,7 +62,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-sm border border-border text-navy md:hidden"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-sm border border-border text-navy transition-colors hover:border-border-strong hover:bg-surface md:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -83,9 +83,8 @@ export function Header() {
         </button>
       </div>
 
-      {/* Thin editorial accent under the bar */}
       <div
-        className="h-px w-full bg-gradient-to-r from-transparent via-burgundy/35 to-transparent"
+        className="h-px w-full bg-gradient-to-r from-transparent via-burgundy/40 to-transparent"
         aria-hidden="true"
       />
 

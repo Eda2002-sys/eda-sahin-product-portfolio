@@ -7,11 +7,11 @@ export type AdditionalProduct = {
 export const additionalProducts: AdditionalProduct[] = [
   {
     name: "Keppel Alex",
-    summary: "AI CFO agent for 2.2M+ rows of enterprise financial data.",
+    summary: "AI CFO workflow across 2.2M+ rows of financial data.",
   },
   {
     name: "Marcus & Millichap",
-    summary: "Nationwide auction intelligence, pricing signals and exports.",
+    summary: "Auction intelligence, pricing signals and exports.",
   },
   {
     name: "Compliance Tracker",
@@ -19,26 +19,18 @@ export const additionalProducts: AdditionalProduct[] = [
   },
   {
     name: "Investor Intelligence",
-    summary: "AI matching across 6,000+ investment entities.",
+    summary: "Investment matching across 6,000+ entities.",
   },
   {
     name: "Investment Deck Generator",
-    summary: "Deal data transformed into teasers, decks and IMs.",
-  },
-  {
-    name: "Financial Well-Being Monitor",
-    summary: "Conversational analysis of economic survey data.",
+    summary: "Deal data into teasers, decks and investment materials.",
   },
   {
     name: "Deep Market Research",
-    summary: "Automated multi-source, source-cited intelligence.",
-  },
-  {
-    name: "Market Intelligence Newsletters",
-    summary: "Custom trend reports with transparent sourcing.",
+    summary: "Multi-source research with source-linked outputs.",
   },
   {
     name: "GA Capital M&A Platform",
-    summary: "Market mapping, buyer matching and due diligence workflows.",
+    summary: "Market mapping, buyer matching and diligence workflows.",
   },
 ];

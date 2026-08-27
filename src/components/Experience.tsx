@@ -11,17 +11,12 @@ export function Experience() {
       aria-labelledby="experience-heading"
     >
       <div className="container-page section-space">
-        <SectionHeading
-          id="experience-heading"
-          eyebrow="Experience"
-          title="Where the work sat in the organisation."
-          description="Timeline of roles. Selected Work above carries the product detail."
-        />
+        <SectionHeading id="experience-heading" title="Experience" />
 
-        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted md:mt-10">
-          AnalystAI and GA Capital run concurrently across the same AI and
-          advisory ecosystem: product delivery on one side, live M&amp;A
-          execution on the other.
+        <p className="case-meta mt-8 text-muted md:mt-10">
+          AnalystAI and GA Capital were concurrent roles across the same AI and
+          advisory ecosystem: product delivery at AnalystAI and live M&amp;A
+          execution at GA Capital.
         </p>
 
         <ol className="mt-10 space-y-0 md:mt-12">
@@ -59,20 +54,22 @@ export function Experience() {
                       </Link>
                     ) : null}
                     <div className="min-w-0">
-                      <h3 className="font-serif text-xl text-navy sm:text-2xl">
-                        {item.company}
-                      </h3>
-                      <p className="mt-1 text-sm text-muted">{item.role}</p>
+                      <h3 className="case-subhead">{item.company}</h3>
+                      <p className="case-meta mt-1 text-muted">{item.role}</p>
                       {item.subtitle ? (
-                        <p className="mt-1 text-xs text-muted">{item.subtitle}</p>
+                        <p className="case-meta mt-1 text-muted">
+                          {item.subtitle}
+                        </p>
                       ) : null}
                     </div>
                   </div>
-                  <p className="shrink-0 text-sm text-muted md:hidden">{item.period}</p>
+                  <p className="case-meta shrink-0 text-muted md:hidden">
+                    {item.period}
+                  </p>
                 </div>
               </div>
               <div className="hidden md:col-span-2 md:block">
-                <p className="text-sm text-muted">{item.period}</p>
+                <p className="case-meta text-muted">{item.period}</p>
               </div>
               <div className="min-w-0 md:col-span-6">
                 {item.focus ? (

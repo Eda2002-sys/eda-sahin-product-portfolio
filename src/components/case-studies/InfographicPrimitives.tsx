@@ -1,7 +1,7 @@
 type CaptionProps = { children: React.ReactNode };
 
 export function Caption({ children }: CaptionProps) {
-  return <p className="mt-3 text-sm leading-relaxed text-muted">{children}</p>;
+  return <p className="visual-caption">{children}</p>;
 }
 
 export function Panel({
@@ -15,13 +15,36 @@ export function Panel({
 }) {
   return (
     <div
-      className={`rounded-sm border p-5 md:p-7 ${
-        dark
-          ? "border-navy bg-navy text-background"
-          : "border-border bg-surface-elevated"
-      } ${className}`}
+      className={`${dark ? "visual-panel visual-panel--dark" : "visual-panel"} p-5 md:p-7 ${className}`}
     >
       {children}
+    </div>
+  );
+}
+
+export function VisualHeader({
+  eyebrow,
+  title,
+  subtitle,
+  end,
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle?: string;
+  end?: React.ReactNode;
+}) {
+  return (
+    <div className="visual-header">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="visual-kicker">{eyebrow}</p>
+          <h3 className="case-subhead mt-2">{title}</h3>
+          {subtitle ? (
+            <p className="case-meta mt-2 text-muted">{subtitle}</p>
+          ) : null}
+        </div>
+        {end ? <div className="shrink-0">{end}</div> : null}
+      </div>
     </div>
   );
 }
@@ -43,22 +66,22 @@ export function SectionLabel({
     <div className="@container flex flex-wrap items-start justify-between gap-3">
       <div className="min-w-0">
         <p
-          className={`text-[11px] uppercase tracking-[0.18em] ${
-            dark ? "text-burgundy-on-dark" : "text-burgundy"
-          }`}
+          className={
+            dark ? "visual-kicker visual-kicker--on-dark" : "visual-kicker"
+          }
         >
           {eyebrow}
         </p>
         <h3
-          className={`mt-2 font-serif text-xl leading-snug @[22rem]:text-2xl @[36rem]:text-3xl ${
-            dark ? "text-background" : "text-navy"
+          className={`case-subhead mt-2 ${
+            dark ? "!text-background" : ""
           }`}
         >
           {title}
         </h3>
         {subtitle ? (
           <p
-            className={`mt-2 text-sm leading-relaxed ${dark ? "text-background/65" : "text-muted"}`}
+            className={`case-meta mt-2 ${dark ? "text-background/65" : "text-muted"}`}
           >
             {subtitle}
           </p>
@@ -163,10 +186,8 @@ export function ProblemCards({
           <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
             {card.number}
           </p>
-          <h3 className="mt-3 font-serif text-xl text-navy md:text-2xl">
-            {card.title}
-          </h3>
-          <p className="mt-3 text-sm leading-relaxed text-muted">{card.body}</p>
+          <h3 className="case-subhead mt-3">{card.title}</h3>
+          <p className="case-meta mt-3 text-muted">{card.body}</p>
         </Panel>
       ))}
     </div>
@@ -192,14 +213,14 @@ export function ApproachCards({
             0{index + 1}
           </p>
           <h3
-            className={`mt-3 font-serif text-xl md:text-2xl ${
-              dark ? "text-background" : "text-navy"
+            className={`case-subhead mt-3 ${
+              dark ? "!text-background" : ""
             }`}
           >
             {card.title}
           </h3>
           <p
-            className={`mt-3 text-sm leading-relaxed ${
+            className={`case-meta mt-3 ${
               dark ? "text-background/70" : "text-muted"
             }`}
           >
@@ -223,30 +244,39 @@ export function BeforeAfter({
   afterLabel?: string;
 }) {
   return (
-    <div className="grid gap-4 md:grid-cols-2">
-      <Panel>
+    <div className="grid gap-4 md:grid-cols-2 md:items-stretch">
+      <Panel className="h-full">
         <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
           {beforeLabel}
         </p>
-        <ul className="mt-4 space-y-3">
+        <ul className="mt-4 space-y-3.5">
           {before.map((item) => (
-            <li key={item} className="text-sm leading-relaxed text-muted">
-              {item}
+            <li key={item} className="flex gap-3 case-meta text-muted">
+              <span className="mt-1.5 text-border-strong" aria-hidden="true">
+                ·
+              </span>
+              <span>{item}</span>
             </li>
           ))}
         </ul>
       </Panel>
-      <Panel dark>
-        <p className="text-[11px] uppercase tracking-[0.18em] text-background/55">
+      <Panel dark className="h-full">
+        <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-burgundy-on-dark">
           {afterLabel}
         </p>
-        <ul className="mt-4 space-y-3">
+        <ul className="mt-4 space-y-3.5">
           {after.map((item) => (
             <li
               key={item}
-              className="text-sm leading-relaxed text-background/85"
+              className="flex gap-3 case-meta text-background/85"
             >
-              {item}
+              <span
+                className="mt-1.5 text-burgundy-on-dark"
+                aria-hidden="true"
+              >
+                ·
+              </span>
+              <span>{item}</span>
             </li>
           ))}
         </ul>
@@ -282,7 +312,7 @@ export function JourneySteps({
         <Panel
           key={step.number}
           dark={dark}
-          className={`h-full ${index === 0 && !dark ? "border-burgundy/40" : ""}`}
+          className={`h-full ${index === 0 && !dark ? "!border-burgundy/35" : ""}`}
         >
           <p
             className={`text-[11px] uppercase tracking-[0.18em] ${
@@ -293,14 +323,14 @@ export function JourneySteps({
             {step.label ? ` · ${step.label}` : ""}
           </p>
           <h3
-            className={`mt-3 font-serif text-xl ${
-              dark ? "text-background" : "text-navy"
+            className={`case-subhead mt-3 ${
+              dark ? "!text-background" : ""
             }`}
           >
             {step.title}
           </h3>
           <p
-            className={`mt-3 text-sm leading-relaxed ${
+            className={`case-meta mt-3 ${
               dark ? "text-background/70" : "text-muted"
             }`}
           >
@@ -333,8 +363,8 @@ export function BuildPillars({
           <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
             {pillar.label}
           </p>
-          <h3 className="mt-3 font-serif text-2xl text-navy">{pillar.title}</h3>
-          <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.body}</p>
+          <h3 className="case-subhead mt-3">{pillar.title}</h3>
+          <p className="case-meta mt-3 text-muted">{pillar.body}</p>
         </Panel>
       ))}
     </div>
