@@ -18,11 +18,15 @@ export function ProjectCoverVisual({ project }: { project: Project }) {
     const isPhone = phoneHeroComponents.has(heroVisual.component);
     const isCompact = compactCoverComponents.has(heroVisual.component);
 
+    // Not a <Link>: several hero infographics embed their own company logos,
+    // which are themselves links (AnalystAiLogo defaults to analystai.ai).
+    // Wrapping them in an anchor produced nested <a> tags - invalid HTML, and
+    // React failed hydration on the home page because of it. The card already
+    // links to the case study through its CTA, so this wrapper is presentational.
     return (
-      <Link
-        href={project.href}
+      <div
         className="group block w-full min-w-0"
-        aria-label={`${project.title} case study preview`}
+        aria-hidden="false"
       >
         <div
           className={`project-cover-shell ${
@@ -49,7 +53,7 @@ export function ProjectCoverVisual({ project }: { project: Project }) {
             />
           </div>
         </div>
-      </Link>
+      </div>
     );
   }
 
