@@ -1,7 +1,36 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { howIWorkSteps } from "@/data/skills";
 
+const ANIMATED_STEP_COUNT = howIWorkSteps.length;
+const STEP_INTERVAL_MS = 1400;
+
 export function HowIWork() {
+  const [litCount, setLitCount] = useState(1);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncMotion = () => setReduceMotion(media.matches);
+    syncMotion();
+    media.addEventListener("change", syncMotion);
+    return () => media.removeEventListener("change", syncMotion);
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion) return;
+
+    const id = window.setInterval(() => {
+      setLitCount((current) =>
+        current >= ANIMATED_STEP_COUNT ? 1 : current + 1,
+      );
+    }, STEP_INTERVAL_MS);
+
+    return () => window.clearInterval(id);
+  }, [reduceMotion]);
+
   return (
     <section
       id="how-i-work"
@@ -30,29 +59,37 @@ export function HowIWork() {
           />
 
           <div className="grid gap-0 md:grid-cols-5 md:gap-3">
-            {howIWorkSteps.map((step, index) => (
-              <li
-                key={step.number}
-                className="relative z-10 grid grid-cols-[auto_1fr] items-start gap-x-4 border-t border-border py-6 first:border-t-0 first:pt-0 md:flex md:flex-col md:items-center md:border-t-0 md:px-2 md:py-0 md:text-center"
-              >
-                <span
-                  className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-[0.6875rem] tracking-[0.14em] shadow-[0_0_0_4px_var(--surface)] md:mx-auto md:h-9 md:w-9 ${
-                    index === 0
-                      ? "border-burgundy bg-burgundy text-background"
-                      : "border-burgundy/40 bg-surface text-burgundy"
-                  }`}
+            {howIWorkSteps.map((step, index) => {
+              const isLit = reduceMotion
+                ? index < ANIMATED_STEP_COUNT
+                : index < litCount;
+
+              return (
+                <li
+                  key={step.number}
+                  className="relative z-10 grid grid-cols-[auto_1fr] items-start gap-x-4 border-t border-border py-6 first:border-t-0 first:pt-0 md:flex md:flex-col md:items-center md:border-t-0 md:px-2 md:py-0 md:text-center"
                 >
-                  {step.number}
-                </span>
-                <p
-                  className={`case-meta pt-0.5 text-navy md:mt-4 md:max-w-[11rem] md:pt-0 ${
-                    index === howIWorkSteps.length - 1 ? "md:max-w-[12.5rem]" : ""
-                  }`}
-                >
-                  {step.title}
-                </p>
-              </li>
-            ))}
+                  <span
+                    className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-[0.6875rem] tracking-[0.14em] shadow-[0_0_0_4px_var(--surface)] transition-[background-color,border-color,color,transform] duration-500 ease-out md:mx-auto md:h-9 md:w-9 ${
+                      isLit
+                        ? "scale-100 border-burgundy bg-burgundy text-background"
+                        : "scale-[0.97] border-burgundy/40 bg-surface text-burgundy"
+                    }`}
+                  >
+                    {step.number}
+                  </span>
+                  <p
+                    className={`case-meta pt-0.5 text-navy transition-colors duration-500 md:mt-4 md:max-w-[11rem] md:pt-0 ${
+                      index === howIWorkSteps.length - 1
+                        ? "md:max-w-[12.5rem]"
+                        : ""
+                    } ${isLit ? "text-navy" : "text-muted"}`}
+                  >
+                    {step.title}
+                  </p>
+                </li>
+              );
+            })}
           </div>
         </ol>
       </div>
