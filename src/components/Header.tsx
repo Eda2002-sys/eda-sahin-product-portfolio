@@ -18,32 +18,18 @@ export function Header() {
   useEffect(() => {
     if (!open) return;
 
-    const scrollY = window.scrollY;
-    const { style } = document.body;
+    const { documentElement, body } = document;
     const previous = {
-      position: style.position,
-      top: style.top,
-      left: style.left,
-      right: style.right,
-      width: style.width,
-      overflow: style.overflow,
+      htmlOverflow: documentElement.style.overflow,
+      bodyOverflow: body.style.overflow,
     };
 
-    style.position = "fixed";
-    style.top = `-${scrollY}px`;
-    style.left = "0";
-    style.right = "0";
-    style.width = "100%";
-    style.overflow = "hidden";
+    documentElement.style.overflow = "hidden";
+    body.style.overflow = "hidden";
 
     return () => {
-      style.position = previous.position;
-      style.top = previous.top;
-      style.left = previous.left;
-      style.right = previous.right;
-      style.width = previous.width;
-      style.overflow = previous.overflow;
-      window.scrollTo(0, scrollY);
+      documentElement.style.overflow = previous.htmlOverflow;
+      body.style.overflow = previous.bodyOverflow;
     };
   }, [open]);
 
@@ -62,7 +48,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 border-b bg-surface-elevated/95 backdrop-blur-md transition-[box-shadow,border-color,background-color] duration-200 ${
+        className={`sticky top-0 z-50 border-b bg-surface-elevated/95 backdrop-blur-md transition-[box-shadow,border-color,background-color] duration-200 max-md:fixed max-md:inset-x-0 ${
           scrolled || open
             ? "border-border-strong shadow-[0_12px_32px_rgba(26,31,46,0.07)]"
             : "border-border"
@@ -127,17 +113,20 @@ export function Header() {
         />
       </header>
 
+      {/* Offset fixed mobile header height */}
+      <div className="h-[3.5625rem] shrink-0 md:hidden" aria-hidden="true" />
+
       {open ? (
-        <>
+        <div className="fixed inset-0 z-40 md:hidden">
           <button
             type="button"
-            className="fixed inset-0 top-14 z-40 bg-navy/20 md:hidden"
+            className="absolute inset-0 top-[3.5625rem] bg-navy/30"
             aria-label="Close menu"
             onClick={() => setOpen(false)}
           />
           <div
             id="mobile-menu"
-            className="fixed inset-x-0 top-14 z-50 max-h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain border-b border-border bg-surface-elevated shadow-[0_18px_40px_rgba(26,31,46,0.12)] md:hidden"
+            className="absolute inset-x-0 top-[3.5625rem] max-h-[calc(100dvh-3.5625rem)] overflow-y-auto overscroll-contain border-b border-border bg-surface-elevated shadow-[0_18px_40px_rgba(26,31,46,0.12)]"
           >
             <nav
               className="container-page flex flex-col gap-1 py-3"
@@ -162,7 +151,7 @@ export function Header() {
               </Link>
             </nav>
           </div>
-        </>
+        </div>
       ) : null}
     </>
   );
