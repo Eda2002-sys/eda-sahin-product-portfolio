@@ -49,13 +49,7 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
           isPrint ? "border-b-[1.5px] border-[#6f2c3a]" : "border-b border-border"
         }`}
       >
-        <h1
-          className={
-            isPrint
-              ? "type-brand text-[2.6rem] leading-none tracking-tight text-[#6f2c3a]"
-              : "case-title text-burgundy"
-          }
-        >
+        <h1 className="case-title text-burgundy">
           {resumeProfile.name}
         </h1>
         <p

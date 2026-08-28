@@ -16,7 +16,6 @@ function fontDataUri(filename) {
 const dmRegular = fontDataUri("DMSans-Regular.ttf");
 const dmMedium = fontDataUri("DMSans-Medium.ttf");
 const dmSemiBold = fontDataUri("DMSans-SemiBold.ttf");
-const instrumentSerif = fontDataUri("InstrumentSerif-Regular.ttf");
 
 const html = `<!DOCTYPE html>
 <html lang="en">
@@ -25,12 +24,6 @@ const html = `<!DOCTYPE html>
   <meta name="format-detection" content="telephone=no, email=no, address=no" />
   <title>Eda Sahin · Resume</title>
   <style>
-    @font-face {
-      font-family: "Instrument Serif";
-      font-style: normal;
-      font-weight: 400;
-      src: url("${instrumentSerif}") format("truetype");
-    }
     @font-face {
       font-family: "DM Sans";
       font-style: normal;
@@ -75,10 +68,10 @@ const html = `<!DOCTYPE html>
 
     h1 {
       margin: 0;
-      font-family: "Instrument Serif", "Times New Roman", Times, serif;
-      font-size: 28pt;
+      font-family: "DM Sans", Helvetica, Arial, sans-serif;
+      font-size: 31pt;
       font-weight: 400;
-      line-height: 0.95;
+      line-height: 1.2;
       color: #6f2c3a;
       letter-spacing: -0.02em;
     }
@@ -373,7 +366,7 @@ const page = await browser.newPage();
 await page.setContent(html, { waitUntil: "networkidle0" });
 await page.evaluateHandle("document.fonts.ready");
 await page.evaluate(async () => {
-  await document.fonts.load('400 28pt "Instrument Serif"');
+  await document.fonts.load('400 31pt "DM Sans"');
   await document.fonts.load('400 9pt "DM Sans"');
   await document.fonts.load('500 9pt "DM Sans"');
   await document.fonts.load('600 9pt "DM Sans"');
