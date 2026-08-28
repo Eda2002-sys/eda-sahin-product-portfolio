@@ -89,7 +89,7 @@ export const resumeExperience: ResumeRole[] = [
     website: "docquity.com",
     websiteHref: "https://docquity.com",
     bullets: [
-      "Supported the copywriting and SEO team by creating engaging blog posts and content.",
+      "Based in Singapore; supported the copywriting and SEO team by creating engaging blog posts and content.",
       "Contributed to improving Docquity's Google Search Rankings, increasing traffic from Malaysia, the Philippines and Indonesia.",
     ],
   },

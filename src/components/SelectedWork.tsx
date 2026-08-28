@@ -113,10 +113,24 @@ export function SelectedWork() {
             {additionalProducts.map((product) => (
               <li
                 key={product.name}
-                className="-mx-3 grid gap-1 rounded-sm px-3 py-5 transition-colors hover:bg-surface sm:grid-cols-12 sm:items-baseline sm:gap-6 sm:py-6"
+                className="group -mx-3 grid gap-1 rounded-sm px-3 py-5 transition-colors hover:bg-surface sm:grid-cols-12 sm:items-baseline sm:gap-6 sm:py-6"
               >
-                <p className="case-meta text-navy sm:col-span-4">
-                  {product.name}
+                <p className="case-meta sm:col-span-4">
+                  {product.href ? (
+                    <a
+                      href={product.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex flex-col text-navy transition-colors hover:text-burgundy"
+                    >
+                      <span className="link-underline">{product.name}</span>
+                      <span className="case-meta mt-0.5 text-muted opacity-0 transition-opacity group-hover:opacity-100">
+                        {product.href.replace(/^https?:\/\/(www\.)?/, "")}
+                      </span>
+                    </a>
+                  ) : (
+                    <span className="text-navy">{product.name}</span>
+                  )}
                 </p>
                 <p className="case-meta text-muted sm:col-span-8">
                   {product.summary}

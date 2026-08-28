@@ -63,7 +63,7 @@ export const experience: ExperienceItem[] = [
     id: "docquity",
     company: "Docquity / Doctor Jobs Today",
     role: "SEO Intern",
-    subtitle: "SEO & content across Southeast Asian markets",
+    subtitle: "Singapore · SEO & content across Southeast Asian markets",
     period: "2022–2023",
     logo: "/images/docquity-logo.png",
     logoHref: "https://docquity.com",
