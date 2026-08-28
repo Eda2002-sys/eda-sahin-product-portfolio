@@ -14,7 +14,7 @@ const sans = DM_Sans({
 export const metadata: Metadata = {
   title: siteConfig.title,
   description: siteConfig.description,
-  metadataBase: new URL("https://eda-sahin-product-portfolio.vercel.app"),
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,

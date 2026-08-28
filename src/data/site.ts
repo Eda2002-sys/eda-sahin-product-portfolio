@@ -3,6 +3,11 @@ export const siteConfig = {
   title: "Eda Sahin · Product Portfolio",
   description:
     "Product portfolio: AI products, product operations, UX, QA and implementation across workforce intelligence, digital health and investment technology.",
+  // The canonical origin, in ONE place. `metadataBase` in app/layout.tsx used
+  // to hardcode this separately, so pointing the site at a custom domain meant
+  // editing a file that holds no other config - and forgetting it silently
+  // leaves every Open Graph and Twitter card pointing at the old origin.
+  url: "https://eda-sahin-product-portfolio.vercel.app",
   location: "Istanbul",
   email: "edashn2002@gmail.com",
   phone: "+90 536 795 45 17",
