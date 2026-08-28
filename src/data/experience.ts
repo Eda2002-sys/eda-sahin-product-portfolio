@@ -7,8 +7,8 @@ export type ExperienceItem = {
   focus?: string[];
   logo?: string;
   logoHref?: string;
-  logoHeight?: number;
-  logoAspect?: number;
+  /** Tunes visual weight inside the shared logo frame. */
+  logoScale?: number;
 };
 
 export const experience: ExperienceItem[] = [
@@ -20,12 +20,11 @@ export const experience: ExperienceItem[] = [
     period: "2025–2026",
     logo: "/images/analystai-logo.png",
     logoHref: "https://www.analystai.ai",
-    logoAspect: 984 / 421,
+    logoScale: 1,
     focus: [
-      "Product testing",
       "User journeys & QA",
-      "Client implementation",
       "Engineering coordination",
+      "Client implementation",
       "Founder support",
     ],
   },
@@ -37,13 +36,11 @@ export const experience: ExperienceItem[] = [
     period: "2025–2026",
     logo: "/images/ga-capital-logo.png",
     logoHref: "https://www.gacapital.ai",
-    logoHeight: 20,
-    logoAspect: 462 / 158,
+    logoScale: 1.3,
     focus: [
       "Live M&A execution",
-      "Due diligence & market research",
-      "Investor / lender coordination",
-      "Data rooms & decision materials",
+      "Due diligence",
+      "Data rooms",
       "CEO support",
     ],
   },
@@ -55,11 +52,9 @@ export const experience: ExperienceItem[] = [
     period: "2024–2025",
     logo: "/images/mentor-logo.png",
     logoHref: "https://mentorozelders.com",
-    logoHeight: 20,
-    logoAspect: 524 / 185,
+    logoScale: 1.45,
     focus: [
       "Content strategy",
-      "Publishing calendars",
       "Digital campaigns",
       "Social media management",
     ],
@@ -72,13 +67,7 @@ export const experience: ExperienceItem[] = [
     period: "2022–2023",
     logo: "/images/docquity-logo.png",
     logoHref: "https://docquity.com",
-    logoHeight: 20,
-    logoAspect: 1018 / 225,
-    focus: [
-      "SEO content",
-      "Copywriting",
-      "Search performance",
-      "International markets",
-    ],
+    logoScale: 0.8,
+    focus: ["SEO content", "International markets", "Search performance"],
   },
 ];

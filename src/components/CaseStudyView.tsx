@@ -51,32 +51,32 @@ export function CaseStudyView({ project }: { project: Project }) {
       <p className="eyebrow">Case study · {project.number}</p>
       <h1 className="case-title mt-4">{project.title}</h1>
       <p className="eyebrow eyebrow-tag mt-4">{project.category}</p>
-      <p className="case-body mt-6 max-w-3xl">{project.summary}</p>
+      <p className="case-body mt-6">{project.summary}</p>
       {study.sourceNote ? (
-        <p className="case-note mt-4 max-w-3xl">{study.sourceNote}</p>
+        <p className="case-note mt-4">{study.sourceNote}</p>
       ) : null}
       {project.context ? (
         <ul className="mt-8 flex flex-wrap gap-2">
           {project.context.map((item) => (
             <li
               key={item}
-              className="rounded-sm border border-border-strong bg-surface-elevated px-2.5 py-1 text-xs text-navy shadow-[0_1px_0_rgba(210,200,187,0.55)]"
+              className="tag-chip rounded-sm border border-border-strong bg-surface-elevated px-2.5 py-1 text-navy shadow-[0_1px_0_rgba(210,200,187,0.55)]"
             >
               {item}
             </li>
           ))}
         </ul>
       ) : null}
-      <p className="case-pull mt-6 max-w-xl border-l border-burgundy/40 pl-4">
+      <p className="case-pull mt-6 border-l border-burgundy/40 pl-4">
         {project.productValue}
       </p>
     </>
   );
 
   return (
-    <article>
+    <article data-case={project.slug}>
       <div className="container-page pt-6 md:pt-8">
-        <Link href="/#work" className="link-underline text-sm text-burgundy">
+        <Link href="/#work" className="link-underline case-meta text-burgundy">
           ← Back to selected work
         </Link>
       </div>
@@ -114,11 +114,11 @@ export function CaseStudyView({ project }: { project: Project }) {
       </header>
 
       <section className="case-band case-band--surface" aria-labelledby="glance-heading">
-        <div className="container-page py-16 md:py-20">
+        <div className="container-page py-14 md:py-[4.25rem]">
           <h2 id="glance-heading" className="case-section">
             At a glance
           </h2>
-          <dl className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <dl className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { label: "Role", value: study.glance.role },
               { label: "Product stage", value: study.glance.stage },
@@ -131,9 +131,9 @@ export function CaseStudyView({ project }: { project: Project }) {
                 value: study.glance.collaboration,
               },
             ].map((item) => (
-              <div key={item.label} className="border-t border-border pt-4">
-                <dt className="visual-kicker">{item.label}</dt>
-                <dd className="case-meta mt-2.5 text-navy">{item.value}</dd>
+              <div key={item.label} className="border-t border-border pt-3.5">
+                <dt className="eyebrow">{item.label}</dt>
+                <dd className="case-detail mt-2">{item.value}</dd>
               </div>
             ))}
           </dl>
@@ -149,7 +149,7 @@ export function CaseStudyView({ project }: { project: Project }) {
             >
               The problem
             </h2>
-            <p className="case-body max-w-3xl md:col-span-8">{study.problem}</p>
+            <p className="case-body md:col-span-8">{study.problem}</p>
           </div>
           <CaseStudyVisualBlock visuals={problemVisuals} className="mt-10" />
         </div>
@@ -233,12 +233,12 @@ export function CaseStudyView({ project }: { project: Project }) {
                 if (insight.observed && insight.productDecision) {
                   return (
                     <div key={key} className="border-t border-border pt-5">
-                      <p className="visual-kicker">Observed</p>
+                      <p className="eyebrow">Observed</p>
                       <p className="case-body mt-3 text-navy">
                         {insight.observed}
                       </p>
                       <div className="mt-6">
-                        <p className="visual-kicker">Product decision</p>
+                        <p className="eyebrow">Product decision</p>
                         <p className="case-body mt-3">
                           {insight.productDecision}
                         </p>
@@ -277,26 +277,26 @@ export function CaseStudyView({ project }: { project: Project }) {
                 >
                   <div className="grid gap-6 lg:grid-cols-4">
                     <div>
-                      <p className="visual-kicker">Observed</p>
-                      <p className="case-meta mt-2 text-navy">
+                      <p className="eyebrow">Observed</p>
+                      <p className="case-body mt-3 text-navy">
                         {decision.observed}
                       </p>
                     </div>
                     <div>
-                      <p className="visual-kicker">Why it matters</p>
-                      <p className="case-meta mt-2 text-muted">
+                      <p className="eyebrow">Why it matters</p>
+                      <p className="case-body mt-3 text-muted">
                         {decision.whyItMatters}
                       </p>
                     </div>
                     <div>
-                      <p className="visual-kicker">Recommendation</p>
-                      <p className="case-meta mt-2 text-muted">
+                      <p className="eyebrow">Recommendation</p>
+                      <p className="case-body mt-3 text-muted">
                         {decision.recommendation}
                       </p>
                     </div>
                     <div>
-                      <p className="visual-kicker">Expected impact</p>
-                      <p className="case-meta mt-2 text-muted">
+                      <p className="eyebrow">Expected impact</p>
+                      <p className="case-body mt-3 text-muted">
                         {decision.expectedImpact}
                       </p>
                     </div>
@@ -331,15 +331,33 @@ export function CaseStudyView({ project }: { project: Project }) {
             <CaseStudyVisualBlock visuals={journeyVisuals} className="mt-10" />
             {showJourneyList ? (
               <ol className="mt-10 flex flex-col gap-6 md:flex-row md:flex-wrap md:items-stretch md:gap-0">
-                {study.journey.map((step, index) => (
+                {study.journey.map((step, index) => {
+                  const isHighlight = study.journeyHighlightIndex === index;
+                  return (
                   <li
                     key={step}
-                    className="relative flex flex-1 flex-col border-t border-border pt-4 md:min-w-[9.5rem] md:border-t-0 md:border-l md:border-border md:pl-4 md:pt-0 md:first:border-l-0 md:first:pl-0"
+                    className={`relative flex flex-1 flex-col border-t pt-4 md:min-w-[9.5rem] md:border-t-0 md:border-l md:pl-4 md:pt-0 md:first:border-l-0 md:first:pl-0 ${
+                      isHighlight
+                        ? "border-burgundy/35 md:rounded-sm md:bg-burgundy/[0.03] md:px-3 md:py-2"
+                        : "border-border"
+                    }`}
                   >
-                    <span className="visual-kicker">
+                    <span
+                      className={
+                        isHighlight
+                          ? "inline-flex h-7 min-w-[1.75rem] items-center justify-center rounded-full border border-burgundy bg-burgundy px-2 text-[0.6875rem] tracking-[0.14em] text-background"
+                          : "eyebrow"
+                      }
+                    >
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="case-meta mt-3 text-navy">{step}</span>
+                    <span
+                      className={`mt-3 text-navy ${
+                        isHighlight ? "case-subhead" : "case-body"
+                      }`}
+                    >
+                      {step}
+                    </span>
                     {index < study.journey.length - 1 ? (
                       <span
                         className="pointer-events-none absolute -right-2.5 top-1/2 z-10 hidden -translate-y-1/2 text-burgundy md:block"
@@ -349,7 +367,8 @@ export function CaseStudyView({ project }: { project: Project }) {
                       </span>
                     ) : null}
                   </li>
-                ))}
+                  );
+                })}
               </ol>
             ) : null}
           </div>
@@ -369,7 +388,7 @@ export function CaseStudyView({ project }: { project: Project }) {
               {study.demonstrates.map((item) => (
                 <li
                   key={item}
-                  className="case-meta border-t border-border pt-4 text-navy"
+                  className="case-body border-t border-border pt-4 text-navy"
                 >
                   {item}
                 </li>

@@ -33,7 +33,7 @@ export function Header() {
       <div className="container-page flex h-14 items-center justify-between md:h-16">
         <Link
           href="/"
-          className="type-brand text-[1.4rem] transition-colors hover:text-burgundy md:text-[1.55rem]"
+          className="type-brand !text-burgundy transition-colors hover:!text-burgundy-soft"
           onClick={() => setOpen(false)}
         >
           {siteConfig.name}
@@ -47,14 +47,14 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-sm px-3 py-2 case-meta text-muted transition-colors hover:bg-surface hover:text-navy"
+              className="rounded-sm px-2.5 py-2 case-meta text-muted transition-colors hover:bg-surface hover:text-navy"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href={siteConfig.resumePath}
-            className="ml-2 rounded-sm border border-navy/12 bg-background px-3.5 py-1.5 case-meta text-navy transition-[border-color,color,background-color] hover:border-burgundy hover:bg-surface hover:text-burgundy"
+            className="ml-2 rounded-sm border border-burgundy bg-background px-3.5 py-1.5 case-meta text-navy transition-[border-color,color,background-color] hover:border-burgundy-soft hover:bg-surface hover:text-burgundy"
           >
             Resume
           </Link>
@@ -101,7 +101,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-sm px-2 py-3 text-base text-navy transition-colors hover:bg-surface"
+                className="case-meta rounded-sm px-2 py-3 text-navy transition-colors hover:bg-surface"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -109,7 +109,7 @@ export function Header() {
             ))}
             <Link
               href={siteConfig.resumePath}
-              className="mt-1 rounded-sm border border-border-strong px-3 py-3 text-base text-navy"
+              className="case-meta mt-1 rounded-sm border border-burgundy px-3 py-3 text-navy transition-colors hover:border-burgundy-soft hover:text-burgundy"
               onClick={() => setOpen(false)}
             >
               Resume

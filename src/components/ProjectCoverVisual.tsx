@@ -5,6 +5,9 @@ import { PlaceholderVisual } from "@/components/PlaceholderVisual";
 import type { Project, ProjectVisualComponent } from "@/data/projects";
 
 const phoneHeroComponents = new Set<ProjectVisualComponent>(["socida-whatsapp"]);
+const compactCoverComponents = new Set<ProjectVisualComponent>([
+  "hautonomy-hero",
+]);
 
 export function ProjectCoverVisual({ project }: { project: Project }) {
   const heroVisual = project.caseStudy?.visuals?.find(
@@ -13,6 +16,7 @@ export function ProjectCoverVisual({ project }: { project: Project }) {
 
   if (heroVisual?.component) {
     const isPhone = phoneHeroComponents.has(heroVisual.component);
+    const isCompact = compactCoverComponents.has(heroVisual.component);
 
     return (
       <Link
@@ -22,19 +26,26 @@ export function ProjectCoverVisual({ project }: { project: Project }) {
       >
         <div
           className={`project-cover-shell ${
-            isPhone ? "project-cover-shell--phone" : "project-cover-shell--wide"
+            isPhone
+              ? "project-cover-shell--phone"
+              : isCompact
+                ? "project-cover-shell--wide project-cover-shell--compact"
+                : "project-cover-shell--wide"
           }`}
         >
           <div
             className={
               isPhone
                 ? "mx-auto w-full max-w-[19rem] sm:max-w-[20.5rem]"
-                : "project-cover-visual min-w-0 w-full"
+                : isCompact
+                  ? "project-cover-visual project-cover-visual--compact mx-auto min-w-0 w-full max-w-[34rem]"
+                  : "project-cover-visual min-w-0 w-full"
             }
           >
             <CaseStudyVisual
               visual={{ ...heroVisual, caption: undefined }}
               priority
+              compact={isCompact}
             />
           </div>
         </div>

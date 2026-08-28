@@ -30,54 +30,31 @@ function EducationNotes({ notes }: { notes: ResumeEducationNote[] }) {
 
 function InstitutionLogo({
   logo,
-  logoHref,
   logoHeight,
   logoAspect,
   logoContained,
-  institution,
 }: {
   logo: string;
-  logoHref?: string;
   logoHeight: number;
   logoAspect: number;
   logoContained?: boolean;
-  institution: string;
 }) {
   const width = Math.round(logoHeight * logoAspect);
 
-  const image = (
-    <Image
-      src={logo}
-      alt=""
-      width={width}
-      height={logoHeight}
-      className="max-w-full object-contain"
-      style={{ width, height: logoHeight, maxWidth: "100%" }}
-    />
-  );
-
-  if (!logoHref) {
-    return (
-      <span
-        className={`mt-0.5 block shrink-0 ${logoContained ? "overflow-hidden rounded-sm" : ""}`}
-      >
-        {image}
-      </span>
-    );
-  }
-
   return (
-    <Link
-      href={logoHref}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`mt-0.5 block shrink-0 transition-opacity hover:opacity-80 ${
-        logoContained ? "overflow-hidden rounded-sm" : ""
-      }`}
-      aria-label={`${institution} (opens in new tab)`}
+    <span
+      className={`mt-0.5 block shrink-0 ${logoContained ? "overflow-hidden rounded-sm" : ""}`}
+      aria-hidden="true"
     >
-      {image}
-    </Link>
+      <Image
+        src={logo}
+        alt=""
+        width={width}
+        height={logoHeight}
+        className="max-w-full object-contain"
+        style={{ width, height: logoHeight, maxWidth: "100%" }}
+      />
+    </span>
   );
 }
 
@@ -107,15 +84,26 @@ export function Education() {
                       {item.logo ? (
                         <InstitutionLogo
                           logo={item.logo}
-                          logoHref={item.logoHref}
                           logoHeight={logoHeight}
                           logoAspect={logoAspect}
                           logoContained={item.logoContained}
-                          institution={item.institution}
                         />
                       ) : null}
                       <div className="min-w-0">
-                        <h3 className="case-subhead">{item.institution}</h3>
+                        <h3 className="case-subhead">
+                          {item.logoHref ? (
+                            <Link
+                              href={item.logoHref}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="link-underline text-navy transition-colors hover:text-burgundy"
+                            >
+                              {item.institution}
+                            </Link>
+                          ) : (
+                            item.institution
+                          )}
+                        </h3>
                         <p className="case-meta mt-1 text-muted">{item.detail}</p>
                       </div>
                     </div>

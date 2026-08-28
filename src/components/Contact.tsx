@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/ButtonLink";
+import { SectionHeading } from "@/components/SectionHeading";
 import { siteConfig } from "@/data/site";
 
 export function Contact() {
@@ -13,14 +14,12 @@ export function Contact() {
         aria-hidden="true"
       />
       <div className="container-page section-space">
-        <p className="eyebrow">Contact</p>
-        <h2 id="contact-heading" className="case-section mt-3">
-          Open to product, operations and founder-facing roles.
-        </h2>
-        <p className="case-body mt-5">
-          If my background feels relevant to what you&apos;re building, or you
-          see a good fit, I&apos;d be happy to connect.
-        </p>
+        <SectionHeading
+          id="contact-heading"
+          eyebrow="Contact"
+          title="Open to product, operations and founder-facing roles."
+          description="If my background feels relevant to what you're building, or you see a good fit, I'd be happy to connect."
+        />
 
         <div className="mt-10 flex flex-wrap gap-3">
           <ButtonLink href={siteConfig.linkedin} external>

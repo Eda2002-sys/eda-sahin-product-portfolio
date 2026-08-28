@@ -40,7 +40,7 @@ export function AnalystAiLogo({
       />
       {showWordmark ? (
         <span
-          className={`text-lg font-medium tracking-tight ${
+          className={`case-subhead tracking-tight ${
             dark ? "text-background" : "text-navy"
           }`}
         >

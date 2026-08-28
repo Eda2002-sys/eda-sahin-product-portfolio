@@ -15,7 +15,7 @@ export function Hero() {
               executable workflows.
             </h1>
 
-            <p className="case-body rise-in rise-in-delay-2 mt-5 max-w-2xl md:mt-6">
+            <p className="case-body rise-in rise-in-delay-2 mt-5 md:mt-6">
               Product thinking, user journeys, QA and engineering coordination —
               from defining the problem to testing the experience and getting it
               ready for implementation.

@@ -144,12 +144,17 @@ const componentMap: Record<
 export function CaseStudyVisual({
   visual,
   priority = false,
+  compact = false,
 }: {
   visual: ProjectVisual;
   priority?: boolean;
+  compact?: boolean;
 }) {
   if (visual.component) {
     const Component = componentMap[visual.component];
+    if (visual.component === "hautonomy-hero") {
+      return <HautonomyHeroVisual caption={visual.caption} compact={compact} />;
+    }
     return <Component caption={visual.caption} />;
   }
 

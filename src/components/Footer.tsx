@@ -12,7 +12,7 @@ export function Footer() {
         <div className="min-w-0">
           <Link
             href="/"
-            className="type-brand text-[1.35rem] transition-colors hover:text-burgundy"
+            className="type-brand transition-colors hover:text-burgundy"
           >
             {siteConfig.name}
           </Link>
@@ -21,24 +21,28 @@ export function Footer() {
           </p>
         </div>
         <nav
-          className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm"
+          className="flex flex-wrap items-center gap-x-5 gap-y-2"
           aria-label="Social and contact"
         >
-          {socialLinks.map((link) => (
+          {socialLinks.map((link) => {
+            const isExternal =
+              link.href.startsWith("http") || link.href.startsWith("mailto:");
+            return (
             <a
               key={link.label}
               href={link.href}
-              target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+              target={isExternal && !link.href.startsWith("mailto:") ? "_blank" : undefined}
               rel={
-                link.href.startsWith("mailto:")
-                  ? undefined
-                  : "noopener noreferrer"
+                isExternal && !link.href.startsWith("mailto:")
+                  ? "noopener noreferrer"
+                  : undefined
               }
-              className="link-underline text-muted transition-colors hover:text-navy"
+              className="link-underline case-meta text-muted transition-colors hover:text-navy"
             >
               {link.label}
             </a>
-          ))}
+            );
+          })}
         </nav>
         <p className="case-meta text-muted sm:text-right">
           {siteConfig.location}

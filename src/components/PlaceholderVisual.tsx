@@ -25,7 +25,7 @@ export function PlaceholderVisual({
       {/* Replace this block with real screenshots/assets when available. */}
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(111,44,58,0.04),transparent_45%),repeating-linear-gradient(0deg,transparent,transparent_23px,rgba(226,221,213,0.55)_24px),repeating-linear-gradient(90deg,transparent,transparent_23px,rgba(226,221,213,0.55)_24px)] transition-transform duration-500 group-hover:scale-[1.015]" />
       <div className="absolute inset-0 flex flex-col justify-between p-5 md:p-6">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
+        <p className="visual-kicker">
           Visual placeholder
         </p>
         <div>

@@ -89,7 +89,7 @@ export function SectionLabel({
       </div>
       {badge ? (
         <span
-          className={`rounded-sm px-2.5 py-1 text-xs ${
+          className={`rounded-sm px-2.5 py-1 visual-ui-mock ${
             dark
               ? "border border-burgundy-on-dark/45 text-burgundy-on-dark"
               : "border border-border text-muted"
@@ -126,14 +126,16 @@ export function StatStrip({
           }`}
         >
           <p
-            className={`text-[11px] uppercase tracking-[0.14em] ${
-              dark ? "text-background/50" : "text-muted"
-            }`}
+            className={
+              dark
+                ? "visual-kicker text-background/50"
+                : "visual-kicker text-muted"
+            }
           >
             {item.label}
           </p>
           <p
-            className={`mt-1 text-sm ${dark ? "text-background" : "text-navy"}`}
+            className={`mt-1 case-meta ${dark ? "text-background" : "text-navy"}`}
           >
             {item.value}
           </p>
@@ -157,7 +159,7 @@ export function PillRow({
       {pills.map((pill, index) => (
         <span
           key={pill}
-          className={`rounded-sm px-2.5 py-1 text-xs ${
+          className={`rounded-sm px-2.5 py-1 visual-ui-mock ${
             index === activeIndex
               ? dark
                 ? "bg-burgundy text-background"
@@ -183,7 +185,7 @@ export function ProblemCards({
     <div className="grid gap-4 md:grid-cols-3">
       {cards.map((card) => (
         <Panel key={card.number} className="h-full">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
+          <p className="visual-kicker">
             {card.number}
           </p>
           <h3 className="case-subhead mt-3">{card.title}</h3>
@@ -206,9 +208,11 @@ export function ApproachCards({
       {cards.map((card, index) => (
         <Panel key={card.title} dark={dark} className="h-full">
           <p
-            className={`text-[11px] uppercase tracking-[0.18em] ${
-              dark ? "text-burgundy-on-dark" : "text-burgundy"
-            }`}
+            className={
+              dark
+                ? "visual-kicker visual-kicker--on-dark"
+                : "visual-kicker"
+            }
           >
             0{index + 1}
           </p>
@@ -246,7 +250,7 @@ export function BeforeAfter({
   return (
     <div className="grid gap-4 md:grid-cols-2 md:items-stretch">
       <Panel className="h-full">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
+        <p className="visual-kicker text-muted">
           {beforeLabel}
         </p>
         <ul className="mt-4 space-y-3.5">
@@ -261,7 +265,7 @@ export function BeforeAfter({
         </ul>
       </Panel>
       <Panel dark className="h-full">
-        <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-burgundy-on-dark">
+        <p className="visual-kicker visual-kicker--on-dark">
           {afterLabel}
         </p>
         <ul className="mt-4 space-y-3.5">
@@ -289,6 +293,7 @@ export function JourneySteps({
   steps,
   columns = 4,
   dark = false,
+  highlightIndex,
 }: {
   steps: {
     number: string;
@@ -298,6 +303,7 @@ export function JourneySteps({
   }[];
   columns?: 2 | 3 | 4;
   dark?: boolean;
+  highlightIndex?: number;
 }) {
   const gridClass =
     columns === 2
@@ -308,16 +314,26 @@ export function JourneySteps({
 
   return (
     <div className={`grid gap-4 ${gridClass}`}>
-      {steps.map((step, index) => (
+      {steps.map((step, index) => {
+        const isHighlight = highlightIndex === index;
+        return (
         <Panel
           key={step.number}
           dark={dark}
-          className={`h-full ${index === 0 && !dark ? "!border-burgundy/35" : ""}`}
+          className={`h-full ${
+            isHighlight
+              ? "!border-burgundy/45 bg-burgundy/[0.04]"
+              : index === 0 && !dark && highlightIndex === undefined
+                ? "!border-burgundy/35"
+                : ""
+          }`}
         >
           <p
-            className={`text-[11px] uppercase tracking-[0.18em] ${
-              dark ? "text-burgundy-on-dark" : "text-burgundy"
-            }`}
+            className={
+              dark
+                ? "visual-kicker visual-kicker--on-dark"
+                : "visual-kicker"
+            }
           >
             {step.number}
             {step.label ? ` · ${step.label}` : ""}
@@ -337,7 +353,8 @@ export function JourneySteps({
             {step.body}
           </p>
         </Panel>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -360,7 +377,7 @@ export function BuildPillars({
     <div className={`grid gap-4 ${gridClass}`}>
       {pillars.map((pillar) => (
         <Panel key={pillar.label} className="h-full">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
+          <p className="visual-kicker">
             {pillar.label}
           </p>
           <h3 className="case-subhead mt-3">{pillar.title}</h3>

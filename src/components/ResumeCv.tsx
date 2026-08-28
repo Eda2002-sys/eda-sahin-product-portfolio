@@ -20,9 +20,11 @@ function Section({
   return (
     <section className="grid items-start gap-3 py-6 sm:grid-cols-[7.5rem_1fr] sm:gap-8 sm:py-7">
       <h2
-        className={`text-[11px] font-semibold uppercase leading-none tracking-[0.18em] ${
-          variant === "print" ? "text-[#6f2c3a]" : "text-burgundy"
-        }`}
+        className={
+          variant === "print"
+            ? "text-[11px] font-semibold uppercase leading-none tracking-[0.18em] text-[#6f2c3a]"
+            : "eyebrow leading-none"
+        }
       >
         {label}
       </h2>
@@ -48,30 +50,40 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
         }`}
       >
         <h1
-          className={`type-brand leading-none tracking-tight ${
+          className={
             isPrint
-              ? "text-[2.6rem] text-[#6f2c3a]"
-              : "text-4xl text-burgundy md:text-5xl"
-          }`}
+              ? "type-brand text-[2.6rem] leading-none tracking-tight text-[#6f2c3a]"
+              : "case-title text-burgundy"
+          }
         >
           {resumeProfile.name}
         </h1>
         <p
-          className={`mt-3 text-[11px] font-medium uppercase tracking-[0.16em] ${
-            isPrint ? "text-[#6b6f7a]" : "text-muted"
-          }`}
+          className={
+            isPrint
+              ? "mt-3 text-[11px] font-medium uppercase tracking-[0.16em] text-[#6b6f7a]"
+              : "eyebrow mt-3 text-muted"
+          }
         >
           Product · Operations · AI
         </p>
         <p
-          className={`mt-3 text-sm leading-relaxed ${
-            isPrint ? "text-[#6b6f7a]" : "text-muted"
-          }`}
+          className={
+            isPrint
+              ? "mt-3 text-sm leading-relaxed text-[#6b6f7a]"
+              : "case-meta mt-3 text-muted"
+          }
         >
           {resumeProfile.location} · {resumeProfile.phone} ·{" "}
           {resumeProfile.email}
         </p>
-        <p className={`mt-1 text-sm ${isPrint ? "text-[#6b6f7a]" : "text-muted"}`}>
+        <p
+          className={
+            isPrint
+              ? "mt-1 text-sm text-[#6b6f7a]"
+              : "case-meta mt-1 text-muted"
+          }
+        >
           {resumeProfile.github} · {resumeProfile.linkedin}
         </p>
       </header>
@@ -83,16 +95,18 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
             : "divide-border border-t-0"
         }`}
       >
-        <Section label="Contact" variant={variant}>
-          <ul
-            className={`space-y-1 text-sm ${isPrint ? "text-[#1a1f2e]" : "text-navy"}`}
-            {...{ "x-apple-data-detectors": "false" }}
-          >
-            <li>{resumeProfile.phone}</li>
-            <li>{resumeProfile.email}</li>
-            <li>{resumeProfile.location}</li>
-          </ul>
-        </Section>
+        {isPrint ? (
+          <Section label="Contact" variant={variant}>
+            <ul
+              className="space-y-1 text-sm text-[#1a1f2e]"
+              {...{ "x-apple-data-detectors": "false" }}
+            >
+              <li>{resumeProfile.phone}</li>
+              <li>{resumeProfile.email}</li>
+              <li>{resumeProfile.location}</li>
+            </ul>
+          </Section>
+        ) : null}
 
         <Section label="Experience" variant={variant}>
           <ul className="space-y-6">
@@ -100,9 +114,11 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
               <li key={`${role.company}-${role.period}`}>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <p
-                    className={`text-[15px] font-semibold tracking-tight ${
-                      isPrint ? "text-[#1a1f2e]" : "text-navy"
-                    }`}
+                    className={
+                      isPrint
+                        ? "text-[15px] font-semibold tracking-tight text-[#1a1f2e]"
+                        : "case-subhead text-navy"
+                    }
                   >
                     {role.title}
                     <span
@@ -115,16 +131,18 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
                     </span>
                   </p>
                   <p
-                    className={`text-sm font-medium ${
-                      isPrint ? "text-[#6b6f7a]" : "text-muted"
-                    }`}
+                    className={
+                      isPrint
+                        ? "text-sm font-medium text-[#6b6f7a]"
+                        : "case-meta text-muted"
+                    }
                   >
                     {role.period}
                   </p>
                 </div>
                 {role.website ? (
                   <p
-                    className={`mt-0.5 text-xs tracking-wide ${
+                    className={`case-meta mt-0.5 tracking-wide ${
                       isPrint ? "text-[#8a909c]" : "text-muted"
                     }`}
                   >
@@ -132,9 +150,11 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
                   </p>
                 ) : null}
                 <ul
-                  className={`mt-2.5 list-disc space-y-1.5 pl-4 text-sm leading-relaxed marker:text-burgundy/70 ${
-                    isPrint ? "text-[#2a3040]" : "text-muted"
-                  }`}
+                  className={
+                    isPrint
+                      ? "mt-2.5 list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-[#2a3040] marker:text-burgundy/70"
+                      : "case-meta mt-2.5 list-disc space-y-1.5 pl-4 marker:text-burgundy/70 text-muted"
+                  }
                 >
                   {role.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
@@ -152,16 +172,20 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div className="min-w-0">
                     <p
-                      className={`text-[15px] font-semibold tracking-tight ${
-                        isPrint ? "text-[#1a1f2e]" : "text-navy"
-                      }`}
+                      className={
+                        isPrint
+                          ? "text-[15px] font-semibold tracking-tight text-[#1a1f2e]"
+                          : "case-subhead text-navy"
+                      }
                     >
                       {item.institution}
                     </p>
                     <p
-                      className={`mt-0.5 text-sm ${
-                        isPrint ? "text-[#2a3040]" : "text-muted"
-                      }`}
+                      className={
+                        isPrint
+                          ? "mt-0.5 text-sm text-[#2a3040]"
+                          : "case-meta mt-0.5 text-muted"
+                      }
                     >
                       {item.detail}
                     </p>
@@ -176,9 +200,11 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
                 </div>
                 {item.notes ? (
                   <ul
-                    className={`mt-2 space-y-1 text-sm leading-relaxed ${
-                      isPrint ? "text-[#6b6f7a]" : "text-muted"
-                    }`}
+                    className={
+                      isPrint
+                        ? "mt-2 space-y-1 text-sm leading-relaxed text-[#6b6f7a]"
+                        : "case-meta mt-2 space-y-1 text-muted"
+                    }
                   >
                     {item.notes.map((note) => (
                       <li key={note.text}>{note.text}</li>
@@ -192,9 +218,11 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
 
         <Section label="Languages" variant={variant}>
           <ul
-            className={`flex flex-wrap gap-x-6 gap-y-1 text-sm ${
-              isPrint ? "text-[#1a1f2e]" : "text-navy"
-            }`}
+            className={
+              isPrint
+                ? "flex flex-wrap gap-x-6 gap-y-1 text-sm text-[#1a1f2e]"
+                : "case-meta flex flex-wrap gap-x-6 gap-y-1 text-navy"
+            }
           >
             {resumeProfile.languages.map((entry) => (
               <li key={entry.language}>

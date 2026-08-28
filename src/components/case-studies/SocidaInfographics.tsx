@@ -30,7 +30,7 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
                 key={brand}
                 className={`shrink-0 rounded-sm px-2 py-1 text-[9px] font-medium uppercase tracking-[0.1em] ${
                   index === 0
-                    ? "bg-burgundy/15 text-[#54222e]"
+                    ? "bg-burgundy/15 text-burgundy-ink"
                     : "border border-border-strong text-navy/75"
                 }`}
               >
@@ -43,7 +43,7 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
         <div className="space-y-2.5 bg-background px-3 py-3.5">
           <div className="ml-auto max-w-[86%] rounded-sm rounded-tr-none border border-border bg-surface px-2.5 py-2">
             <div className="flex items-center gap-2 text-[11px] text-navy/70">
-              <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-burgundy/15 text-[9px] text-[#54222e]">
+              <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-burgundy/15 text-[9px] text-burgundy-ink">
                 ▶
               </span>
               <span className="h-3.5 flex-1 rounded-sm bg-border-strong/80" />
@@ -65,7 +65,7 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
           </div>
 
           <div className="max-w-[94%] rounded-sm rounded-tl-none border border-border bg-surface-elevated px-2.5 py-2.5">
-            <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-[#54222e]">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-burgundy-ink">
               Approved source · Brand A
             </p>
             <p className="mt-1.5 text-[12px] leading-snug text-navy">
@@ -74,7 +74,7 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
             </p>
             <div className="mt-2.5 space-y-1.5 border-t border-border pt-2.5">
               <div className="flex items-center gap-2.5 rounded-sm border border-border px-2 py-1.5">
-                <span className="shrink-0 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#54222e]">
+                <span className="shrink-0 text-[9px] font-semibold uppercase tracking-[0.12em] text-burgundy-ink">
                   PDF
                 </span>
                 <div className="min-w-0">
@@ -85,7 +85,7 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
                 </div>
               </div>
               <div className="flex items-center gap-2.5 rounded-sm border border-border px-2 py-1.5">
-                <span className="shrink-0 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#54222e]">
+                <span className="shrink-0 text-[9px] font-semibold uppercase tracking-[0.12em] text-burgundy-ink">
                   Loop
                 </span>
                 <div className="min-w-0">
@@ -178,11 +178,11 @@ export function SocidaApproachVisual({ caption }: { caption?: string }) {
       <div className="grid gap-4 md:grid-cols-3">
         {steps.map((step) => (
           <Panel key={step.number} className="h-full">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
+            <p className="visual-kicker">
               {step.number}
             </p>
             <h3 className="case-subhead mt-3">{step.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted">{step.body}</p>
+            <p className="case-meta mt-3 text-muted">{step.body}</p>
           </Panel>
         ))}
       </div>
@@ -215,11 +215,11 @@ export function SocidaBuildVisual({ caption }: { caption?: string }) {
       <div className="grid gap-4 md:grid-cols-3">
         {pillars.map((pillar) => (
           <Panel key={pillar.label} className="h-full">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy">
+            <p className="visual-kicker">
               {pillar.label}
             </p>
             <h3 className="case-subhead mt-3">{pillar.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.body}</p>
+            <p className="case-meta mt-3 text-muted">{pillar.body}</p>
           </Panel>
         ))}
       </div>
@@ -267,14 +267,14 @@ export function SocidaJourneyVisual({ caption }: { caption?: string }) {
       <Panel dark>
         <div className="flex flex-wrap items-end justify-between gap-3 border-b border-background/15 pb-5">
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-burgundy-on-dark">
+            <p className="visual-kicker visual-kicker--on-dark">
               Company knowledge · WhatsApp
             </p>
             <p className="case-subhead mt-2 !text-background">
               Operating loop
             </p>
           </div>
-          <p className="pb-0.5 text-xs text-background/55">employee + manager</p>
+          <p className="visual-kicker visual-kicker--on-dark text-background/55">employee + manager</p>
         </div>
 
         <ol className="mt-6 grid gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-5">
@@ -284,17 +284,17 @@ export function SocidaJourneyVisual({ caption }: { caption?: string }) {
               className="flex h-full flex-col rounded-sm border border-background/12 bg-background/[0.04] p-4 md:p-5"
             >
               <div className="flex items-center justify-between gap-3">
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-burgundy-on-dark">
+                <p className="visual-kicker visual-kicker--on-dark">
                   {step.number}
                 </p>
-                <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-background/70">
+                <span className="visual-kicker visual-kicker--on-dark text-background/70">
                   {step.role}
                 </span>
               </div>
               <h3 className="case-subhead mt-3.5 !text-background">
                 {step.title}
               </h3>
-              <p className="mt-2.5 flex-1 text-sm leading-relaxed text-background/80">
+              <p className="case-meta mt-2.5 flex-1 text-background/80">
                 {step.body}
               </p>
             </li>
@@ -322,7 +322,7 @@ export function SocidaGovernanceVisual({ caption }: { caption?: string }) {
             <div className="mt-4 space-y-3">
               <div className="visual-inset visual-inset--soft px-3 py-2.5">
                 <div className="flex items-center gap-2 text-[11px] text-navy/70">
-                  <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-burgundy/15 text-[9px] text-[#54222e]">
+                  <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-burgundy/15 text-[9px] text-burgundy-ink">
                     ▶
                   </span>
                   <span className="h-3 flex-1 rounded-sm bg-border-strong/80" />
@@ -348,11 +348,11 @@ export function SocidaGovernanceVisual({ caption }: { caption?: string }) {
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
                   <p className="visual-kicker">PDF</p>
-                  <p className="mt-1.5 text-sm font-medium text-navy">
+                  <p className="case-meta mt-1.5 text-navy">
                     Financing_routes.pdf
                   </p>
                 </div>
-                <span className="shrink-0 rounded-sm bg-burgundy/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-burgundy">
+                <span className="shrink-0 visual-kicker rounded-sm bg-burgundy/10 px-2 py-0.5 text-burgundy">
                   Approved
                 </span>
               </div>
@@ -364,14 +364,14 @@ export function SocidaGovernanceVisual({ caption }: { caption?: string }) {
                 ].map(([label, value]) => (
                   <div
                     key={label}
-                    className="flex items-center justify-between gap-3 text-[12px]"
+                    className="flex items-center justify-between gap-3 case-meta"
                   >
                     <dt className="text-muted">{label}</dt>
                     <dd className="text-navy">{value}</dd>
                   </div>
                 ))}
               </dl>
-              <p className="mt-3 border-t border-border pt-3 text-[12px] leading-snug text-muted">
+              <p className="case-meta mt-3 border-t border-border pt-3 leading-snug text-muted">
                 Relevant section: “24-month financing available for Model X when
                 eligibility criteria are met.”
               </p>
@@ -382,18 +382,18 @@ export function SocidaGovernanceVisual({ caption }: { caption?: string }) {
             <p className="visual-kicker visual-kicker--on-dark">
               Approved answer
             </p>
-            <p className="mt-4 text-[13px] leading-relaxed text-background/90">
+            <p className="case-meta mt-4 leading-relaxed text-background/90">
               Yes — for Model X, the approved 24-month financing route is
               available when eligibility criteria are met.
             </p>
-            <p className="mt-4 text-[11px] text-burgundy-on-dark">
+            <p className="visual-kicker visual-kicker--on-dark mt-4">
               Source · Financing_routes.pdf · p.4
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {["Open document", "Ask follow-up"].map((action) => (
                 <span
                   key={action}
-                  className="rounded-sm border border-background/20 px-2.5 py-1 text-[11px] text-background/75"
+                  className="tag-chip rounded-sm border border-background/20 px-2.5 py-1 text-background/75"
                 >
                   {action}
                 </span>
@@ -443,13 +443,13 @@ export function SocidaDemandVisual({ caption }: { caption?: string }) {
       <Panel>
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
+            <p className="visual-kicker">
               Demand signal
             </p>
             <h3 className="case-subhead mt-2">
               Workforce questions over time
             </h3>
-            <p className="mt-2 text-sm text-muted">
+            <p className="case-meta mt-2 text-muted">
               Illustrative product pattern · ~300 employees · WhatsApp
             </p>
 
@@ -472,7 +472,7 @@ export function SocidaDemandVisual({ caption }: { caption?: string }) {
                 />
               ))}
             </div>
-            <div className="mt-3 flex items-center justify-between text-[11px] text-muted">
+            <div className="mt-3 flex items-center justify-between case-meta text-muted">
               <span>Less</span>
               <span>More</span>
             </div>
@@ -480,13 +480,13 @@ export function SocidaDemandVisual({ caption }: { caption?: string }) {
 
           <div className="lg:col-span-5">
             <div className="rounded-sm border border-border bg-background p-4">
-              <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
+              <p className="visual-kicker">
                 Selected spike
               </p>
               <p className="case-subhead mt-2">
                 Financing &amp; eligibility leads the day
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-muted">
+              <ul className="mt-4 space-y-2 case-meta text-muted">
                 <li className="flex justify-between gap-3">
                   <span>Financing &amp; eligibility</span>
                   <span className="text-navy">High</span>
@@ -503,12 +503,12 @@ export function SocidaDemandVisual({ caption }: { caption?: string }) {
             </div>
 
             <div className="mt-4 space-y-3">
-              <p className="text-[11px] uppercase tracking-[0.16em] text-muted">
+              <p className="visual-kicker text-muted">
                 Year by topic
               </p>
               {topics.map((topic) => (
                 <div key={topic.label}>
-                  <div className="mb-1 flex justify-between gap-3 text-xs text-muted">
+                  <div className="mb-1 flex justify-between gap-3 case-meta text-muted">
                     <span>{topic.label}</span>
                     <span>{topic.value}%</span>
                   </div>
@@ -525,14 +525,14 @@ export function SocidaDemandVisual({ caption }: { caption?: string }) {
         </div>
 
         <div className="mt-8 rounded-sm border border-burgundy/25 bg-burgundy/[0.04] p-4 md:p-5">
-          <p className="text-[11px] uppercase tracking-[0.16em] text-burgundy">
+          <p className="visual-kicker">
             Manager action
           </p>
-          <p className="mt-2 text-sm leading-relaxed text-navy md:text-base">
+          <p className="case-body mt-2 text-navy">
             Reinforce trade-in-valuation guidance for teams with the highest
             question volume.
           </p>
-          <p className="mt-2 text-sm text-muted">
+          <p className="case-meta mt-2 text-muted">
             Demand becomes an input for reinforcement, source updates, and
             operational follow-up.
           </p>
@@ -551,7 +551,7 @@ export function SocidaOutcomeVisual({ caption }: { caption?: string }) {
   ];
   const after = [
     "Approved answers, documents, and continuous reinforcement in WhatsApp",
-    "Lookup, reinforcement and source improvement in one continuous loop",
+    "Recurring demand became visible to knowledge owners, creating a clear correction path.",
     "Managers could reinforce topics, review flags, and update sources",
   ];
 
@@ -559,14 +559,14 @@ export function SocidaOutcomeVisual({ caption }: { caption?: string }) {
     <figure>
       <div className="grid gap-4 md:grid-cols-2 md:items-stretch">
         <Panel className="h-full">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
+          <p className="visual-kicker text-muted">
             Before
           </p>
           <ul className="mt-5 space-y-4">
             {before.map((item) => (
               <li
                 key={item}
-                className="flex gap-3 text-sm leading-relaxed text-muted"
+                className="case-meta flex gap-3 text-muted"
               >
                 <span className="mt-1.5 text-burgundy" aria-hidden="true">
                   ·
@@ -577,14 +577,14 @@ export function SocidaOutcomeVisual({ caption }: { caption?: string }) {
           </ul>
         </Panel>
         <Panel dark className="h-full">
-          <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-burgundy-on-dark">
+          <p className="visual-kicker visual-kicker--on-dark">
             After
           </p>
           <ul className="mt-5 space-y-4">
             {after.map((item) => (
               <li
                 key={item}
-                className="flex gap-3 text-sm leading-relaxed text-background/85"
+                className="case-meta flex gap-3 text-background/85"
               >
                 <span className="mt-1.5 text-burgundy-on-dark" aria-hidden="true">
                   ·

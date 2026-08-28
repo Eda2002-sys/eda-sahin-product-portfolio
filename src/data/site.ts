@@ -18,12 +18,15 @@ export const socialLinks = [
   { label: "LinkedIn", href: siteConfig.linkedin },
   { label: "GitHub", href: siteConfig.github },
   { label: "Email", href: `mailto:${siteConfig.email}` },
+  { label: "Resume", href: siteConfig.resumePath },
 ] as const;
 
 export const navLinks = [
   { label: "Work", href: "/#work" },
-  { label: "About", href: "/#about" },
+  { label: "How I work", href: "/#how-i-work" },
   { label: "Experience", href: "/#experience" },
   { label: "Education", href: "/#education" },
+  { label: "About", href: "/#about" },
+  { label: "Capabilities", href: "/#skills" },
   { label: "Contact", href: "/#contact" },
 ] as const;

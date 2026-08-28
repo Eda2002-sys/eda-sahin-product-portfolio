@@ -85,7 +85,11 @@ export function ProductSkills() {
       aria-labelledby="skills-heading"
     >
       <div className="container-page section-space">
-        <SectionHeading id="skills-heading" title="Capabilities" />
+        <SectionHeading
+          id="skills-heading"
+          title="Capabilities"
+          description="How I create value across ambiguous systems, real workflows and cross-functional delivery."
+        />
 
         <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {skillGroups.map((group) => (

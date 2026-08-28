@@ -36,7 +36,7 @@ export function AnalystAiHeroVisual({ caption }: { caption?: string }) {
       <Panel className="!p-0 overflow-visible">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-3.5 py-2.5 @[42rem]:gap-3 @[42rem]:px-6 @[42rem]:py-3.5">
           <AnalystAiLogo size="sm" showWordmark />
-          <span className="text-[11px] text-muted @[42rem]:text-xs">
+          <span className="case-meta text-muted">
             Enterprise · DDQ · Data room
           </span>
         </div>
@@ -44,31 +44,31 @@ export function AnalystAiHeroVisual({ caption }: { caption?: string }) {
         {/* Stack on homepage covers; side-by-side when the figure itself is wide */}
         <div className="grid @[42rem]:grid-cols-12">
           <div className="border-b border-border p-3.5 @[42rem]:col-span-7 @[42rem]:border-b-0 @[42rem]:border-r @[42rem]:p-6">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#54222e] @[42rem]:text-[11px]">
+            <p className="visual-kicker">
               Document Q&A
             </p>
             <h3 className="case-subhead mt-1.5">
               Answer with evidence attached
             </h3>
-            <p className="mt-1.5 hidden text-sm text-muted @[42rem]:block">
+            <p className="case-meta mt-1.5 hidden text-muted @[42rem]:block">
               Investment teams need traceable outputs, not fluent summaries
               alone.
             </p>
             <div className="mt-3 space-y-2.5 @[42rem]:mt-5 @[42rem]:space-y-3">
               <div className="rounded-sm border border-border bg-background px-3 py-2.5 @[42rem]:px-4 @[42rem]:py-3">
-                <p className="text-[10px] uppercase tracking-[0.12em] text-muted @[42rem]:text-[11px]">
+                <p className="visual-kicker text-muted">
                   Question
                 </p>
-                <p className="mt-1.5 text-[13px] leading-snug text-navy @[42rem]:mt-2 @[42rem]:text-sm @[42rem]:leading-relaxed">
+                <p className="case-meta mt-1.5 leading-snug text-navy @[42rem]:mt-2">
                   What are the key revenue drivers and margin risks in the
                   management presentation?
                 </p>
               </div>
               <div className="rounded-sm border border-burgundy/30 bg-burgundy/[0.04] px-3 py-2.5 @[42rem]:px-4 @[42rem]:py-3">
-                <p className="text-[10px] uppercase tracking-[0.12em] text-burgundy @[42rem]:text-[11px]">
+                <p className="visual-kicker text-burgundy">
                   Source-linked answer
                 </p>
-                <p className="mt-1.5 text-[13px] leading-snug text-navy @[42rem]:mt-2 @[42rem]:text-sm @[42rem]:leading-relaxed">
+                <p className="case-meta mt-1.5 leading-snug text-navy @[42rem]:mt-2">
                   <span className="@[42rem]:hidden">
                     Enterprise expansion drives growth; margin pressure from
                     implementation cost and vendor concentration.
@@ -94,7 +94,7 @@ export function AnalystAiHeroVisual({ caption }: { caption?: string }) {
           </div>
 
           <div className="bg-navy p-3.5 text-background @[42rem]:col-span-5 @[42rem]:p-6">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-burgundy-on-dark @[42rem]:text-[11px]">
+            <p className="visual-kicker visual-kicker--on-dark">
               Citation panel
             </p>
             <h3 className="case-subhead mt-1.5 !text-background">
@@ -109,20 +109,20 @@ export function AnalystAiHeroVisual({ caption }: { caption?: string }) {
                   }`}
                 >
                   <div className="flex items-start justify-between gap-2">
-                    <p className="text-[12px] leading-snug text-background/80 @[42rem]:text-xs @[42rem]:leading-relaxed">
+                    <p className="case-meta leading-snug text-background/80">
                       {item.source}
                     </p>
-                    <span className="shrink-0 text-[10px] uppercase tracking-[0.12em] text-burgundy-on-dark">
+                    <span className="shrink-0 visual-kicker visual-kicker--on-dark">
                       {item.status}
                     </span>
                   </div>
-                  <p className="mt-1.5 text-[13px] leading-snug text-background/70 @[42rem]:mt-2 @[42rem]:text-sm @[42rem]:leading-relaxed">
+                  <p className="case-meta mt-1.5 leading-snug text-background/70 @[42rem]:mt-2">
                     {item.excerpt}
                   </p>
                 </div>
               ))}
             </div>
-            <p className="mt-3 hidden text-xs leading-relaxed text-background/55 @[42rem]:mt-4 @[42rem]:block">
+            <p className="case-meta mt-3 hidden leading-relaxed text-background/55 @[42rem]:mt-4 @[42rem]:block">
               Source validation tested as core behaviour, not a secondary display
               detail.
             </p>
@@ -224,6 +224,7 @@ export function AnalystAiJourneyVisual({ caption }: { caption?: string }) {
     <figure>
       <JourneySteps
         columns={3}
+        highlightIndex={2}
         steps={[
           {
             number: "01",
@@ -269,7 +270,7 @@ export function AnalystAiWorkspaceVisual({ caption }: { caption?: string }) {
         <div className="border-b border-border px-5 py-4 md:px-7">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <AnalystAiLogo size="sm" showWordmark />
-            <span className="rounded-sm border border-border px-2.5 py-1 text-xs text-muted">
+            <span className="tag-chip rounded-sm border border-border px-2.5 py-1 text-muted">
               Enterprise pattern
             </span>
           </div>
@@ -289,10 +290,10 @@ export function AnalystAiWorkspaceVisual({ caption }: { caption?: string }) {
         />
         <div className="grid lg:grid-cols-12">
           <aside className="border-b border-border bg-surface p-5 lg:col-span-3 lg:border-b-0 lg:border-r md:p-6">
-            <p className="text-[11px] uppercase tracking-[0.14em] text-burgundy">
+            <p className="visual-kicker">
               DDQ sections
             </p>
-            <nav className="mt-4 space-y-1 text-sm">
+            <nav className="mt-4 space-y-1 case-meta">
               {[
                 ["Commercial", "Complete"],
                 ["Financial", "In review"],
@@ -306,7 +307,7 @@ export function AnalystAiWorkspaceVisual({ caption }: { caption?: string }) {
                   }`}
                 >
                   <span>{section}</span>
-                  <span className="text-[10px] uppercase tracking-[0.12em]">
+                  <span className="visual-kicker">
                     {status}
                   </span>
                 </div>
@@ -314,18 +315,18 @@ export function AnalystAiWorkspaceVisual({ caption }: { caption?: string }) {
             </nav>
           </aside>
           <div className="p-5 lg:col-span-5 md:p-7">
-            <p className="text-[11px] uppercase tracking-[0.14em] text-muted">
+            <p className="visual-kicker text-muted">
               Active question
             </p>
             <p className="case-subhead mt-2">
               Customer concentration above 20%?
             </p>
             <div className="mt-4 rounded-sm border border-border bg-background p-4">
-              <p className="text-sm text-navy">
+              <p className="case-meta text-navy">
                 Top three customers represent ~38% of revenue per management
                 accounts: concentration risk flagged.
               </p>
-              <p className="mt-3 text-[11px] text-burgundy">
+              <p className="visual-kicker mt-3 text-burgundy">
                 Source · Financial appendix p.7 · Revenue note p.3
               </p>
             </div>
@@ -333,7 +334,7 @@ export function AnalystAiWorkspaceVisual({ caption }: { caption?: string }) {
               {["Assign task", "Add to report", "Flag for IC"].map((action) => (
                 <span
                   key={action}
-                  className="rounded-sm border border-border px-2.5 py-1 text-xs text-muted"
+                  className="tag-chip rounded-sm border border-border px-2.5 py-1 text-muted"
                 >
                   {action}
                 </span>
@@ -341,10 +342,10 @@ export function AnalystAiWorkspaceVisual({ caption }: { caption?: string }) {
             </div>
           </div>
           <div className="border-t border-border bg-navy p-5 text-background lg:col-span-4 lg:border-t-0 lg:border-l md:p-7">
-            <p className="text-[11px] uppercase tracking-[0.14em] text-burgundy-on-dark">
+            <p className="visual-kicker visual-kicker--on-dark">
               Open tasks
             </p>
-            <ul className="mt-4 space-y-2 text-sm">
+            <ul className="mt-4 space-y-2 case-meta">
               {[
                 "Verify customer contract terms · Legal",
                 "Cross-check AR aging · Financial",

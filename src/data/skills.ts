@@ -11,46 +11,46 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Product",
+    title: "Product judgement",
     items: [
-      { label: "Product Discovery" },
-      { label: "Product Analysis" },
-      { label: "Feature Prioritisation" },
-      { label: "User Journeys" },
-      {
-        label: "Product Operations",
-        proof:
-          "Kept product behaviour aligned across roles and surfaces — from intake and routing rules to review and handoff points.",
-      },
+      { label: "User journeys" },
+      { label: "Workflow design" },
+      { label: "Feature prioritisation" },
       {
         label: "Product QA",
         proof:
           "Tested end-to-end product journeys across patient, admin and WhatsApp flows; documented expected vs actual behaviour and retested fixes with engineering.",
       },
-      { label: "Requirements" },
     ],
   },
   {
-    title: "Execution",
+    title: "Execution discipline",
     items: [
       {
-        label: "Engineering Coordination",
-        proof:
-          "Turned product and client issues into clear engineering handoffs, then followed them through implementation and retesting.",
-      },
-      {
-        label: "Issue Documentation",
+        label: "Issue documentation",
         proof:
           "Captured reproducible product issues with context, expected behaviour and priority so engineering could act without re-explaining the problem.",
       },
-      { label: "Acceptance Criteria" },
+      { label: "Acceptance criteria" },
+      {
+        label: "Engineering coordination",
+        proof:
+          "Turned product and client issues into clear engineering handoffs, then followed them through implementation and retesting.",
+      },
       { label: "Retesting" },
-      { label: "Implementation" },
-      { label: "Stakeholder Management" },
     ],
   },
   {
-    title: "AI & Tools",
+    title: "Operating range",
+    items: [
+      { label: "Rapid learning" },
+      { label: "Ambiguous problem solving" },
+      { label: "Multi-workstream ownership" },
+      { label: "Founder support" },
+    ],
+  },
+  {
+    title: "Technical fluency",
     items: [
       {
         label: "Cursor",
@@ -65,30 +65,6 @@ export const skillGroups: SkillGroup[] = [
       { label: "Claude Code" },
       { label: "GitHub" },
       { label: "Supabase" },
-      { label: "Vercel" },
-      { label: "Railway" },
-      { label: "ElevenLabs" },
-    ],
-  },
-  {
-    title: "Operating Range",
-    items: [
-      { label: "Rapid Learning" },
-      { label: "Ambiguous Problem Solving" },
-      { label: "Multi-workstream Ownership" },
-      { label: "Cross-functional Execution" },
-      {
-        label: "Client Implementation",
-        proof:
-          "Turned client sessions and onboarding friction into product issues and priorities before demos drifted from the shipped product.",
-      },
-      { label: "Founder Support" },
-      { label: "Market Research" },
-      {
-        label: "Due Diligence",
-        proof:
-          "Worked across live M&A processes, data rooms, DDQs and source-linked investment workflows.",
-      },
     ],
   },
 ];

@@ -22,10 +22,6 @@ export const additionalProducts: AdditionalProduct[] = [
     summary: "Investment matching across 6,000+ entities.",
   },
   {
-    name: "Investment Deck Generator",
-    summary: "Deal data into teasers, decks and investment materials.",
-  },
-  {
     name: "Deep Market Research",
     summary: "Multi-source research with source-linked outputs.",
   },

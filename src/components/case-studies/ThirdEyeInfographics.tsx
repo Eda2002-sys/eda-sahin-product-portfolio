@@ -14,6 +14,7 @@ function InsightCard({
   branches,
   owner,
   nextAction,
+  trend,
 }: {
   tag: string;
   tagTone?: "burgundy" | "amber" | "green";
@@ -21,6 +22,11 @@ function InsightCard({
   branches: string;
   owner: string;
   nextAction: string;
+  trend?: {
+    delta: string;
+    label: string;
+    values: number[];
+  };
 }) {
   const border =
     tagTone === "amber"
@@ -41,35 +47,61 @@ function InsightCard({
     >
       <div className="flex items-center gap-2">
         <span className={`h-1.5 w-1.5 rounded-full ${dot}`} aria-hidden="true" />
-        <span className="text-[10px] uppercase tracking-[0.14em] text-muted">
+        <span className="visual-kicker text-muted">
           {tag}
         </span>
       </div>
-      <dl className="mt-4 space-y-3 text-sm">
+      {trend ? (
+        <div className="mt-4 rounded-sm border border-amber-600/15 bg-amber-600/[0.05] px-3 py-2.5">
+          <div className="flex items-end justify-between gap-3">
+            <div>
+              <p className="case-meta mt-1 text-burgundy">{trend.delta}</p>
+              <p className="case-meta mt-0.5 text-muted">
+                {trend.label}
+              </p>
+            </div>
+            <svg
+              viewBox="0 0 72 24"
+              className="h-6 w-[4.5rem] shrink-0 text-amber-700"
+              aria-hidden="true"
+            >
+              <polyline
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                points={trend.values
+                  .map((value, index) => {
+                    const x = (index / (trend.values.length - 1)) * 72;
+                    const min = Math.min(...trend.values);
+                    const max = Math.max(...trend.values);
+                    const y = 22 - ((value - min) / (max - min || 1)) * 18;
+                    return `${x},${y}`;
+                  })
+                  .join(" ")}
+              />
+            </svg>
+          </div>
+        </div>
+      ) : null}
+      <dl className="mt-4 space-y-3">
         <div>
-          <dt className="text-[10px] uppercase tracking-[0.12em] text-muted">
-            Issue
-          </dt>
-          <dd className="mt-1 text-navy">{issue}</dd>
+          <dt className="visual-kicker text-muted">Issue</dt>
+          <dd className="case-meta mt-1 text-navy">{issue}</dd>
         </div>
         <div>
-          <dt className="text-[10px] uppercase tracking-[0.12em] text-muted">
-            Affected branches
-          </dt>
-          <dd className="mt-1 text-navy">{branches}</dd>
+          <dt className="visual-kicker text-muted">Affected branches</dt>
+          <dd className="case-meta mt-1 text-navy">{branches}</dd>
         </div>
         <div>
-          <dt className="text-[10px] uppercase tracking-[0.12em] text-muted">
-            Owner
-          </dt>
-          <dd className="mt-1 text-navy">{owner}</dd>
+          <dt className="visual-kicker text-muted">Owner</dt>
+          <dd className="case-meta mt-1 text-navy">{owner}</dd>
         </div>
       </dl>
       <div className="mt-4 border-t border-border pt-3">
-        <p className="text-[10px] uppercase tracking-[0.12em] text-muted">
-          Next action
-        </p>
-        <p className="mt-1 text-sm text-burgundy">{nextAction}</p>
+        <p className="visual-kicker text-muted">Next action</p>
+        <p className="case-meta mt-1 text-burgundy">{nextAction}</p>
       </div>
     </div>
   );
@@ -87,13 +119,13 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
     <figure className="@container min-w-0">
       <Panel className="!p-0 overflow-visible">
         <div className="border-b border-border px-4 py-3 @[42rem]:px-6 @[42rem]:py-4">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#54222e]">
+          <p className="visual-kicker">
             Operating loop
           </p>
           <h3 className="case-subhead mt-1.5">
             Frontline updates → manager actions
           </h3>
-          <p className="mt-1.5 hidden text-sm text-muted @[42rem]:block">
+          <p className="case-meta mt-1.5 hidden text-muted @[42rem]:block">
             WhatsApp check-ins become daily briefs, signals and next actions.
           </p>
         </div>
@@ -101,7 +133,7 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
         {/* Stack on homepage covers; 3-col only when the figure itself is wide */}
         <div className="grid gap-0 @[42rem]:grid-cols-12">
           <div className="border-b border-border p-3.5 @[42rem]:col-span-4 @[42rem]:border-b-0 @[42rem]:border-r @[42rem]:p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#54222e]">
+            <p className="visual-kicker">
               Frontline updates
             </p>
             <ul className="mt-2.5 space-y-1.5 @[42rem]:mt-3 @[42rem]:space-y-2">
@@ -116,13 +148,13 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
                 </li>
               ))}
             </ul>
-            <p className="mt-2 text-[11px] leading-snug text-muted @[42rem]:mt-3">
+            <p className="mt-2 case-meta leading-snug text-muted @[42rem]:mt-3">
               2–3 shift-close questions · no new app
             </p>
           </div>
 
           <div className="flex flex-row items-center gap-3 border-b border-border bg-surface px-3.5 py-3 @[42rem]:col-span-3 @[42rem]:flex-col @[42rem]:justify-center @[42rem]:gap-0 @[42rem]:border-b-0 @[42rem]:border-r @[42rem]:px-4 @[42rem]:py-5">
-            <p className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#54222e] @[42rem]:text-[11px]">
+            <p className="shrink-0 visual-kicker">
               Synthesis
             </p>
             <div className="relative flex h-10 w-10 shrink-0 items-center justify-center @[42rem]:my-4 @[42rem]:h-16 @[42rem]:w-16">
@@ -139,23 +171,23 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
                 aria-hidden="true"
               />
             </div>
-            <p className="min-w-0 text-[11px] leading-snug text-muted @[42rem]:max-w-[12rem] @[42rem]:text-center @[42rem]:text-xs">
+            <p className="min-w-0 case-meta leading-snug text-muted @[42rem]:max-w-[12rem] @[42rem]:text-center">
               Patterns grouped · owners assigned · exceptions flagged
             </p>
           </div>
 
           <div className="bg-navy p-3.5 text-background @[42rem]:col-span-5 @[42rem]:p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-burgundy-on-dark">
+            <p className="visual-kicker visual-kicker--on-dark">
               Manager-ready
             </p>
             <div className="mt-2.5 rounded-sm border border-background/15 bg-background/5 p-3 @[42rem]:mt-3 @[42rem]:p-3.5">
-              <span className="rounded-sm bg-burgundy px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.12em]">
+              <span className="visual-kicker visual-kicker--on-dark rounded-sm bg-burgundy px-2 py-0.5">
                 Staffing risk
               </span>
-              <p className="mt-2 text-base leading-snug text-background @[42rem]:mt-2.5 @[42rem]:text-lg">
+              <p className="case-subhead mt-2 !text-background @[42rem]:mt-2.5">
                 Branch 4 thin next Friday: 3 overlapping leave requests
               </p>
-              <dl className="mt-2.5 space-y-1.5 text-[13px] @[42rem]:mt-3 @[42rem]:space-y-2 @[42rem]:text-sm">
+              <dl className="mt-2.5 space-y-1.5 case-meta @[42rem]:mt-3 @[42rem]:space-y-2">
                 <div className="flex justify-between gap-3 border-b border-background/10 pb-1.5">
                   <dt className="text-background/60">Owner</dt>
                   <dd>HR Ops</dd>
@@ -175,7 +207,7 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
               ].map((item) => (
                 <p
                   key={item}
-                  className="rounded-sm border border-background/10 px-2.5 py-1.5 text-[11px] leading-snug text-background/75"
+                  className="rounded-sm border border-background/10 px-2.5 py-1.5 case-meta leading-snug text-background/75"
                 >
                   {item}
                 </p>
@@ -209,7 +241,7 @@ export function ThirdEyeProblemVisual({ caption }: { caption?: string }) {
       <Panel className="!p-0 overflow-hidden">
         <div className="grid md:grid-cols-2">
           <div className="border-b border-border bg-surface/60 p-5 md:border-b-0 md:border-r md:p-7">
-            <p className="text-[11px] uppercase tracking-[0.14em] text-muted">
+            <p className="visual-kicker text-muted">
               Before
             </p>
             <p className="case-subhead mt-2">Typical corporate tools</p>
@@ -229,10 +261,10 @@ export function ThirdEyeProblemVisual({ caption }: { caption?: string }) {
           </div>
 
           <div className="relative bg-burgundy/[0.03] p-5 md:p-7">
-            <span className="absolute right-5 top-5 rounded-sm border border-burgundy/40 px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-burgundy">
+            <span className="absolute right-5 top-5 visual-kicker rounded-sm border border-burgundy/40 px-2 py-0.5 text-burgundy">
               Third Eye
             </span>
-            <p className="text-[11px] uppercase tracking-[0.14em] text-muted">
+            <p className="visual-kicker text-muted">
               After
             </p>
             <p className="case-subhead mt-2">Manager-ready loop</p>
@@ -292,25 +324,25 @@ export function ThirdEyeApproachVisual({ caption }: { caption?: string }) {
           <div className="border-b border-border p-5 lg:col-span-5 lg:border-b-0 lg:border-r md:p-6">
             <div className="overflow-hidden rounded-[1.2rem] border border-border bg-background">
               <div className="border-b border-border px-4 py-2.5">
-                <p className="text-xs text-muted">Shift-close check-in</p>
+                <p className="visual-kicker text-muted">Shift-close check-in</p>
               </div>
               <div className="space-y-3 px-3 py-4">
                 <div className="max-w-[92%] rounded-sm rounded-tl-none border border-border bg-surface-elevated px-3 py-2.5">
-                  <p className="text-[12px] leading-relaxed text-navy">
+                  <p className="visual-ui-mock leading-relaxed text-navy">
                     What customer question came up most today?
                   </p>
                 </div>
                 <div className="ml-auto max-w-[88%] rounded-sm rounded-tr-none border border-emerald-900/10 bg-emerald-950/[0.05] px-3 py-2.5">
-                  <p className="text-[12px] leading-relaxed text-navy">
+                  <p className="visual-ui-mock leading-relaxed text-navy">
                     Insurance: whether it covers replacement parts on this
                     model.
                   </p>
-                  <p className="mt-1 text-right text-[10px] text-muted">
+                  <p className="visual-ui-mock mt-1 text-right text-muted">
                     Sarah · Branch 2
                   </p>
                 </div>
                 <div className="max-w-[92%] rounded-sm rounded-tl-none border border-border bg-surface-elevated px-3 py-2.5">
-                  <p className="text-[12px] leading-relaxed text-navy">
+                  <p className="visual-ui-mock leading-relaxed text-navy">
                     Got it. Anything blocking service recovery before close?
                   </p>
                 </div>
@@ -329,7 +361,7 @@ export function ThirdEyeApproachVisual({ caption }: { caption?: string }) {
               pills={["Automotive", "Healthcare", "Field ops"]}
               activeIndex={0}
             />
-            <p className="mt-5 text-[11px] uppercase tracking-[0.14em] text-burgundy">
+            <p className="mt-5 visual-kicker">
               Daily operating brief
             </p>
             <ul className="mt-4 space-y-3">
@@ -343,8 +375,8 @@ export function ThirdEyeApproachVisual({ caption }: { caption?: string }) {
                   }`}
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <p className="text-sm text-navy">{item.title}</p>
-                    <span className="shrink-0 text-xs text-muted">{item.meta}</span>
+                    <p className="case-meta text-navy">{item.title}</p>
+                    <span className="shrink-0 case-meta text-muted">{item.meta}</span>
                   </div>
                 </li>
               ))}
@@ -388,13 +420,13 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
         <div className="border-b border-background/15 px-5 py-4 md:px-7">
           <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.18em] text-burgundy-on-dark">
+              <p className="visual-kicker visual-kicker--on-dark">
                 Pilot format
               </p>
               <h3 className="case-subhead mt-2 !text-background">
                 Manager visibility in days, not quarters
               </h3>
-              <p className="mt-2 text-sm text-background/65">
+              <p className="case-meta mt-2 text-background/65">
                 Best for 20–50 frontline employees across 2–5 sites: WhatsApp
                 check-ins plus mobile web fallback.
               </p>
@@ -402,14 +434,14 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
                 {["Setup in days", "No employee app rollout"].map((pill) => (
                   <span
                     key={pill}
-                    className="rounded-full border border-background/20 px-3 py-1 text-xs text-background/70"
+                    className="tag-chip rounded-full border border-background/20 px-3 py-1 text-background/70"
                   >
                     {pill}
                   </span>
                 ))}
               </div>
             </div>
-            <p className="text-[11px] uppercase tracking-[0.16em] text-background/50">
+            <p className="visual-kicker visual-kicker--on-dark text-background/50">
               Daily manager outputs
             </p>
           </div>
@@ -421,13 +453,13 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
               key={output.number}
               className="rounded-sm border border-background/15 bg-background/5 p-4"
             >
-              <span className="text-[11px] uppercase tracking-[0.14em] text-burgundy-on-dark">
+              <span className="visual-kicker visual-kicker--on-dark">
                 {output.number}
               </span>
               <h4 className="case-subhead mt-2 !text-background">
                 {output.title}
               </h4>
-              <p className="mt-2 text-sm leading-relaxed text-background/65">
+              <p className="case-meta mt-2 text-background/65">
                 {output.body}
               </p>
             </div>
@@ -499,10 +531,15 @@ export function ThirdEyeBriefVisual({ caption }: { caption?: string }) {
           <InsightCard
             tag="Customer question trend"
             tagTone="amber"
-            issue="32% increase in insurance-related questions this week"
+            issue="Insurance-related questions rising across Region North"
             branches="Region North · 6 branches"
             owner="Regional manager"
             nextAction="Update service desk talking points"
+            trend={{
+              delta: "32% increase",
+              label: "vs last week",
+              values: [5, 6, 5, 7, 8, 9, 11],
+            }}
           />
           <InsightCard
             tag="Training gap"
@@ -537,16 +574,16 @@ export function ThirdEyeOutcomeVisual({ caption }: { caption?: string }) {
     <figure>
       <div className="grid gap-4 md:grid-cols-2 md:items-stretch">
         <Panel className="h-full">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+          <p className="visual-kicker text-muted">
             Before
           </p>
           <ul className="mt-5 space-y-4">
             {before.map((item) => (
               <li
                 key={item}
-                className="flex gap-3 text-sm leading-relaxed text-muted"
+                className="case-meta flex gap-3 text-muted"
               >
-                <span className="mt-1.5 text-[#54222e]" aria-hidden="true">
+                <span className="mt-1.5 text-burgundy-ink" aria-hidden="true">
                   ·
                 </span>
                 <span>{item}</span>
@@ -555,14 +592,14 @@ export function ThirdEyeOutcomeVisual({ caption }: { caption?: string }) {
           </ul>
         </Panel>
         <Panel dark className="h-full">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-burgundy-on-dark">
+          <p className="visual-kicker visual-kicker--on-dark">
             After
           </p>
           <ul className="mt-5 space-y-4">
             {after.map((item) => (
               <li
                 key={item}
-                className="flex gap-3 text-sm leading-relaxed text-background/85"
+                className="case-meta flex gap-3 text-background/85"
               >
                 <span
                   className="mt-1.5 text-burgundy-on-dark"

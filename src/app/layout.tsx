@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Newsreader } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/data/site";
@@ -8,13 +8,6 @@ import "./globals.css";
 const sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
-  display: "swap",
-});
-
-const serif = Newsreader({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-newsreader",
   display: "swap",
 });
 
@@ -55,11 +48,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+    <html lang="en" className={sans.variable}>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-surface-elevated focus:px-3 focus:py-2 focus:text-sm"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-surface-elevated focus:px-3 focus:py-2 focus:case-meta"
         >
           Skip to content
         </a>

@@ -32,7 +32,7 @@ export function CaseStudyMedia({
           />
         </div>
         {caption ? (
-          <figcaption className="mt-3 text-sm leading-relaxed text-muted">
+          <figcaption className="visual-caption mt-3">
             {caption}
           </figcaption>
         ) : null}
@@ -54,7 +54,7 @@ export function CaseStudyMedia({
           />
         </div>
         {caption ? (
-          <figcaption className="mt-3 text-sm leading-relaxed text-muted">
+          <figcaption className="visual-caption mt-3">
             {caption}
           </figcaption>
         ) : null}
@@ -76,7 +76,7 @@ export function CaseStudyMedia({
         />
       </div>
       {caption ? (
-        <figcaption className="mt-3 text-sm leading-relaxed text-muted">
+        <figcaption className="visual-caption mt-3">
           {caption}
         </figcaption>
       ) : null}

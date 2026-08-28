@@ -3,8 +3,6 @@ type SectionHeadingProps = {
   title: string;
   description?: string;
   id?: string;
-  /** Wider measure for longer section intros (e.g. Selected Work). */
-  wide?: boolean;
 };
 
 export function SectionHeading({
@@ -12,10 +10,9 @@ export function SectionHeading({
   title,
   description,
   id,
-  wide = false,
 }: SectionHeadingProps) {
   return (
-    <div className={wide ? "max-w-5xl" : "max-w-3xl"}>
+    <div>
       {eyebrow ? <p className="eyebrow mb-3">{eyebrow}</p> : null}
       <h2 id={id} className="case-section">
         {title}

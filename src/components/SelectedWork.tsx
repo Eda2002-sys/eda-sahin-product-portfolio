@@ -29,6 +29,8 @@ function ProjectCard({
 
         <h3 className="case-section mt-3 sm:mt-4">{project.title}</h3>
 
+        <p className="case-meta mt-2 text-burgundy">{project.whatChanged}</p>
+
         <p className="case-body mt-3 sm:mt-4">{project.summary}</p>
 
         {project.context ? (
@@ -36,7 +38,7 @@ function ProjectCard({
             {project.context.map((item) => (
               <li
                 key={item}
-                className="rounded-sm border border-border-strong bg-surface-elevated px-2.5 py-1 text-xs text-navy shadow-[0_1px_0_rgba(210,200,187,0.55)]"
+                className="tag-chip rounded-sm border border-border-strong bg-surface-elevated px-2.5 py-1 text-navy shadow-[0_1px_0_rgba(210,200,187,0.55)]"
               >
                 {item}
               </li>
@@ -47,7 +49,7 @@ function ProjectCard({
         <div className="mt-5 sm:mt-6">
           <p className="eyebrow eyebrow-navy">My role</p>
           <ul className="mt-3 grid gap-x-6 gap-y-2 sm:grid-cols-2">
-            {project.roleHighlights.slice(0, 8).map((item) => (
+            {project.roleHighlights.slice(0, 4).map((item) => (
               <li
                 key={item}
                 className="case-meta flex gap-2 text-navy/80"
@@ -61,10 +63,6 @@ function ProjectCard({
             ))}
           </ul>
         </div>
-
-        <p className="case-pull mt-5 border-l border-burgundy/40 pl-4 sm:mt-6">
-          {project.productValue}
-        </p>
 
         <Link
           href={project.href}
@@ -91,7 +89,6 @@ export function SelectedWork() {
           eyebrow="Selected work"
           title="Four products. Four different operating problems."
           description="Workforce intelligence, operating intelligence, digital health and investment technology — showing the product decisions, workflows and QA behind each system."
-          wide
         />
         <div className="mt-2 md:mt-4">
           {flagship.map((project, index) => (
@@ -118,7 +115,7 @@ export function SelectedWork() {
                 key={product.name}
                 className="-mx-3 grid gap-1 rounded-sm px-3 py-5 transition-colors hover:bg-surface sm:grid-cols-12 sm:items-baseline sm:gap-6 sm:py-6"
               >
-                <p className="case-meta font-medium text-navy sm:col-span-4">
+                <p className="case-meta text-navy sm:col-span-4">
                   {product.name}
                 </p>
                 <p className="case-meta text-muted sm:col-span-8">

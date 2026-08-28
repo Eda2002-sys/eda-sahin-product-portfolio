@@ -106,6 +106,8 @@ export type CaseStudyContent = {
   /** Detailed 4-column findings layout. */
   decisions: DecisionFinding[];
   journey: string[];
+  /** Optional 0-based index to highlight a decision point in the Key workflow list. */
+  journeyHighlightIndex?: number;
   demonstrates: string[];
   /** Optional closing line under the Outcome visual. */
   outcomeLine?: string;
@@ -129,6 +131,8 @@ export type Project = {
   summary: string;
   context?: string[];
   roleHighlights: string[];
+  /** Compact before → after line for homepage cards. */
+  whatChanged: string;
   productValue: string;
   ctaLabel: string;
   href: string;
@@ -154,9 +158,9 @@ export const projects: Project[] = [
       "Knowledge workflow design",
       "Approved-source grounding",
       "Voice, text & document QA",
-      "Multi-brand knowledge-base testing",
       "Continuous reinforcement loop",
     ],
+    whatChanged: "Scattered knowledge → controlled WhatsApp workflow",
     productValue:
       "Turned fragmented brand knowledge into a controlled, in-channel workflow employees could use during live customer conversations.",
     ctaLabel: "View case study",
@@ -265,13 +269,14 @@ export const projects: Project[] = [
     title: "Third Eye",
     category: "Operating Intelligence · AI · WhatsApp",
     summary:
-      "A WhatsApp-first operating intelligence product that turns frontline employee check-ins into daily briefs, recurring signals and next actions.",
+      "A WhatsApp-first operating intelligence product that turns lightweight frontline check-ins into recurring signals, manager-ready briefs and clear next actions.",
     roleHighlights: [
       "Check-in design",
       "Daily brief UX",
       "Signal → action logic",
       "Meta / WhatsApp QA",
     ],
+    whatChanged: "Frontline updates → manager actions",
     productValue:
       "Shaped the loop from employee check-in to manager action: what gets asked, what becomes a signal, and what gets assigned next.",
     ctaLabel: "View case study",
@@ -344,7 +349,7 @@ export const projects: Project[] = [
           items: [
             "Worked through daily brief UX: what should surface, in what order, and why",
             "Tested executive dashboard logic for recurring signals and next actions",
-            "Tested when recurring knowledge gaps should trigger training or follow-up actions",
+            "Tested when recurring operational signals should trigger follow-up actions",
           ],
         },
         {
@@ -383,11 +388,10 @@ export const projects: Project[] = [
       "A clinician-led digital health platform combining lab data, biomarker trends, wearables and personalised health programs.",
     roleHighlights: [
       "Lab PDF / image ingestion QA",
-      "Marker & unit conversion logic",
       "Program enrolment & phase routing",
-      "Retesting / re-enrolment rules",
       "Patient, admin & clinician dashboard QA",
     ],
+    whatChanged: "Lab data → reviewable clinical workflow",
     productValue:
       "Made lab data reviewable before it entered personalised programs, then validated how that data drove enrolment, phase routing, retesting and clinician review.",
     ctaLabel: "View case study",
@@ -433,7 +437,7 @@ export const projects: Project[] = [
           alt: "Sanitized program phase progress and marker longitudinal view",
           label: "Patient program view",
           caption:
-            "Reviewed lab data then drives phase routing, longitudinal markers and compliance tracking in the patient program.",
+            "Reviewed lab data then drives program eligibility, phase routing, longitudinal tracking and compliance workflows.",
           placement: "demand",
         },
         {
@@ -445,7 +449,7 @@ export const projects: Project[] = [
       glance: {
         role: "Journey testing, clinical program logic validation, and dashboard QA",
         stage:
-          "Live workflow validation across lab intake, program routing and patient / clinician journeys",
+          "Live product validation across lab intake, lifecycle logic and patient / clinician journeys",
         usersScale:
           "Patients in personalised programs; clinicians and admins reviewing progress",
         surfaces:
@@ -504,6 +508,7 @@ export const projects: Project[] = [
         "Re-evaluate",
         "Graduate / Continue / Escalate",
       ],
+      journeyHighlightIndex: 3,
       demonstrates: [],
       outcomeLine:
         "From disconnected lab data and fragile lifecycle logic to a reviewable, source-linked clinical workflow.",
@@ -521,9 +526,10 @@ export const projects: Project[] = [
       "Source-linked document Q&A QA",
       "DDQ & data-room workflows",
       "Citation / evidence validation",
-      "Onboarding & implementation QA",
       "Client issue → engineering handoff",
+      "Implementation feedback loops",
     ],
+    whatChanged: "AI answers → source-linked diligence",
     productValue:
       "Validated source-linked answers, connected DDQ and data-room workflows, and turned client friction into engineering-ready product issues.",
     ctaLabel: "View case study",
@@ -581,7 +587,7 @@ export const projects: Project[] = [
       glance: {
         role: "Product testing, client feedback loops, implementation, and engineering coordination",
         stage:
-          "Enterprise product iteration across document Q&A, DDQ and data-room workflows",
+          "Live enterprise product iteration across document Q&A, diligence and data-room workflows",
         usersScale: "Investment and diligence teams working across documents and data rooms",
         surfaces: "Document Q&A, DDQ, data rooms, tasks, libraries, reporting",
         collaboration: "Founders, engineering, clients, implementation",
@@ -638,7 +644,7 @@ export const projects: Project[] = [
       ],
       demonstrates: [],
       outcomeLine:
-        "A diligence workspace where answers, evidence, tasks and follow-ups stay connected.",
+        "A diligence workflow where answers, evidence, tasks and follow-ups stay connected from question to decision.",
     },
   }
 ];

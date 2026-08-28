@@ -6,10 +6,16 @@
   /* Darker muted for readable secondary text on ivory */
   --muted: #555963;
   --burgundy: #6f2c3a;
+  /* Dark burgundy ink — small caps on ivory (same family, not a second accent) */
+  --burgundy-ink: #54222e;
   /* Mid burgundy for light surfaces / button hover (not for navy text) */
   --burgundy-soft: #8a3d4d;
   /* Readable rose on navy — brighter than before for small labels */
   --burgundy-on-dark: #e8b4bc;
+  /* Subtle per-case micro-accents — tint only, base palette unchanged */
+  --accent-socida: #5e6f5c;
+  --accent-third-eye: #6f2c3a;
+  --accent-hautonomy: #a8848f;
   --border: #e4ddd3;
   --border-strong: #d2c8bb;
   --surface: #fbf9f5;
@@ -22,6 +28,7 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-burgundy: var(--burgundy);
+  --color-burgundy-ink: var(--burgundy-ink);
   --color-burgundy-soft: var(--burgundy-soft);
   --color-burgundy-on-dark: var(--burgundy-on-dark);
   --color-border: var(--border);
@@ -30,7 +37,6 @@
   --color-surface-elevated: var(--surface-elevated);
   --color-navy: var(--navy);
   --font-sans: var(--font-dm-sans);
-  --font-serif: var(--font-newsreader);
 }
 
 * {
@@ -106,12 +112,13 @@ body {
 }
 
 .eyebrow {
+  font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   /* Darker than brand burgundy so small caps stay readable on ivory */
-  color: #54222e;
+  color: var(--burgundy-ink);
 }
 
 .eyebrow-muted {
@@ -125,14 +132,12 @@ body {
 
 /* Category tags — distinct from navy body, aligned with UI accent */
 .eyebrow-tag {
-  color: color-mix(in srgb, var(--burgundy) 72%, #3a1a22);
+  color: color-mix(in srgb, var(--burgundy) 72%, var(--burgundy-ink));
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Site type scale (premium, one family for content)
-   Face: DM Sans for all content hierarchy.
-   Serif (Newsreader): brand mark only — Header / Footer / portrait name.
-   Hierarchy = size + weight + color, not mixed families in body copy.
+   Site type scale — DM Sans everywhere (hero body / meta voice)
+   Hierarchy = size + color, single regular weight family.
    ───────────────────────────────────────────────────────────── */
 
 .type-display,
@@ -140,7 +145,7 @@ body {
 .hero-title {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 2.25rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--navy);
@@ -158,8 +163,8 @@ body {
 .case-section {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 1.75rem;
-  font-weight: 500;
-  line-height: 1.2;
+  font-weight: 400;
+  line-height: 1.25;
   letter-spacing: -0.015em;
   color: var(--navy);
 }
@@ -175,7 +180,7 @@ body {
 .case-subhead {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.35;
   color: var(--navy);
 }
@@ -211,6 +216,23 @@ body {
   line-height: 1.6;
 }
 
+/* Mid-scale between meta and body — e.g. At a glance values */
+.type-detail,
+.case-detail {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--navy);
+}
+
+@media (min-width: 768px) {
+  .type-detail,
+  .case-detail {
+    font-size: 0.96875rem;
+  }
+}
+
 .type-note,
 .case-note {
   font-family: var(--font-sans), system-ui, sans-serif;
@@ -240,28 +262,48 @@ body {
 .type-closing,
 .case-closing {
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.65;
   color: var(--navy);
 }
 
-@media (min-width: 768px) {
-  .type-closing,
-  .case-closing {
-    font-size: 1.25rem;
-  }
-}
-
-/* Brand mark — Newsreader; content stays DM Sans */
+/* Brand mark — same family as hero body/meta */
 .type-brand {
-  font-family: var(--font-serif), "Times New Roman", Georgia, serif;
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  line-height: 1;
-  font-feature-settings: "kern" 1, "liga" 1;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
   color: var(--navy);
+}
+
+.visual-kicker {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--burgundy-ink);
+}
+
+.visual-kicker--on-dark {
+  color: var(--burgundy-on-dark);
+}
+
+/* Context / experience tags — same scale as case-meta */
+.tag-chip {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Infographic UI mock chrome (phone screens, pills) — smaller by design */
+.visual-ui-mock {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.45;
 }
 
 /*
@@ -273,6 +315,27 @@ body {
 .bg-navy.text-burgundy-soft,
 .bg-navy :is(.text-burgundy, .text-burgundy-soft) {
   color: var(--burgundy-on-dark);
+}
+
+/* Per-case micro-accent — very subtle, same palette family */
+[data-case="socida-ai"] {
+  --case-accent: var(--accent-socida);
+}
+
+[data-case="third-eye"] {
+  --case-accent: var(--accent-third-eye);
+}
+
+[data-case="hautonomy"] {
+  --case-accent: var(--accent-hautonomy);
+}
+
+[data-case] .case-pull {
+  border-left-color: color-mix(in srgb, var(--case-accent, var(--burgundy)) 32%, var(--burgundy));
+}
+
+[data-case] .eyebrow-tag {
+  color: color-mix(in srgb, var(--case-accent, var(--burgundy)) 18%, var(--burgundy-ink));
 }
 
 .section-space {
@@ -323,16 +386,8 @@ body {
   }
 }
 
-.visual-kicker {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #54222e;
-}
-
-.visual-kicker--on-dark {
-  color: var(--burgundy-on-dark);
+figure {
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
 
 .visual-inset {
@@ -432,9 +487,17 @@ body {
   overflow: visible;
 }
 
+.project-cover-shell--compact {
+  padding: 0.625rem 0.75rem 0.875rem;
+}
+
 @media (min-width: 768px) {
   .project-cover-shell--wide {
     padding: 1rem 1.125rem 1.25rem;
+  }
+
+  .project-cover-shell--compact {
+    padding: 0.75rem 0.875rem 1rem;
   }
 }
 

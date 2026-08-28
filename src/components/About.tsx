@@ -8,23 +8,19 @@ export function About() {
       aria-labelledby="about-heading"
     >
       <div className="container-page section-space">
-        <div className="max-w-5xl">
-          <SectionHeading id="about-heading" title="About" wide />
-          <div className="mt-8 space-y-5">
-            <p className="case-body">
-              I studied Business Administration at Koç University and then moved
-              into founder-facing Chief of Staff work across AI products and
-              M&amp;A. The role put me between users, clients, product and
-              engineering — often where unclear requirements or broken workflows
-              became visible.
-            </p>
-            <p className="case-body">
-              My work so far spans healthcare, workforce intelligence, financial
-              services and investment technology — requiring me to learn
-              unfamiliar domains quickly and move between product, operations,
-              clients and engineering.
-            </p>
-          </div>
+        <SectionHeading id="about-heading" eyebrow="About" title="How I operate" />
+        <div className="mt-8 space-y-5">
+          <p className="case-pull text-navy">
+            I work best where the problem is still unclear and the path to
+            execution has not been fully defined.
+          </p>
+          <p className="case-body">
+            My work has taken me across healthcare, workforce intelligence,
+            financial services and investment technology, usually between users,
+            clients, product and engineering. That range has made me comfortable
+            learning unfamiliar domains quickly, testing the real workflow and
+            turning friction into decisions teams can act on.
+          </p>
         </div>
       </div>
     </section>
