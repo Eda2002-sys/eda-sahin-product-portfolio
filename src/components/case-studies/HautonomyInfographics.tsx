@@ -143,7 +143,7 @@ export function HautonomyApproachVisual({ caption }: { caption?: string }) {
   const cards = [
     {
       title: "Keep the original beside the extraction",
-      body: "Compare the structured value with the source page — labels, units, and ranges intact.",
+      body: "Compare the structured value with the source page, labels, units, and ranges intact.",
     },
     {
       title: "Normalize without erasing context",

@@ -383,7 +383,7 @@ export function SocidaGovernanceVisual({ caption }: { caption?: string }) {
               Approved answer
             </p>
             <p className="case-meta mt-4 leading-relaxed text-background/90">
-              Yes — for Model X, the approved 24-month financing route is
+              Yes. For Model X, the approved 24-month financing route is
               available when eligibility criteria are met.
             </p>
             <p className="visual-kicker visual-kicker--on-dark mt-4">

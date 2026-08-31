@@ -399,7 +399,7 @@ export function CreSheetVisual({ caption }: { caption?: string }) {
             </tbody>
           </table>
           <p className="mt-4 text-xs text-muted">
-            Sanitized sheet pattern — addresses, bids and live volumes withheld.
+            Sanitized sheet pattern: addresses, bids and live volumes withheld.
           </p>
         </div>
       </Panel>
@@ -430,7 +430,7 @@ export function CreInsightsVisual({ caption }: { caption?: string }) {
               Market pattern review
             </h3>
             <p className="mt-1 text-sm text-muted">
-              Illustrative product pattern — not live auction performance.
+              Illustrative product pattern, not live auction performance.
             </p>
           </div>
           <div className="rounded-sm border border-border bg-surface px-3 py-2">

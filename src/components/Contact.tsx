@@ -36,7 +36,7 @@ export function Contact() {
             GitHub
           </ButtonLink>
           <ButtonLink href={siteConfig.resumePath} variant="secondary">
-            Resume
+            CV
           </ButtonLink>
         </div>
       </div>

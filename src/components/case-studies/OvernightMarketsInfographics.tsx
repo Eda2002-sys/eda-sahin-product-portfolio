@@ -387,7 +387,7 @@ export function OvernightReportVisual({ caption }: { caption?: string }) {
             </p>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
               Sanitized product pattern using public-source style evidence
-              handling — not a reproduction of a bank proprietary report.
+              handling, not a reproduction of a bank proprietary report.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -417,7 +417,7 @@ export function OvernightReportVisual({ caption }: { caption?: string }) {
                 <p className="mt-2 text-sm leading-relaxed text-background/80">
                   Cross-region technology weakness preceded lower European
                   trading and a lower U.S. close. Source summaries are retained
-                  for review — not treated as analyst conclusions.
+                  for review, not treated as analyst conclusions.
                 </p>
               </div>
               <div className="rounded-sm border border-burgundy/30 bg-burgundy/[0.05] p-4">

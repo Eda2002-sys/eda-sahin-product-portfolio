@@ -23,7 +23,7 @@ export const socialLinks = [
   { label: "LinkedIn", href: siteConfig.linkedin },
   { label: "GitHub", href: siteConfig.github },
   { label: "Email", href: `mailto:${siteConfig.email}` },
-  { label: "Resume", href: siteConfig.resumePath },
+  { label: "CV", href: siteConfig.resumePath },
 ] as const;
 
 export const navLinks = [

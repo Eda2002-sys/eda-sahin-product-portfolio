@@ -278,6 +278,22 @@ body {
   color: var(--navy);
 }
 
+/* Navbar name — stronger anchor than utility nav links */
+.type-brand-nav {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+  color: var(--burgundy);
+}
+
+@media (min-width: 768px) {
+  .type-brand-nav {
+    font-size: 1.3125rem;
+  }
+}
+
 .visual-kicker {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 0.6875rem;

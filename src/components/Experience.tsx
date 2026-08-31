@@ -11,11 +11,7 @@ export function Experience() {
       aria-labelledby="experience-heading"
     >
       <div className="container-page section-space">
-        <SectionHeading
-          id="experience-heading"
-          title="Experience"
-          description="AnalystAI and GA Capital were concurrent roles across the same AI and advisory ecosystem: product delivery at AnalystAI and live M&A execution at GA Capital."
-        />
+        <SectionHeading id="experience-heading" title="Experience" />
 
         <ol className="mt-10 space-y-0 md:mt-12">
           {experience.map((item) => (

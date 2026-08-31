@@ -45,7 +45,7 @@ export function HowIWork() {
         <SectionHeading
           id="how-heading"
           title="How I work."
-          description="Ambiguous systems → concrete product decisions → cross-functional implementation."
+          description="I start by understanding what the user is trying to do, map the full workflow, test where it breaks and work with the team until the fix is implemented."
         />
 
         <ol className="relative mt-10 md:mt-14">
@@ -79,7 +79,7 @@ export function HowIWork() {
                     {step.number}
                   </span>
                   <p
-                    className={`case-meta pt-0.5 text-navy transition-colors duration-500 md:mt-4 md:max-w-[11rem] md:pt-0 ${
+                    className={`case-meta min-w-0 pt-0.5 transition-colors duration-500 md:mt-4 md:max-w-[11rem] md:pt-0 ${
                       index === howIWorkSteps.length - 1
                         ? "md:max-w-[12.5rem]"
                         : ""

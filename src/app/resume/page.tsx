@@ -5,9 +5,9 @@ import { ResumeCv } from "@/components/ResumeCv";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Resume — Eda Sahin",
+  title: "CV · Eda Sahin",
   description:
-    "Resume for Eda Sahin — Chief of Staff across AI products and M&A technology.",
+    "CV for Eda Sahin, Chief of Staff across AI products and M&A technology.",
   formatDetection: {
     telephone: false,
     email: false,
@@ -28,7 +28,7 @@ export default function ResumePage() {
 
         <div className="mt-8 flex flex-col gap-6 sm:mt-10 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="eyebrow">Resume</p>
+            <p className="eyebrow">CV</p>
             <p className="case-body mt-4">
               Chief of Staff across AI products and M&A technology. Istanbul.
             </p>

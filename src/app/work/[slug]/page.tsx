@@ -22,10 +22,10 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.title} — Eda Sahin`,
+    title: `${project.title} · Eda Sahin`,
     description: project.summary,
     openGraph: {
-      title: `${project.title} — Eda Sahin`,
+      title: `${project.title} · Eda Sahin`,
       description: project.summary,
       type: "article",
     },

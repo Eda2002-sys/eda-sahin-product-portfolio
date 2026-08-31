@@ -152,17 +152,18 @@ export const projects: Project[] = [
     title: "Socida AI",
     category: "Automotive · Workforce Intelligence · WhatsApp",
     summary:
-      "A WhatsApp-based knowledge system for a distributed automotive workforce, combining approved product information, documents and continuous reinforcement in one channel.",
+      "Employees could ask product, financing and process questions by text or voice, receive answers grounded in approved company sources, access documents and complete training without leaving WhatsApp.",
     context: ["~300 employees", "7 brand knowledge bases", "WhatsApp-first"],
     roleHighlights: [
-      "Knowledge workflow design",
-      "Approved-source grounding",
-      "Voice, text & document QA",
-      "Continuous reinforcement loop",
+      "Mapped the employee question → answer → source workflow",
+      "Tested voice, text, images and document-based questions",
+      "Validated whether answers stayed grounded in approved sources",
+      "Worked with engineering on QA issues and workflow improvements",
     ],
-    whatChanged: "Scattered knowledge → controlled WhatsApp workflow",
+    whatChanged:
+      "AI knowledge and training inside WhatsApp for automotive employees.",
     productValue:
-      "Turned fragmented brand knowledge into a controlled, in-channel workflow employees could use during live customer conversations.",
+      "Employees get approved answers, documents and training without leaving WhatsApp.",
     ctaLabel: "View case study",
     href: "/work/socida-ai",
     type: "case-study",
@@ -217,7 +218,7 @@ export const projects: Project[] = [
       problem:
         "Product, financing, service and operating knowledge lived across documents, portals, chats and one-off training sessions. Employees needed answers during live customer conversations, not after searching multiple systems. The product therefore had to work inside WhatsApp, where the workforce already communicated.",
       roleNarrative:
-        "I worked across product definition and real-user journey testing, shaping how employees asked for knowledge in WhatsApp and validating how answers, documents and continuous reinforcement behaved across text, voice and role-specific workflows.",
+        "I mapped how employees asked questions in WhatsApp, tested voice, text and document flows, validated that answers stayed tied to approved sources, and worked with engineering on QA issues and workflow improvements.",
       workSectionsTitle: "What I worked on",
       workSections: [
         {
@@ -269,16 +270,17 @@ export const projects: Project[] = [
     title: "Third Eye",
     category: "Operating Intelligence · AI · WhatsApp",
     summary:
-      "A WhatsApp-first operating intelligence product that turns lightweight frontline check-ins into recurring signals, manager-ready briefs and clear next actions.",
+      "Frontline employees answer lightweight daily check-ins in WhatsApp. The product groups those updates into recurring issues, daily briefs, owners and next actions for managers.",
     roleHighlights: [
-      "Check-in design",
-      "Daily brief UX",
-      "Signal → action logic",
-      "Meta / WhatsApp QA",
+      "Designed and tested employee check-in flows",
+      "Tested how raw updates became signals and daily briefs",
+      "Reviewed manager dashboards and action flows",
+      "Validated Meta / WhatsApp behaviour and handed issues to engineering",
     ],
-    whatChanged: "Frontline updates → manager actions",
+    whatChanged:
+      "A WhatsApp-based operating system for turning employee updates into manager actions.",
     productValue:
-      "Shaped the loop from employee check-in to manager action: what gets asked, what becomes a signal, and what gets assigned next.",
+      "Daily check-ins become manager-ready briefs with owners and next actions.",
     ctaLabel: "View case study",
     href: "/work/third-eye",
     type: "case-study",
@@ -333,7 +335,7 @@ export const projects: Project[] = [
       problem:
         "Frontline updates lived across WhatsApp and informal reporting, but managers still had to reconstruct what mattered manually. The product needed to capture lightweight daily input without adding another tool, then turn that input into recurring signals and next actions.",
       roleNarrative:
-        "I shaped and tested the operating loop from employee check-in to manager action, covering onboarding, prompt design, daily brief UX, dashboard logic and Meta / WhatsApp behaviour, then translating issues into engineering-ready handoffs.",
+        "I designed and tested employee check-in flows, validated how raw updates became signals and daily briefs, reviewed manager dashboards and action flows, and tested Meta / WhatsApp behaviour before handing issues to engineering.",
       workSectionsTitle: "What I worked on",
       workSections: [
         {
@@ -385,15 +387,17 @@ export const projects: Project[] = [
     title: "Hautonomy",
     category: "Digital Health · Clinical Programs · Data",
     summary:
-      "A clinician-led digital health platform combining lab data, biomarker trends, wearables and personalised health programs.",
+      "Patients upload lab results and health data; clinicians review the structured data, enrol patients into programs and track how biomarkers, habits and program phases change over time.",
     roleHighlights: [
-      "Lab PDF / image ingestion QA",
-      "Program enrolment & phase routing",
-      "Patient, admin & clinician dashboard QA",
+      "Tested lab PDF and image ingestion",
+      "Validated extracted values and unit conversion",
+      "Tested enrolment, phase routing, retesting and graduation logic",
+      "Compared patient, admin and clinician views for consistency",
     ],
-    whatChanged: "Lab data → reviewable clinical workflow",
+    whatChanged:
+      "A digital health platform that turns lab results into personalised health programs.",
     productValue:
-      "Made lab data reviewable before it entered personalised programs, then validated how that data drove enrolment, phase routing, retesting and clinician review.",
+      "Lab results flow into reviewable clinical programs with tracked biomarkers and phases.",
     ctaLabel: "View case study",
     href: "/work/hautonomy",
     type: "case-study",
@@ -459,7 +463,7 @@ export const projects: Project[] = [
       problem:
         "Personalised clinical programs depend on correct sequencing across lab ingestion, unit conversion, enrolment, phase routing, retesting and compliance. Small logic errors create confusing patient experiences and unreliable clinician review.",
       roleNarrative:
-        "I tested how clinical data moved through the product: from document intake and marker normalization to enrolment, phase routing, retesting and clinician review, checking both patient and admin journeys for logic gaps and inconsistent states.",
+        "I tested lab PDF and image ingestion, validated extracted values and unit conversion, exercised enrolment and phase routing logic, and compared patient, admin and clinician views for consistency.",
       workSectionsTitle: "What I worked on",
       workSections: [
         {
@@ -521,17 +525,17 @@ export const projects: Project[] = [
     title: "AnalystAI Enterprise & DDQ",
     category: "Investment Technology · AI · Due Diligence",
     summary:
-      "An AI-native workspace for document analysis, due diligence, data rooms, tasks and source-linked investment outputs.",
+      "Investment teams could upload data-room documents, ask questions, inspect the evidence behind AI answers, manage DDQs and tasks, and keep diligence work connected in one workspace.",
     roleHighlights: [
-      "Source-linked document Q&A QA",
-      "DDQ & data-room workflows",
-      "Citation / evidence validation",
-      "Client issue → engineering handoff",
-      "Implementation feedback loops",
+      "Tested document Q&A and source-linked answers",
+      "Validated citations against underlying documents",
+      "Tested DDQ, data-room and task workflows",
+      "Turned client feedback into structured engineering issues and retested fixes",
     ],
-    whatChanged: "AI answers → source-linked diligence",
+    whatChanged:
+      "An AI workspace for reviewing documents, answering diligence questions and managing deal workflows.",
     productValue:
-      "Validated source-linked answers, connected DDQ and data-room workflows, and turned client friction into engineering-ready product issues.",
+      "Diligence teams work from documents to verified answers, DDQs and tasks in one workspace.",
     ctaLabel: "View case study",
     href: "/work/analystai-enterprise",
     type: "case-study",
@@ -595,7 +599,7 @@ export const projects: Project[] = [
       problem:
         "Investment teams need to move between documents, questions, tasks and decisions without losing the evidence behind an answer or the state of the diligence process. AI only adds value when those workflows stay connected.",
       roleNarrative:
-        "I tested how diligence work moved through the product: from document Q&A and source validation to DDQ, data-room workflows, onboarding and client implementation, then translated gaps into engineering-ready issues and followed them through resolution.",
+        "I tested document Q&A and source-linked answers, validated citations against underlying documents, walked DDQ and data-room workflows end to end, and turned client feedback into structured engineering issues that I retested after fixes.",
       workSections: [
         {
           title: "AI trust & document workflows",

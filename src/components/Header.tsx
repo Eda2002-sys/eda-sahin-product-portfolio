@@ -57,7 +57,7 @@ export function Header() {
         <div className="container-page flex h-14 items-center justify-between md:h-16">
           <Link
             href="/"
-            className="type-brand !text-burgundy transition-colors hover:!text-burgundy-soft"
+            className="type-brand-nav ml-0.5 shrink-0 transition-colors hover:text-burgundy-soft md:ml-1.5 lg:ml-2"
             onClick={() => setOpen(false)}
           >
             {siteConfig.name}
@@ -80,7 +80,7 @@ export function Header() {
               href={siteConfig.resumePath}
               className="case-meta ml-2 rounded-sm border border-burgundy bg-background px-3.5 py-1.5 text-navy transition-[border-color,color,background-color] hover:border-burgundy-soft hover:bg-surface hover:text-burgundy"
             >
-              Resume
+              CV
             </Link>
           </nav>
 
@@ -147,7 +147,7 @@ export function Header() {
                 className="case-meta mt-1 rounded-sm border border-burgundy px-3 py-3 text-navy transition-colors hover:border-burgundy-soft hover:text-burgundy"
                 onClick={() => setOpen(false)}
               >
-                Resume
+                CV
               </Link>
             </nav>
           </div>

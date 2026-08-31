@@ -87,8 +87,8 @@ export function SelectedWork() {
         <SectionHeading
           id="work-heading"
           eyebrow="Selected work"
-          title="Four products. Four different operating problems."
-          description="Workforce intelligence, operating intelligence, digital health and investment technology — showing the product decisions, workflows and QA behind each system."
+          title="Four AI products. Four different operating problems."
+          description="Across automotive, operations, digital health and investment technology, I worked on the product logic, user journeys, QA and implementation behind each system."
         />
         <div className="mt-2 md:mt-4">
           {flagship.map((project, index) => (
@@ -107,7 +107,7 @@ export function SelectedWork() {
           <SectionHeading
             id="additional-products-heading"
             eyebrow="Additional product experience"
-            title="Other products and workflows I worked on."
+            title="Other AI and data products I contributed to across finance, research and investment workflows."
           />
           <ul className="mt-10 divide-y divide-border border-t border-border md:mt-12">
             {additionalProducts.map((product) => (

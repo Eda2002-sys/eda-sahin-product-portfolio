@@ -72,22 +72,22 @@ export const skillGroups: SkillGroup[] = [
 export const howIWorkSteps = [
   {
     number: "01",
-    title: "Understand the problem",
+    title: "Understand the user and problem",
   },
   {
     number: "02",
-    title: "Map the user and system journey",
+    title: "Map the full workflow",
   },
   {
     number: "03",
-    title: "Test the real workflow",
+    title: "Test the real experience",
   },
   {
     number: "04",
-    title: "Turn friction into product decisions",
+    title: "Turn findings into product decisions",
   },
   {
     number: "05",
-    title: "Follow through to implementation",
+    title: "Follow through with engineering",
   },
 ] as const;
