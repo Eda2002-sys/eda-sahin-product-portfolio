@@ -2,41 +2,44 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { siteConfig } from "@/data/site";
 
 const experienceStrip = [
-  { label: "Healthcare", flow: "Lab data → programs" },
-  { label: "Workforce", flow: "Knowledge → answers" },
-  { label: "Operations", flow: "Updates → actions" },
-  { label: "Investment tech", flow: "Docs → diligence" },
-  { label: "M&A", flow: "Research → deals" },
+  { label: "Healthcare", flow: "Lab results → personalised programs" },
+  { label: "Workforce", flow: "Employee questions → grounded answers" },
+  { label: "Operations", flow: "Frontline updates → manager actions" },
+  { label: "Investment tech", flow: "Documents → diligence answers" },
+  { label: "M&A", flow: "Market research → live deal execution" },
 ] as const;
 
 export function Hero() {
   return (
     <section className="border-b border-border">
       <div className="container-page py-10 md:py-16 lg:py-20">
-        <div className="min-w-0 max-w-4xl">
-          <p className="eyebrow rise-in">Product · Operations · AI</p>
+        <h1 className="case-title rise-in rise-in-delay-1 max-w-5xl text-balance">
+          Different industries. Same job: turning complex workflows into working
+          products.
+        </h1>
 
-          <h1 className="case-title rise-in rise-in-delay-1 mt-4 sm:mt-5">
-            I work across product, operations and engineering to turn real user
-            and business problems into products that work.
-          </h1>
-
-          <p className="case-body rise-in rise-in-delay-2 mt-5 md:mt-6">
-            I map user journeys, test real workflows, identify where products
-            break and work with engineering to turn those findings into product
-            decisions and implementation.
-          </p>
-        </div>
+        <p className="case-body rise-in rise-in-delay-2 mt-5 max-w-4xl md:mt-6">
+          I work across users, business and engineering to define workflows,
+          test real scenarios, identify where products break and turn findings
+          into shipped improvements.
+        </p>
 
         <div
-          className="rise-in rise-in-delay-2 mt-8 overflow-x-auto border-y border-border md:mt-10"
+          className="rise-in rise-in-delay-2 mt-8 border-y border-border md:mt-10"
           aria-label="Experience across domains"
         >
-          <ul className="flex min-w-[44rem] divide-x divide-border lg:min-w-0 lg:w-full">
-            {experienceStrip.map((item) => (
-              <li key={item.label} className="min-w-0 flex-1 px-3 py-4 md:px-4">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
+            {experienceStrip.map((item, index) => (
+              <li
+                key={item.label}
+                className={`min-w-0 px-0 py-4 sm:px-4 sm:py-5 ${
+                  index < experienceStrip.length - 1
+                    ? "border-b border-border lg:border-b-0 lg:border-r"
+                    : ""
+                }`}
+              >
                 <p className="eyebrow">{item.label}</p>
-                <p className="case-meta mt-2 whitespace-nowrap text-navy">
+                <p className="case-meta mt-2 max-w-[16rem] text-navy leading-snug sm:max-w-none">
                   {item.flow}
                 </p>
               </li>
@@ -46,8 +49,8 @@ export function Hero() {
 
         <div className="min-w-0 max-w-4xl">
           <p className="case-meta rise-in rise-in-delay-2 mt-5 text-muted md:mt-6">
-            Based in Istanbul · Open to product, operations, founder-facing
-            and cross-functional roles
+            Istanbul-based · Open to global product, operations, strategy and
+            founder-facing roles
           </p>
 
           <div className="rise-in rise-in-delay-2 mt-8 flex flex-wrap items-center gap-x-3 gap-y-3 md:mt-10">

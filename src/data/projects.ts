@@ -153,7 +153,7 @@ export const projects: Project[] = [
     category: "Automotive · Workforce Intelligence · WhatsApp",
     summary:
       "Employees could ask product, financing and process questions by text or voice, receive answers grounded in approved company sources, access documents and complete training without leaving WhatsApp.",
-    context: ["~300 employees", "7 brand knowledge bases", "WhatsApp-first"],
+    context: ["~300 employees", "7 brand knowledge bases", "WhatsApp first"],
     roleHighlights: [
       "Mapped the employee question → answer → source workflow",
       "Tested voice, text, images and document-based questions",
@@ -184,7 +184,7 @@ export const projects: Project[] = [
           component: "socida-problem",
           alt: "Fragmented knowledge sources leading to no single point of access",
           caption:
-            "The operating friction: many sources, no single point of access mid-conversation.",
+            "The operating friction: many sources, no single point of access mid conversation.",
           placement: "problem",
         },
         {
@@ -216,7 +216,7 @@ export const projects: Project[] = [
         collaboration: "Founders, engineering, operations, content / knowledge owners",
       },
       problem:
-        "Product, financing, service and operating knowledge lived across documents, portals, chats and one-off training sessions. Employees needed answers during live customer conversations, not after searching multiple systems. The product therefore had to work inside WhatsApp, where the workforce already communicated.",
+        "Product, financing, service and operating knowledge lived across documents, portals, chats and one off training sessions. Employees needed answers during live customer conversations, not after searching multiple systems. The product therefore had to work inside WhatsApp, where the workforce already communicated.",
       roleNarrative:
         "I mapped how employees asked questions in WhatsApp, tested voice, text and document flows, validated that answers stayed tied to approved sources, and worked with engineering on QA issues and workflow improvements.",
       workSectionsTitle: "What I worked on",
@@ -224,7 +224,7 @@ export const projects: Project[] = [
         {
           title: "Meet employees in WhatsApp",
           items: [
-            "Validated Ask → Learn → Practise → Apply under mid-conversation timing pressure",
+            "Validated Ask → Learn → Practise → Apply under mid conversation timing pressure",
             "Tested multilingual text and voice phrasing against real workforce questions",
             "Checked that reinforcement reused the same conversational patterns as lookup",
           ],
@@ -249,8 +249,8 @@ export const projects: Project[] = [
       decisions: [],
       insights: [
         {
-          title: "Questions were conversational, not keyword-perfect.",
-          body: "Employees often asked incomplete questions mid-customer conversation. Retrieval needed clarification, source-linked answers and explicit failure states rather than assuming perfect prompts.",
+          title: "Questions were conversational, not keyword perfect.",
+          body: "Employees often asked incomplete questions mid customer conversation. Retrieval needed clarification, source-linked answers and explicit failure states rather than assuming perfect prompts.",
         },
         {
           title: "Usage signals needed a correction loop.",
@@ -301,7 +301,7 @@ export const projects: Project[] = [
           component: "third-eye-problem",
           alt: "Before and after comparison of typical corporate tools versus Third Eye visibility",
           caption:
-            "From scattered chat and manual follow-up to a daily manager-ready rhythm.",
+            "From scattered chat and manual follow up to a daily manager-ready rhythm.",
           placement: "problem",
         },
         {
@@ -315,7 +315,7 @@ export const projects: Project[] = [
           component: "third-eye-brief",
           alt: "Three manager insight cards with issue, branches, owner and next action",
           caption:
-            "Manager-level insights: staffing risk, customer trends and training gaps with clear owners.",
+            "Manager level insights: staffing risk, customer trends and training gaps with clear owners.",
           placement: "governance",
         },
         {
@@ -351,7 +351,7 @@ export const projects: Project[] = [
           items: [
             "Worked through daily brief UX: what should surface, in what order, and why",
             "Tested executive dashboard logic for recurring signals and next actions",
-            "Tested when recurring operational signals should trigger follow-up actions",
+            "Tested when recurring operational signals should trigger follow up actions",
           ],
         },
         {
@@ -446,7 +446,7 @@ export const projects: Project[] = [
         },
         {
           component: "hautonomy-outcome",
-          alt: "Before and after comparison of fragile clinical workflows versus source-preserving review",
+          alt: "Before and after comparison of fragile clinical workflows versus source preserving review",
           placement: "outcome",
         },
       ],
@@ -476,8 +476,8 @@ export const projects: Project[] = [
         {
           title: "Lifecycle logic",
           items: [
-            "Exercised retesting and re-enrolment logic across program phases",
-            "Compared patient-facing outcomes with admin / clinician views",
+            "Exercised retesting and re enrolment logic across program phases",
+            "Compared patient facing outcomes with admin / clinician views",
           ],
         },
         {
@@ -498,7 +498,7 @@ export const projects: Project[] = [
         },
         {
           observed:
-            "Retesting and re-enrolment could appear correct in one role while patient and clinician/admin state diverged.",
+            "Retesting and re enrolment could appear correct in one role while patient and clinician/admin state diverged.",
           productDecision:
             "Test lifecycle changes as paired journeys across roles, not as isolated screens.",
         },
@@ -509,7 +509,7 @@ export const projects: Project[] = [
         "Enrol",
         "Route to phase",
         "Retest",
-        "Re-evaluate",
+        "Re evaluate",
         "Graduate / Continue / Escalate",
       ],
       journeyHighlightIndex: 3,
@@ -558,7 +558,7 @@ export const projects: Project[] = [
           component: "analystai-problem",
           alt: "Three operating problems in AI diligence and workspace fragmentation",
           caption:
-            "The friction: unsupported summaries, drifting task state, and onboarding-vs-implementation gaps.",
+            "The friction: unsupported summaries, drifting task state, and onboarding vs implementation gaps.",
           placement: "problem",
         },
         {
@@ -592,14 +592,14 @@ export const projects: Project[] = [
         role: "Product testing, client feedback loops, implementation, and engineering coordination",
         stage:
           "Live enterprise product iteration across document Q&A, diligence and data-room workflows",
-        usersScale: "Investment and diligence teams working across documents and data rooms",
-        surfaces: "Document Q&A, DDQ, data rooms, tasks, libraries, reporting",
+        usersScale: "Investment and diligence teams working across documents and data-rooms",
+        surfaces: "Document Q&A, DDQ, data-rooms, tasks, libraries, reporting",
         collaboration: "Founders, engineering, clients, implementation",
       },
       problem:
         "Investment teams need to move between documents, questions, tasks and decisions without losing the evidence behind an answer or the state of the diligence process. AI only adds value when those workflows stay connected.",
       roleNarrative:
-        "I tested document Q&A and source-linked answers, validated citations against underlying documents, walked DDQ and data-room workflows end to end, and turned client feedback into structured engineering issues that I retested after fixes.",
+        "I tested document Q&A and source-linked answers, validated citations against underlying documents, walked DDQ and data-room workflows end-to-end, and turned client feedback into structured engineering issues that I retested after fixes.",
       workSections: [
         {
           title: "AI trust & document workflows",
@@ -611,14 +611,14 @@ export const projects: Project[] = [
         {
           title: "Diligence & workspace flows",
           items: [
-            "Walked DDQ workflows end to end",
-            "Tested data room UX, libraries, task flows and reporting paths",
+            "Walked DDQ workflows end-to-end",
+            "Tested data-room UX, libraries, task flows and reporting paths",
           ],
         },
         {
           title: "Client implementation & delivery",
           items: [
-            "Supported onboarding with product-accurate narratives",
+            "Supported onboarding with product accurate narratives",
             "Captured client feedback and converted it into actionable product context",
           ],
         },
@@ -639,16 +639,16 @@ export const projects: Project[] = [
         },
       ],
       journey: [
-        "Documents enter the workspace / data room",
+        "Documents enter the workspace / data-room",
         "User asks questions or works a DDQ path",
         "AI returns source-linked outputs",
-        "Tasks and libraries organise follow-up",
+        "Tasks and libraries organise follow up",
         "Reporting captures diligence progress",
         "Team revisits evidence with shared context",
       ],
       demonstrates: [],
       outcomeLine:
-        "A diligence workflow where answers, evidence, tasks and follow-ups stay connected from question to decision.",
+        "A diligence workflow where answers, evidence, tasks and follow ups stay connected from question to decision.",
     },
   }
 ];

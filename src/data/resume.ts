@@ -47,21 +47,21 @@ export const resumeExperience: ResumeRole[] = [
   {
     title: "Chief of Staff",
     company: "AnalystAI",
-    period: "2025–2026",
+    period: "2025 to 2026",
     website: "www.analystai.ai",
     websiteHref: "https://www.analystai.ai",
     bullets: [
-      "Partner with the CEO on product strategy, business operations and the development of AI-powered solutions for investment and operating teams.",
-      "Lead product management, testing and cross-functional delivery across multiple AI products, from business requirements and user journeys to engineering prioritisation and deployment.",
+      "Partner with the CEO on product strategy, business operations and the development of AI powered solutions for investment and operating teams.",
+      "Lead product management, testing and cross functional delivery across multiple AI products, from business requirements and user journeys to engineering prioritisation and deployment.",
       "Manage AI product development for international clients including Keppel Corporation, Marcus & Millichap, Thrive Senior Living and Socida, coordinating engineering teams, client requirements, testing and implementation.",
-      "Support product demonstrations, onboarding and continuous improvement across investment, healthcare and operating-intelligence use cases.",
+      "Support product demonstrations, onboarding and continuous improvement across investment, healthcare and operating intelligence use cases.",
       "Work hands-on with tools including Cursor, Codex, Claude Code, ElevenLabs and Meta Business Suite.",
     ],
   },
   {
     title: "Chief of Staff",
     company: "GA Capital",
-    period: "2025–2026",
+    period: "2025 to 2026",
     website: "www.gacapital.ai",
     websiteHref: "https://www.gacapital.ai",
     bullets: [
@@ -74,18 +74,18 @@ export const resumeExperience: ResumeRole[] = [
   {
     title: "Marketing Specialist",
     company: "Mentor Özel Ders",
-    period: "2024–2025",
+    period: "2024 to 2025",
     website: "mentorozelders.com",
     websiteHref: "https://mentorozelders.com",
     bullets: [
       "Dynamic Instagram management and content strategy.",
-      "Post and pre-design and creation of seasonal content calendars.",
+      "Post and pre design and creation of seasonal content calendars.",
     ],
   },
   {
     title: "SEO Intern",
     company: "Docquity, Doctor Jobs Today",
-    period: "2022–2023",
+    period: "2022 to 2023",
     website: "docquity.com",
     websiteHref: "https://docquity.com",
     bullets: [
@@ -98,7 +98,7 @@ export const resumeExperience: ResumeRole[] = [
 export const resumeEducation: ResumeEducation[] = [
   {
     institution: "Koç University",
-    period: "2020–2025",
+    period: "2020 to 2025",
     detail: "B.A. Business Administration",
     logo: "/images/koc-university-logo.png",
     logoHref: "https://www.koc.edu.tr/",
@@ -112,7 +112,7 @@ export const resumeEducation: ResumeEducation[] = [
   },
   {
     institution: "Darüşşafaka High School",
-    period: "2016–2020",
+    period: "2016 to 2020",
     detail: "High School Diploma",
     logo: "/images/darussafaka-logo.png",
     logoHref: "https://www.darussafaka.org/",
@@ -121,7 +121,7 @@ export const resumeEducation: ResumeEducation[] = [
     logoContained: true,
     notes: [
       {
-        text: "Darüşşafaka entrance exam winner: opening ceremony speech",
+        text: "Top-ranked entrant; delivered the opening ceremony speech",
         href: "https://www.darussafaka.org/haberler/darussafaka-egitim-kurumlari-torenle-acildi",
       },
       { text: "IEARN Conference 2017 attendee, Morocco" },

@@ -159,7 +159,7 @@ export function OvernightApproachVisual({ caption }: { caption?: string }) {
   const cards = [
     {
       title: "Start from the approved source universe",
-      body: "The workflow uses the team's defined market-data, news, macroeconomic, and company-information inputs.",
+      body: "The workflow uses the team's defined market data, news, macroeconomic, and company information inputs.",
     },
     {
       title: "Separate collection from editorial judgment",
@@ -202,7 +202,7 @@ export function OvernightBuildVisual({ caption }: { caption?: string }) {
     },
     {
       label: "Triage",
-      title: "Cross-market prioritization",
+      title: "Cross market prioritization",
       body: "Events grouped by relevance to the report rather than presented as an undifferentiated feed.",
     },
     {
@@ -247,7 +247,7 @@ export function OvernightJourneyVisual({ caption }: { caption?: string }) {
       number: "02",
       label: "Prioritize",
       title: "Rank developments by report relevance",
-      body: "Events are organized into the cross-asset picture, with source and timing context retained for the reviewer.",
+      body: "Events are organized into the cross asset picture, with source and timing context retained for the reviewer.",
     },
     {
       number: "03",
@@ -284,21 +284,21 @@ export function OvernightJourneyVisual({ caption }: { caption?: string }) {
   );
 }
 
-/** Sanitized report preview — public-source walkthrough pattern, not a bank report. */
+/** Sanitized report preview, public source walkthrough pattern, not a bank report. */
 export function OvernightReportVisual({ caption }: { caption?: string }) {
   const regions = [
     {
       region: "Türkiye",
       instrument: "BIST 100",
       move: "−1.90%",
-      note: "Official exchange close retained for local-market section.",
+      note: "Official exchange close retained for local market section.",
       source: "Borsa İstanbul",
     },
     {
       region: "Asia",
       instrument: "Nikkei 225",
       move: "about −4%",
-      note: "Technology-led risk-off session in the regional wrap.",
+      note: "Technology led risk off session in the regional wrap.",
       source: "Public market wrap",
     },
     {
@@ -379,14 +379,14 @@ export function OvernightReportVisual({ caption }: { caption?: string }) {
             </div>
 
             <p className="mt-5 text-[11px] uppercase tracking-[0.16em] text-burgundy">
-              Morning note · public-source walkthrough
+              Morning note · public source walkthrough
             </p>
             <p className="mt-2 max-w-3xl text-xl leading-snug text-navy md:text-2xl">
               Global technology selling crosses regions; Türkiye close requires
               desk review
             </p>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
-              Sanitized product pattern using public-source style evidence
+              Sanitized product pattern using public source style evidence
               handling, not a reproduction of a bank proprietary report.
             </p>
 
@@ -425,8 +425,8 @@ export function OvernightReportVisual({ caption }: { caption?: string }) {
                   Türkiye implication · analyst-owned
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-navy">
-                  The editor must decide whether the global risk-off context
-                  changes the local-market read. The system preserves evidence;
+                  The editor must decide whether the global risk off context
+                  changes the local market read. The system preserves evidence;
                   it does not make that causal judgment.
                 </p>
               </div>

@@ -146,8 +146,8 @@ export function AnalystAiProblemVisual({ caption }: { caption?: string }) {
           },
           {
             number: "02",
-            title: "DDQ and data room state drifted apart",
-            body: "When tasks, documents and reporting live in separate surfaces, follow-ups get lost and teams redo work across the diligence cycle.",
+            title: "DDQ and data-room state drifted apart",
+            body: "When tasks, documents and reporting live in separate surfaces, follow ups get lost and teams redo work across the diligence cycle.",
           },
           {
             number: "03",
@@ -173,7 +173,7 @@ export function AnalystAiApproachVisual({ caption }: { caption?: string }) {
           },
           {
             title: "Connect documents, tasks and reporting",
-            body: "DDQ paths, data rooms, libraries and task state stay linked through the same workflow rather than adjacent feature tabs.",
+            body: "DDQ paths, data-rooms, libraries and task state stay linked through the same workflow rather than adjacent feature tabs.",
           },
           {
             title: "Feed client sessions into product priority",
@@ -199,13 +199,13 @@ export function AnalystAiBuildVisual({ caption }: { caption?: string }) {
           },
           {
             label: "Work",
-            title: "DDQ & data room",
+            title: "DDQ & data-room",
             body: "Structured diligence paths with document context, task assignment and progress visible across the workspace.",
           },
           {
             label: "Organize",
             title: "Libraries & tasks",
-            body: "Shared evidence, follow-up ownership and libraries that match how investment teams actually coordinate diligence.",
+            body: "Shared evidence, follow up ownership and libraries that match how investment teams actually coordinate diligence.",
           },
           {
             label: "Report",
@@ -229,7 +229,7 @@ export function AnalystAiJourneyVisual({ caption }: { caption?: string }) {
           {
             number: "01",
             label: "Ingest",
-            title: "Documents enter workspace / data room",
+            title: "Documents enter workspace / data-room",
             body: "Deal materials, DDQ templates and supporting files indexed with clear ownership and access boundaries.",
           },
           {
@@ -242,7 +242,7 @@ export function AnalystAiJourneyVisual({ caption }: { caption?: string }) {
             number: "03",
             label: "Verify",
             title: "Outputs traced to underlying evidence",
-            body: "Citations inspected, confidence gaps flagged and tasks created for follow-up where sources are incomplete.",
+            body: "Citations inspected, confidence gaps flagged and tasks created for follow up where sources are incomplete.",
           },
           {
             number: "04",
@@ -348,8 +348,8 @@ export function AnalystAiWorkspaceVisual({ caption }: { caption?: string }) {
             <ul className="mt-4 space-y-2 case-meta">
               {[
                 "Verify customer contract terms · Legal",
-                "Cross-check AR aging · Financial",
-                "Schedule mgmt follow-up · Commercial",
+                "Cross check AR aging · Financial",
+                "Schedule mgmt follow up · Commercial",
               ].map((task) => (
                 <li
                   key={task}

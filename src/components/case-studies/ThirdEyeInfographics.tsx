@@ -112,7 +112,7 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
   const frontlineUpdates = [
     "Customers keep asking about insurance covering replacement parts.",
     "CRM was slow again this morning: team worked around it.",
-    "Two call-offs at checkout; queue building before peak.",
+    "Two call offs at checkout; queue building before peak.",
   ];
 
   return (
@@ -149,7 +149,7 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
               ))}
             </ul>
             <p className="mt-2 case-meta leading-snug text-muted @[42rem]:mt-3">
-              2–3 shift-close questions · no new app
+              2 to 3 shift close questions · no new app
             </p>
           </div>
 
@@ -227,7 +227,7 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
 export function ThirdEyeProblemVisual({ caption }: { caption?: string }) {
   const before = [
     "Updates scattered across WhatsApp, spreadsheets and email",
-    "Managers rely on manual follow-up",
+    "Managers rely on manual follow up",
     "Repeated issues are noticed too late",
   ];
   const after = [
@@ -395,7 +395,7 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
     {
       number: "01",
       title: "WhatsApp pulse",
-      body: "2–3 shift-close questions: lightweight, repeatable, no new employee app.",
+      body: "2 to 3 shift close questions: lightweight, repeatable, no new employee app.",
     },
     {
       number: "02",
@@ -410,7 +410,7 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
     {
       number: "04",
       title: "Action queue",
-      body: "Owner-linked follow-ups, training triggers and escalation paths surfaced daily.",
+      body: "Owner linked follow ups, training triggers and escalation paths surfaced daily.",
     },
   ];
 
@@ -427,7 +427,7 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
                 Manager visibility in days, not quarters
               </h3>
               <p className="case-meta mt-2 text-background/65">
-                Best for 20–50 frontline employees across 2–5 sites: WhatsApp
+                Best for 20 to 50 frontline employees across 2 to 5 sites: WhatsApp
                 check-ins plus mobile web fallback.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -480,7 +480,7 @@ export function ThirdEyeJourneyVisual({ caption }: { caption?: string }) {
             number: "01",
             label: "Pulse",
             title: "Frontline completes WhatsApp check-in",
-            body: "Short shift-close questions capture customer issues, workarounds, branch differences and recovery blockers.",
+            body: "Short shift close questions capture customer issues, workarounds, branch differences and recovery blockers.",
           },
           {
             number: "02",
@@ -497,7 +497,7 @@ export function ThirdEyeJourneyVisual({ caption }: { caption?: string }) {
           {
             number: "04",
             label: "Act",
-            title: "Follow-ups loop back to the field",
+            title: "Follow ups loop back to the field",
             body: "Action queue, training triggers and escalation paths connect dashboard review to frontline recovery.",
           },
         ]}
@@ -507,14 +507,14 @@ export function ThirdEyeJourneyVisual({ caption }: { caption?: string }) {
   );
 }
 
-/** Manager-level insight cards: staffing, trend, training gap pattern. */
+/** Manager level insight cards: staffing, trend, training gap pattern. */
 export function ThirdEyeBriefVisual({ caption }: { caption?: string }) {
   return (
     <figure>
       <Panel className="!p-0 overflow-hidden">
         <div className="border-b border-border px-5 py-4 md:px-7">
           <SectionLabel
-            eyebrow="Manager-level insights"
+            eyebrow="Manager level insights"
             title="Insights you can act on today"
             subtitle="Issue, affected branches, owner and next action, surfaced each morning."
             badge="Daily brief pattern"
@@ -531,7 +531,7 @@ export function ThirdEyeBriefVisual({ caption }: { caption?: string }) {
           <InsightCard
             tag="Customer question trend"
             tagTone="amber"
-            issue="Insurance-related questions rising across Region North"
+            issue="Insurance related questions rising across Region North"
             branches="Region North · 6 branches"
             owner="Regional manager"
             nextAction="Update service desk talking points"
@@ -547,7 +547,7 @@ export function ThirdEyeBriefVisual({ caption }: { caption?: string }) {
             issue="New joiners asking about warranty procedures"
             branches="Onboarding cohort · Branch 2"
             owner="Training lead"
-            nextAction="Trigger warranty SOP micro-training"
+            nextAction="Trigger warranty SOP micro training"
           />
         </div>
       </Panel>
@@ -567,7 +567,7 @@ export function ThirdEyeOutcomeVisual({ caption }: { caption?: string }) {
     "Lightweight WhatsApp check-ins",
     "Repeated signals grouped into a daily brief",
     "Owners and next actions surfaced for managers",
-    "Follow-ups looped back into operations",
+    "Follow ups looped back into operations",
   ];
 
   return (

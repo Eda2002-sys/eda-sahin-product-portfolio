@@ -110,7 +110,7 @@ export function HautonomyProblemVisual({ caption }: { caption?: string }) {
     {
       number: "02",
       title: "Manual entry separated value from evidence",
-      body: "Re-keying slowed the process and could detach a number from the page, date, unit, range, or document where it appeared.",
+      body: "Re keying slowed the process and could detach a number from the page, date, unit, range, or document where it appeared.",
     },
     {
       number: "03",
@@ -197,7 +197,7 @@ export function HautonomyBuildVisual({ caption }: { caption?: string }) {
     {
       label: "Review",
       title: "Professional exception handling",
-      body: "Side-by-side source comparison, uncertain matches, corrections, approval, and retained reviewer state.",
+      body: "Side by side source comparison, uncertain matches, corrections, approval, and retained reviewer state.",
     },
   ];
 
@@ -411,7 +411,7 @@ export function HautonomyReviewVisual({ caption }: { caption?: string }) {
               {[
                 ["Original label", "LDL-Chol"],
                 ["Structured result", "3.4 mmol/L"],
-                ["Document range", "0.0–3.0"],
+                ["Document range", "0.0 to 3.0"],
                 ["Source location", "Page 2 · line 19"],
                 ["Confidence", "Medium"],
                 ["Exception", "Unit and label match"],
@@ -568,7 +568,7 @@ export function HautonomyProgramVisual({ caption }: { caption?: string }) {
 export function HautonomyOutcomeVisual({ caption }: { caption?: string }) {
   const before = [
     "Lab data arrived disconnected from source context and program state.",
-    "Phase routing, retesting and re-enrolment were easy to misread across roles.",
+    "Phase routing, retesting and re enrolment were easy to misread across roles.",
     "Trend preparation and exception review lived in separate steps.",
   ];
   const after = [

@@ -86,9 +86,8 @@ export function SelectedWork() {
       <div className="container-page pt-16 md:pt-24">
         <SectionHeading
           id="work-heading"
-          eyebrow="Selected work"
-          title="Four AI products. Four different operating problems."
-          description="Across automotive, operations, digital health and investment technology, I worked on the product logic, user journeys, QA and implementation behind each system."
+          title="Selected work"
+          description="AI makes it faster to learn across new fields. I use that speed with human judgement to understand unfamiliar workflows, ask the right questions and turn what I learn into products that work. Below are some of the AI-native products I've helped shape, test and implement."
         />
         <div className="mt-2 md:mt-4">
           {flagship.map((project, index) => (
@@ -106,8 +105,8 @@ export function SelectedWork() {
         >
           <SectionHeading
             id="additional-products-heading"
-            eyebrow="Additional product experience"
-            title="Other AI and data products I contributed to across finance, research and investment workflows."
+            title="Additional AI & data products"
+            description="Products I contributed to across finance, research and investment workflows."
           />
           <ul className="mt-10 divide-y divide-border border-t border-border md:mt-12">
             {additionalProducts.map((product) => (

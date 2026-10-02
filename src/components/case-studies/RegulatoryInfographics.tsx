@@ -102,11 +102,11 @@ export function RegulatoryProblemVisual({ caption }: { caption?: string }) {
     {
       number: "01",
       title: "Monitoring produced noise",
-      body: "Official updates, enforcement actions, guidance, commentary, index pages, events, and non-regulatory material arrived through overlapping channels.",
+      body: "Official updates, enforcement actions, guidance, commentary, index pages, events, and non regulatory material arrived through overlapping channels.",
     },
     {
       number: "02",
-      title: "Impact was organization-specific",
+      title: "Impact was organization specific",
       body: "The same update could be critical, informational, or irrelevant depending on jurisdiction, sector, business activity, and the company's own control environment.",
     },
     {
@@ -193,7 +193,7 @@ export function RegulatoryBuildVisual({ caption }: { caption?: string }) {
     {
       label: "Monitor",
       title: "Regulatory source intake",
-      body: "Defined jurisdictions and source classes, relevance filtering, language handling, and new-item detection.",
+      body: "Defined jurisdictions and source classes, relevance filtering, language handling, and new item detection.",
     },
     {
       label: "Analyze",
@@ -203,7 +203,7 @@ export function RegulatoryBuildVisual({ caption }: { caption?: string }) {
     {
       label: "Compare",
       title: "Policy and gap analysis",
-      body: "Internal documents selected as context for structured coverage, contradiction, and missing-control review.",
+      body: "Internal documents selected as context for structured coverage, contradiction, and missing control review.",
     },
     {
       label: "Act",
@@ -431,7 +431,7 @@ export function RegulatoryOutcomeVisual({ caption }: { caption?: string }) {
     "Policy evidence and action ownership drifted away from the original update.",
   ];
   const after = [
-    "New material enters a structured, organization-specific review flow.",
+    "New material enters a structured, organization specific review flow.",
     "Obligations, dates, evidence, and policy context stay together.",
     "Professional decisions become owned, reviewable work rather than isolated commentary.",
   ];

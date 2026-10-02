@@ -275,7 +275,7 @@ export function CreBuildVisual({ caption }: { caption?: string }) {
     {
       label: "Explore",
       title: "Interactive market map",
-      body: "Geographic search, synchronized pins and records, clustering context, filters, zoom, and selected-asset focus.",
+      body: "Geographic search, synchronized pins and records, clustering context, filters, zoom, and selected asset focus.",
     },
     {
       label: "Qualify",
@@ -331,7 +331,7 @@ export function CreSheetVisual({ caption }: { caption?: string }) {
       status: "Pending",
     },
     {
-      name: "Mixed-use land tract",
+      name: "Mixed use land tract",
       city: "City D",
       type: "Land",
       size: "2.1 acres",
@@ -482,7 +482,7 @@ export function CreOutcomeVisual({ caption }: { caption?: string }) {
   ];
   const after = [
     "Map and table operate on one structured property record.",
-    "Market filters, selected-asset context, and auction information stay synchronized.",
+    "Market filters, selected asset context, and auction information stay synchronized.",
     "Reviewed records and opportunity sets can be corrected and carried forward from the same workspace.",
   ];
 

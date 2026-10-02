@@ -127,7 +127,7 @@ export function LpProblemVisual({ caption }: { caption?: string }) {
     {
       number: "03",
       title: "Research decayed after the project",
-      body: "One-off spreadsheets preserved conclusions but rarely preserved source lineage, conflicts, freshness, and the next verification step.",
+      body: "One off spreadsheets preserved conclusions but rarely preserved source lineage, conflicts, freshness, and the next verification step.",
     },
   ];
 
@@ -158,12 +158,12 @@ export function LpApproachVisual({ caption }: { caption?: string }) {
       body: "Candidate evidence is checked for entity fit, relevance, duplication, and source strength before it can update a maintained record.",
     },
     {
-      title: "Preserve claim-level lineage",
+      title: "Preserve claim level lineage",
       body: "Mandate, allocation, portfolio, relationship, and contact signals remain connected to the source from which they were derived.",
     },
     {
       title: "Make gaps part of the product",
-      body: "Missing, stale, conflicting, or review-pending fields remain visible so an analyst knows what to verify next.",
+      body: "Missing, stale, conflicting, or review pending fields remain visible so an analyst knows what to verify next.",
     },
   ];
 
@@ -443,7 +443,7 @@ export function LpBuildVisual({ caption }: { caption?: string }) {
     {
       label: "Brief",
       title: "Decision and outreach preparation",
-      body: "Source-backed briefings, relationship maps, target context, and the specific checks still required.",
+      body: "Source backed briefings, relationship maps, target context, and the specific checks still required.",
     },
   ];
 

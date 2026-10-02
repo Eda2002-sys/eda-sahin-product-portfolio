@@ -17,7 +17,7 @@ export function Contact() {
         <SectionHeading
           id="contact-heading"
           eyebrow="Contact"
-          title="Open to product, operations and founder-facing roles."
+          title="Open to global product, operations, strategy and founder-facing roles."
           description="If my background feels relevant to what you're building, or you see a good fit, I'd be happy to connect."
         />
 

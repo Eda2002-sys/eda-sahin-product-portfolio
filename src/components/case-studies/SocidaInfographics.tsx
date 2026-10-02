@@ -24,7 +24,7 @@ export function SocidaWhatsAppMock({ caption }: { caption?: string }) {
         </div>
 
         <div className="flex gap-1.5 overflow-x-auto border-b border-border bg-surface px-3 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {["Brand A", "Brand B", "Multi-brand", "Service"].map(
+          {["Brand A", "Brand B", "Multi brand", "Service"].map(
             (brand, index) => (
               <span
                 key={brand}
@@ -164,7 +164,7 @@ export function SocidaApproachVisual({ caption }: { caption?: string }) {
     {
       number: "02",
       title: "Ground answers in approved sources",
-      body: "Responses came from controlled product, financing, and operating materials, not an open-ended generative chatbot.",
+      body: "Responses came from controlled product, financing, and operating materials, not an open ended generative chatbot.",
     },
     {
       number: "03",
@@ -196,7 +196,7 @@ export function SocidaBuildVisual({ caption }: { caption?: string }) {
     {
       label: "Learn",
       title: "Vehicle and financing knowledge",
-      body: "Employees could ask about vehicle models, brand information, financing routes, and day-to-day operating questions in the language used across the business.",
+      body: "Employees could ask about vehicle models, brand information, financing routes, and day to day operating questions in the language used across the business.",
     },
     {
       label: "Use",
@@ -206,7 +206,7 @@ export function SocidaBuildVisual({ caption }: { caption?: string }) {
     {
       label: "Reinforce",
       title: "An ongoing learning loop",
-      body: "In-channel prompts, practice moments, documents and progress signals turned one answer into continuous reinforcement instead of a one-off training event.",
+      body: "In channel prompts, practice moments, documents and progress signals turned one answer into continuous reinforcement instead of a one off training event.",
     },
   ];
 
@@ -245,7 +245,7 @@ export function SocidaJourneyVisual({ caption }: { caption?: string }) {
     {
       number: "03",
       title: "Apply",
-      body: "Relevant document or next step is shared in-channel during the shift.",
+      body: "Relevant document or next step is shared in channel during the shift.",
       role: "Employee",
     },
     {
@@ -390,7 +390,7 @@ export function SocidaGovernanceVisual({ caption }: { caption?: string }) {
               Source · Financing_routes.pdf · p.4
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
-              {["Open document", "Ask follow-up"].map((action) => (
+              {["Open document", "Ask follow up"].map((action) => (
                 <span
                   key={action}
                   className="tag-chip rounded-sm border border-background/20 px-2.5 py-1 text-background/75"
@@ -426,7 +426,7 @@ export function SocidaDemandVisual({ caption }: { caption?: string }) {
   const topics = [
     { label: "Financing & eligibility", value: 28 },
     { label: "Models & specifications", value: 22 },
-    { label: "Service & after-sales", value: 19 },
+    { label: "Service & after sales", value: 19 },
     { label: "Campaigns & recalls", value: 17 },
     { label: "Internal docs & HR", value: 14 },
   ];
@@ -534,7 +534,7 @@ export function SocidaDemandVisual({ caption }: { caption?: string }) {
           </p>
           <p className="case-meta mt-2 text-muted">
             Demand becomes an input for reinforcement, source updates, and
-            operational follow-up.
+            operational follow up.
           </p>
         </div>
       </Panel>
@@ -545,7 +545,7 @@ export function SocidaDemandVisual({ caption }: { caption?: string }) {
 
 export function SocidaOutcomeVisual({ caption }: { caption?: string }) {
   const before = [
-    "Knowledge scattered across documents, chats, and one-off training",
+    "Knowledge scattered across documents, chats, and one off training",
     "Employees searched multiple systems during customer conversations",
     "Managers had little visibility into recurring knowledge gaps",
   ];
