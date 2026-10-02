@@ -21,21 +21,35 @@ export function Contact() {
           description="If my background feels relevant to what you're building, or you see a good fit, I'd be happy to connect."
         />
 
-        <div className="mt-10 flex flex-wrap gap-3">
-          <ButtonLink href={siteConfig.linkedin} external>
+        <div className="mt-8 flex flex-col gap-3 min-[420px]:mt-10 min-[420px]:flex-row min-[420px]:flex-wrap">
+          <ButtonLink
+            href={siteConfig.linkedin}
+            external
+            className="w-full min-[420px]:w-auto"
+          >
             LinkedIn
           </ButtonLink>
           <ButtonLink
             href={`mailto:${siteConfig.email}`}
             variant="secondary"
             external
+            className="w-full min-[420px]:w-auto"
           >
             Email
           </ButtonLink>
-          <ButtonLink href={siteConfig.github} variant="secondary" external>
+          <ButtonLink
+            href={siteConfig.github}
+            variant="secondary"
+            external
+            className="w-full min-[420px]:w-auto"
+          >
             GitHub
           </ButtonLink>
-          <ButtonLink href={siteConfig.resumePath} variant="secondary">
+          <ButtonLink
+            href={siteConfig.resumePath}
+            variant="secondary"
+            className="w-full min-[420px]:w-auto"
+          >
             CV
           </ButtonLink>
         </div>

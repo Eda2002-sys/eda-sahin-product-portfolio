@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function ResumePage() {
   return (
     <div className="border-b border-border">
-      <div className="container-page py-16 md:py-24">
+      <div className="container-page py-10 md:py-24">
         <Link
           href="/"
           className="link-underline case-meta inline-flex text-burgundy"
@@ -26,21 +26,35 @@ export default function ResumePage() {
           ← Back to portfolio
         </Link>
 
-        <div className="mt-8 flex flex-col gap-6 sm:mt-10 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="case-body">
+        <div className="mt-6 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+          <div className="min-w-0">
+            <p className="case-body text-pretty">
               Chief of Staff with experience across AI products, operations and
               M&A. Based in Istanbul.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <ButtonLink href={siteConfig.resumePdfPath} external>
+          <div className="flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap">
+            <ButtonLink
+              href={siteConfig.resumePdfPath}
+              external
+              className="w-full min-[420px]:w-auto"
+            >
               Download PDF
             </ButtonLink>
-            <ButtonLink href={siteConfig.linkedin} variant="secondary" external>
+            <ButtonLink
+              href={siteConfig.linkedin}
+              variant="secondary"
+              external
+              className="w-full min-[420px]:w-auto"
+            >
               LinkedIn
             </ButtonLink>
-            <ButtonLink href={siteConfig.github} variant="secondary" external>
+            <ButtonLink
+              href={siteConfig.github}
+              variant="secondary"
+              external
+              className="w-full min-[420px]:w-auto"
+            >
               GitHub
             </ButtonLink>
           </div>

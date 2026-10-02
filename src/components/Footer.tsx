@@ -17,7 +17,7 @@ export function Footer() {
             {siteConfig.name}
           </Link>
           <p className="case-meta mt-2 text-muted">
-            Product · Operations · Founder facing work
+            Product · Operations · Founder-facing work
           </p>
         </div>
         <nav

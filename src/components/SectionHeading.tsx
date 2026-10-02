@@ -14,11 +14,13 @@ export function SectionHeading({
   return (
     <div>
       {eyebrow ? <p className="eyebrow mb-3">{eyebrow}</p> : null}
-      <h2 id={id} className="case-section">
+      <h2 id={id} className="case-section text-balance">
         {title}
       </h2>
       {description ? (
-        <p className="case-body mt-4">{description}</p>
+        <p className="case-body mt-3 max-w-3xl text-pretty md:mt-4">
+          {description}
+        </p>
       ) : null}
     </div>
   );

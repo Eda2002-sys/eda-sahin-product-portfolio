@@ -281,7 +281,7 @@ body {
 /* Navbar name — stronger anchor than utility nav links */
 .type-brand-nav {
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.1875rem;
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.35;

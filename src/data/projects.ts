@@ -153,7 +153,7 @@ export const projects: Project[] = [
     category: "Automotive · Workforce Intelligence · WhatsApp",
     summary:
       "Employees could ask product, financing and process questions by text or voice, receive answers grounded in approved company sources, access documents and complete training without leaving WhatsApp.",
-    context: ["~300 employees", "7 brand knowledge bases", "WhatsApp first"],
+    context: ["~300 employees", "7 brand knowledge bases", "WhatsApp-first"],
     roleHighlights: [
       "Mapped the employee question → answer → source workflow",
       "Tested voice, text, images and document-based questions",

@@ -40,7 +40,7 @@ export function ProjectCoverVisual({ project }: { project: Project }) {
           <div
             className={
               isPhone
-                ? "mx-auto w-full max-w-[19rem] sm:max-w-[20.5rem]"
+                ? "mx-auto w-full max-w-[16.5rem] min-[400px]:max-w-[19rem] sm:max-w-[20.5rem]"
                 : isCompact
                   ? "project-cover-visual project-cover-visual--compact mx-auto min-w-0 w-full max-w-[34rem]"
                   : "project-cover-visual min-w-0 w-full"

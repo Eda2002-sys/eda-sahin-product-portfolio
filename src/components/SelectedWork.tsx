@@ -12,7 +12,7 @@ function ProjectCard({
   reverse?: boolean;
 }) {
   return (
-    <article className="grid items-start gap-8 border-t border-border py-10 transition-colors md:gap-12 md:py-16 lg:grid-cols-12 lg:gap-14">
+    <article className="grid items-start gap-6 border-t border-border py-8 transition-colors sm:gap-8 sm:py-10 md:gap-12 md:py-16 lg:grid-cols-12 lg:gap-14">
       <div
         className={`min-w-0 lg:col-span-6 ${reverse ? "lg:order-2" : "lg:order-1"}`}
       >
@@ -24,12 +24,18 @@ function ProjectCard({
       >
         <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-4">
           <span className="case-subhead text-burgundy">{project.number}</span>
-          <p className="eyebrow eyebrow-tag">{project.category}</p>
+          <p className="eyebrow eyebrow-tag max-w-full text-pretty break-words">
+            {project.category}
+          </p>
         </div>
 
-        <h3 className="case-section mt-3 sm:mt-4">{project.title}</h3>
+        <h3 className="case-section mt-3 text-balance sm:mt-4">
+          {project.title}
+        </h3>
 
-        <p className="case-meta mt-2 text-burgundy">{project.whatChanged}</p>
+        <p className="case-meta mt-2 text-pretty text-burgundy">
+          {project.whatChanged}
+        </p>
 
         <p className="case-body mt-3 sm:mt-4">{project.summary}</p>
 

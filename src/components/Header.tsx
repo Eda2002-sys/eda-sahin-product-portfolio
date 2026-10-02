@@ -57,7 +57,7 @@ export function Header() {
         <div className="container-page flex h-14 items-center justify-between md:h-16">
           <Link
             href="/"
-            className="type-brand-nav ml-0.5 shrink-0 transition-colors hover:text-burgundy-soft md:ml-1.5 lg:ml-2"
+            className="type-brand-nav max-w-[70%] shrink-0 truncate transition-colors hover:text-burgundy-soft md:max-w-none md:ml-1.5 lg:ml-2"
             onClick={() => setOpen(false)}
           >
             {siteConfig.name}
