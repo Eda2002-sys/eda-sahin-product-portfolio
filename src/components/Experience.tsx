@@ -14,14 +14,15 @@ export function Experience() {
         <SectionHeading
           id="experience-heading"
           title="Experience"
-          description="I'm most useful when a problem is still messy. I get close to the real workflow, understand what is breaking, turn that into something actionable and stay close through implementation."
+          descriptionWide
+          description="I started working in marketing roles, where I learned how to understand an audience, work from feedback and turn business needs into something people could actually respond to. After graduating, that naturally pulled me closer to product and operations, where the same instinct became understanding user problems and figuring out what needed to happen next."
         />
 
         <ol className="mt-10 space-y-0 md:mt-12">
           {experience.map((item) => (
             <li
               key={item.id}
-              className="grid gap-5 border-t border-border py-8 md:grid-cols-12 md:items-center md:gap-6 md:py-10"
+              className="grid gap-5 border-t border-border py-8 md:grid-cols-12 md:items-start md:gap-6 md:py-10"
             >
               <div className="min-w-0 md:col-span-4">
                 {item.logo ? (
@@ -72,19 +73,14 @@ export function Experience() {
               <div className="hidden md:col-span-2 md:block">
                 <p className="case-meta text-muted">{item.period}</p>
               </div>
-              <div className="min-w-0 md:col-span-6 md:justify-self-start">
-                {item.focus ? (
-                  <ul className="flex flex-wrap gap-2">
-                    {item.focus.map((focusItem) => (
-                      <li
-                        key={focusItem}
-                        className="tag-chip rounded-sm border border-border px-2.5 py-1 text-muted"
-                      >
-                        {focusItem}
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
+              <div className="min-w-0 md:col-span-6">
+                <ul className="case-meta list-disc space-y-2 pl-4 text-muted marker:text-burgundy/70">
+                  {item.bullets.map((bullet) => (
+                    <li key={bullet} className="pl-0.5 leading-relaxed">
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </li>
           ))}

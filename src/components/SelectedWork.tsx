@@ -112,7 +112,6 @@ export function SelectedWork() {
           <SectionHeading
             id="additional-products-heading"
             title="Additional AI & data products"
-            description="Products I contributed to across finance, research and investment workflows."
           />
           <ul className="mt-10 divide-y divide-border border-t border-border md:mt-12">
             {additionalProducts.map((product) => (

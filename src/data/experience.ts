@@ -4,7 +4,7 @@ export type ExperienceItem = {
   role: string;
   subtitle?: string;
   period: string;
-  focus?: string[];
+  bullets: string[];
   logo?: string;
   logoHref?: string;
   /** Tunes visual weight inside the shared logo frame. */
@@ -21,33 +21,35 @@ export const experience: ExperienceItem[] = [
     logo: "/images/ga-capital-logo.png",
     logoHref: "https://www.gacapital.ai",
     logoScale: 1.3,
-    focus: [
-      "Client & engineering bridge",
-      "End to end product testing",
-      "Client delivery",
-      "M&A due diligence",
+    bullets: [
+      "Worked between clients and engineering on AI products, translating requirements and feedback into clear product tasks and keeping them connected to implementation.",
+      "Tested end to end workflows with real use cases and product data, comparing expected and actual outputs to identify logic gaps, edge cases and patterns before release.",
     ],
   },
   {
     id: "mentor",
     company: "Mentor Özel Ders",
     role: "Marketing Intern",
-    subtitle: "6 month internship completed during university · Turkey",
+    subtitle: "Turkey",
     period: "2024 to 2025",
     logo: "/images/mentor-logo.png",
     logoHref: "https://mentorozelders.com",
     logoScale: 1.45,
-    focus: ["Instagram content", "Campaign planning", "Content production"],
+    bullets: [
+      "Planned weekly Instagram content around campaigns, tutor demand and seasonal periods, working with the team from idea and copy through publishing.",
+    ],
   },
   {
     id: "docquity",
     company: "Docquity, Doctor Jobs Today",
     role: "Marketing Intern",
-    subtitle: "18 month internship completed during university · Singapore",
+    subtitle: "Singapore",
     period: "2022 to 2023",
     logo: "/images/docquity-logo.png",
     logoHref: "https://docquity.com",
     logoScale: 0.8,
-    focus: ["Healthcare content", "SEO", "Southeast Asian markets"],
+    bullets: [
+      "Wrote blog and web content for healthcare audiences in Malaysia, the Philippines and Indonesia.",
+    ],
   },
 ];

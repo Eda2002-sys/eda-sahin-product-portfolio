@@ -263,7 +263,7 @@ const html = `<!DOCTYPE html>
         "Mentor Özel Ders",
         "2024 to 2025 · Turkey",
         "mentorozelders.com",
-        "6 month internship completed during university",
+        null,
         [
           "Planned weekly Instagram content around campaigns, tutor demand and seasonal periods, working with the team from idea and copy through publishing.",
           "Organised team content shoots, coordinated schedules and practical details, and supported production on set.",
@@ -274,7 +274,7 @@ const html = `<!DOCTYPE html>
         "Docquity, Doctor Jobs Today",
         "2022 to 2023 · Singapore",
         "docquity.com",
-        "18 month internship completed during university",
+        null,
         [
           "Wrote blog and web content for healthcare audiences in Malaysia, the Philippines and Indonesia.",
           "Worked in a regular feedback loop with the manager and content team, revising drafts, sharing weekly progress reports and adjusting work based on feedback.",
@@ -328,7 +328,7 @@ function experienceBlock(title, company, period, website, note, bullets) {
       <div class="entry-title">${title} <span class="entry-company">· ${company}</span></div>
       <div class="period">${period}</div>
     </div>
-    <div class="note">${note}</div>
+    ${note ? `<div class="note">${note}</div>` : ""}
     <div class="website">${website}</div>
     <ul class="bullets">${bullets.map((b) => `<li>${b}</li>`).join("")}</ul>
   </div>`;

@@ -77,7 +77,6 @@ export const resumeExperience: ResumeRole[] = [
     company: "Mentor Özel Ders",
     period: "2024 to 2025",
     location: "Turkey",
-    note: "6 month internship completed during university",
     website: "mentorozelders.com",
     websiteHref: "https://mentorozelders.com",
     bullets: [
@@ -90,7 +89,6 @@ export const resumeExperience: ResumeRole[] = [
     company: "Docquity, Doctor Jobs Today",
     period: "2022 to 2023",
     location: "Singapore",
-    note: "18 month internship completed during university",
     website: "docquity.com",
     websiteHref: "https://docquity.com",
     bullets: [

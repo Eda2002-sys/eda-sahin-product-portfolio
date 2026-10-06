@@ -19,9 +19,10 @@ export function Hero() {
         </h1>
 
         <p className="case-body rise-in rise-in-delay-2 mt-4 max-w-4xl md:mt-6">
-          I work across users, business and engineering to define workflows,
-          test real scenarios, identify where products break and turn findings
-          into shipped improvements.
+          Early in my career, I&apos;ve had the chance to work across very
+          different products and industries, getting close to users and real
+          workflows, understanding what needs to change and working with clients
+          and teams to move things forward.
         </p>
 
         <div
@@ -52,49 +53,17 @@ export function Hero() {
             founder facing roles
           </p>
 
-          <div className="rise-in rise-in-delay-2 mt-7 flex flex-col gap-3 md:mt-10">
-            <div className="flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap min-[420px]:items-center">
-              <ButtonLink href="/#work" className="w-full min-[420px]:w-auto">
-                View selected work
-              </ButtonLink>
-              <ButtonLink
-                href={siteConfig.resumePdfPath}
-                variant="secondary"
-                className="w-full min-[420px]:w-auto"
-              >
-                Download CV
-              </ButtonLink>
-            </div>
-            <div className="flex flex-wrap items-center gap-x-2 case-meta text-muted">
-              <a
-                href={siteConfig.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline transition-colors hover:text-burgundy"
-              >
-                LinkedIn
-              </a>
-              <span className="text-border-strong" aria-hidden="true">
-                ·
-              </span>
-              <a
-                href={siteConfig.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline transition-colors hover:text-burgundy"
-              >
-                GitHub
-              </a>
-              <span className="text-border-strong" aria-hidden="true">
-                ·
-              </span>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="link-underline transition-colors hover:text-burgundy"
-              >
-                Email
-              </a>
-            </div>
+          <div className="rise-in rise-in-delay-2 mt-7 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap min-[420px]:items-center md:mt-10">
+            <ButtonLink href="/#work" className="w-full min-[420px]:w-auto">
+              View selected work
+            </ButtonLink>
+            <ButtonLink
+              href={siteConfig.resumePdfPath}
+              variant="secondary"
+              className="w-full min-[420px]:w-auto"
+            >
+              Download CV
+            </ButtonLink>
           </div>
         </div>
       </div>
