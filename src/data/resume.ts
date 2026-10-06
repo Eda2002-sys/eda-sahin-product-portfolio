@@ -4,6 +4,9 @@ export type ResumeRole = {
   title: string;
   company: string;
   period: string;
+  location?: string;
+  /** Short line under the title (e.g. combined-role context). */
+  note?: string;
   website?: string;
   websiteHref?: string;
   bullets: string[];
@@ -26,15 +29,24 @@ export type ResumeEducation = {
   logoContained?: boolean;
 };
 
+export type ResumeReference = {
+  name: string;
+  title: string;
+};
+
 export const resumeProfile = {
   name: siteConfig.name,
+  summary:
+    "Business graduate with hands on experience across product, operations and client delivery in international technology and advisory environments.",
   location: "Istanbul, Turkey",
   phone: "+90 536 795 45 17",
   email: siteConfig.email,
   github: "github.com/Eda2002-sys",
   githubHref: siteConfig.github,
-  linkedin: "linkedin.com/in/eda-şahin-b79300231",
+  linkedin: "linkedin.com/in/eda-sahin-b79300231",
   linkedinHref: siteConfig.linkedin,
+  portfolio: "eda-sahin-product-portfolio.vercel.app",
+  portfolioHref: siteConfig.url,
   portraitPath: siteConfig.portraitPath,
   pdfPath: "/resume.pdf",
   languages: [
@@ -45,52 +57,46 @@ export const resumeProfile = {
 
 export const resumeExperience: ResumeRole[] = [
   {
-    title: "Chief of Staff",
-    company: "AnalystAI",
-    period: "2025 to 2026",
-    website: "www.analystai.ai",
-    websiteHref: "https://www.analystai.ai",
-    bullets: [
-      "Partner with the CEO on product strategy, business operations and the development of AI powered solutions for investment and operating teams.",
-      "Lead product management, testing and cross functional delivery across multiple AI products, from business requirements and user journeys to engineering prioritisation and deployment.",
-      "Manage AI product development for international clients including Keppel Corporation, Marcus & Millichap, Thrive Senior Living and Socida, coordinating engineering teams, client requirements, testing and implementation.",
-      "Support product demonstrations, onboarding and continuous improvement across investment, healthcare and operating intelligence use cases.",
-      "Work hands-on with tools including Cursor, Codex, Claude Code, ElevenLabs and Meta Business Suite.",
-    ],
-  },
-  {
-    title: "Chief of Staff",
+    title: "Product & Operations Associate",
     company: "GA Capital",
     period: "2025 to 2026",
+    location: "New York, USA",
+    note: "Combined role across GA Capital and AnalystAI, spanning AI products and M&A advisory.",
     website: "www.gacapital.ai",
     websiteHref: "https://www.gacapital.ai",
     bullets: [
-      "Support the CEO across transaction execution, client management, business development and strategic initiatives within an AI-native M&A advisory firm.",
-      "Contribute to live M&A engagements through due diligence, market and financial analysis, investor and lender outreach, data-room management and client materials.",
-      "Coordinate communication across clients, investors, lenders, advisers and internal teams to maintain transaction momentum and timely execution.",
-      "Support the use of AnalystAI products on international M&A mandates valued at over $20 million.",
+      "Worked between clients and engineering on AI products, translating requirements and feedback into clear product tasks and keeping them connected to implementation.",
+      "Tested end to end workflows with real use cases and product data, comparing expected and actual outputs to identify logic gaps, edge cases and patterns before release.",
+      "Worked with both international business clients and individual users across demos, onboarding, implementation and product feedback, including organisations such as Keppel Corporation, Marcus & Millichap, Thrive Senior Living and Socida.",
+      "Kept smaller workstreams moving by tracking open points, decisions and dependencies across the founder, clients and engineering team.",
+      "Worked on UK buy side transactions, supporting due diligence, financial modelling and analysis, investor and lender research, data room management and preparation of deal materials.",
     ],
   },
   {
-    title: "Marketing Specialist",
+    title: "Marketing Intern",
     company: "Mentor Özel Ders",
     period: "2024 to 2025",
+    location: "Turkey",
+    note: "6 month internship completed during university",
     website: "mentorozelders.com",
     websiteHref: "https://mentorozelders.com",
     bullets: [
-      "Dynamic Instagram management and content strategy.",
-      "Post and pre design and creation of seasonal content calendars.",
+      "Planned weekly Instagram content around campaigns, tutor demand and seasonal periods, working with the team from idea and copy through publishing.",
+      "Organised team content shoots, coordinated schedules and practical details, and supported production on set.",
     ],
   },
   {
-    title: "SEO Intern",
+    title: "Marketing Intern",
     company: "Docquity, Doctor Jobs Today",
     period: "2022 to 2023",
+    location: "Singapore",
+    note: "18 month internship completed during university",
     website: "docquity.com",
     websiteHref: "https://docquity.com",
     bullets: [
-      "Based in Singapore; supported the copywriting and SEO team by creating engaging blog posts and content.",
-      "Contributed to improving Docquity's Google Search Rankings, increasing traffic from Malaysia, the Philippines and Indonesia.",
+      "Wrote blog and web content for healthcare audiences in Malaysia, the Philippines and Indonesia.",
+      "Worked in a regular feedback loop with the manager and content team, revising drafts, sharing weekly progress reports and adjusting work based on feedback.",
+      "Used keyword research and search intent to shape article structure and improve organic discoverability.",
     ],
   },
 ];
@@ -106,7 +112,7 @@ export const resumeEducation: ResumeEducation[] = [
     logoAspect: 849 / 204,
     notes: [
       {
-        text: "Selected coursework: Business Strategy, Marketing Research, Quantitative Methods",
+        text: "Türkiye İş Bankası Scholar, Koç University Anadolu Scholars Program",
       },
     ],
   },
@@ -121,10 +127,20 @@ export const resumeEducation: ResumeEducation[] = [
     logoContained: true,
     notes: [
       {
-        text: "Top-ranked entrant; delivered the opening ceremony speech",
+        text: "Full scholarship, ranked 1st in entrance examination",
         href: "https://www.darussafaka.org/haberler/darussafaka-egitim-kurumlari-torenle-acildi",
       },
-      { text: "IEARN Conference 2017 attendee, Morocco" },
     ],
+  },
+];
+
+export const resumeReferences: ResumeReference[] = [
+  {
+    name: "Ata Onat",
+    title: "Founder & Managing Director, GA Capital",
+  },
+  {
+    name: "Murat Necmi Uzuner",
+    title: "Founder, Mentor Özel Ders",
   },
 ];

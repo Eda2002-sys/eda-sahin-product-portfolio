@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Eda Sahin",
   title: "Eda Sahin · Product Portfolio",
   description:
-    "Product portfolio: AI products, product operations, UX, QA and implementation across workforce intelligence, digital health and investment technology.",
+    "Product portfolio of Eda Sahin, Product & Operations Associate: AI products, client delivery and implementation across workforce intelligence, digital health and investment technology.",
   // The canonical origin, in ONE place. `metadataBase` in app/layout.tsx used
   // to hardcode this separately, so pointing the site at a custom domain meant
   // editing a file that holds no other config - and forgetting it silently
@@ -28,7 +28,6 @@ export const socialLinks = [
 
 export const navLinks = [
   { label: "Work", href: "/#work" },
-  { label: "How I work", href: "/#how-i-work" },
   { label: "Experience", href: "/#experience" },
   { label: "Education", href: "/#education" },
   { label: "Contact", href: "/#contact" },

@@ -75,7 +75,7 @@ export function HautonomyHeroVisual({
               {[
                 ["Marker", "Canonical name"],
                 ["Unit", "Normalized"],
-                ["Range", "Source-linked"],
+                ["Range", "Source linked"],
                 ["Trend", "Awaiting approval"],
               ].map(([label, value]) => (
                 <div
@@ -524,10 +524,10 @@ export function HautonomyProgramVisual({ caption }: { caption?: string }) {
             My markers
           </p>
           <p className="mt-2 case-meta text-muted">
-            Labs, devices, check-ins and derivatives in one longitudinal view.
+            Labs, devices, check ins and derivatives in one longitudinal view.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            {["All sources", "Lab", "Program check-in", "Devices"].map(
+            {["All sources", "Lab", "Program check in", "Devices"].map(
               (filter, index) => (
                 <span
                   key={filter}
@@ -572,7 +572,7 @@ export function HautonomyOutcomeVisual({ caption }: { caption?: string }) {
     "Trend preparation and exception review lived in separate steps.",
   ];
   const after = [
-    "Source-linked values can be reviewed before they enter programs.",
+    "Source linked values can be reviewed before they enter programs.",
     "Lifecycle logic is testable across patient and clinician views together.",
     "Clinician review surfaces exceptions without claiming clinical judgment.",
   ];

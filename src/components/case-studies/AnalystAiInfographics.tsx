@@ -66,7 +66,7 @@ export function AnalystAiHeroVisual({ caption }: { caption?: string }) {
               </div>
               <div className="rounded-sm border border-burgundy/30 bg-burgundy/[0.04] px-3 py-2.5 @[42rem]:px-4 @[42rem]:py-3">
                 <p className="visual-kicker text-burgundy">
-                  Source-linked answer
+                  Source linked answer
                 </p>
                 <p className="case-meta mt-1.5 leading-snug text-navy @[42rem]:mt-2">
                   <span className="@[42rem]:hidden">
@@ -146,7 +146,7 @@ export function AnalystAiProblemVisual({ caption }: { caption?: string }) {
           },
           {
             number: "02",
-            title: "DDQ and data-room state drifted apart",
+            title: "DDQ and data room state drifted apart",
             body: "When tasks, documents and reporting live in separate surfaces, follow ups get lost and teams redo work across the diligence cycle.",
           },
           {
@@ -173,7 +173,7 @@ export function AnalystAiApproachVisual({ caption }: { caption?: string }) {
           },
           {
             title: "Connect documents, tasks and reporting",
-            body: "DDQ paths, data-rooms, libraries and task state stay linked through the same workflow rather than adjacent feature tabs.",
+            body: "DDQ paths, data rooms, libraries and task state stay linked through the same workflow rather than adjacent feature tabs.",
           },
           {
             title: "Feed client sessions into product priority",
@@ -199,7 +199,7 @@ export function AnalystAiBuildVisual({ caption }: { caption?: string }) {
           },
           {
             label: "Work",
-            title: "DDQ & data-room",
+            title: "DDQ & data room",
             body: "Structured diligence paths with document context, task assignment and progress visible across the workspace.",
           },
           {
@@ -229,7 +229,7 @@ export function AnalystAiJourneyVisual({ caption }: { caption?: string }) {
           {
             number: "01",
             label: "Ingest",
-            title: "Documents enter workspace / data-room",
+            title: "Documents enter workspace / data room",
             body: "Deal materials, DDQ templates and supporting files indexed with clear ownership and access boundaries.",
           },
           {
@@ -377,7 +377,7 @@ export function AnalystAiOutcomeVisual({ caption }: { caption?: string }) {
           "Client friction often surfaced only during onboarding and real implementation",
         ]}
         after={[
-          "Document Q&A returns inspectable, source-linked answers by default",
+          "Document Q&A returns inspectable, source linked answers by default",
           "Data room, DDQ, tasks and libraries operate as one diligence workspace",
           "Onboarding feedback flows directly into product issues and priorities",
         ]}

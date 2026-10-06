@@ -2,6 +2,7 @@ import {
   resumeEducation,
   resumeExperience,
   resumeProfile,
+  resumeReferences,
 } from "@/data/resume";
 
 type ResumeCvProps = {
@@ -46,26 +47,26 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
     >
       <header
         className={`pb-6 ${
-          isPrint ? "border-b-[1.5px] border-[#6f2c3a]" : "border-b border-border"
+          isPrint
+            ? "border-b-[1.5px] border-[#6f2c3a]"
+            : "border-b border-border"
         }`}
       >
-        <h1 className="case-title text-burgundy">
-          {resumeProfile.name}
-        </h1>
+        <h1 className="case-title text-burgundy">{resumeProfile.name}</h1>
         <p
           className={
             isPrint
-              ? "mt-3 text-[11px] font-medium uppercase tracking-[0.16em] text-[#6b6f7a]"
-              : "eyebrow mt-3 text-muted"
+              ? "mt-3 max-w-3xl text-sm leading-relaxed text-[#6b6f7a]"
+              : "case-body mt-3 max-w-3xl"
           }
         >
-          Product · Operations · AI
+          {resumeProfile.summary}
         </p>
         <p
           className={
             isPrint
               ? "mt-3 text-sm leading-relaxed text-[#6b6f7a]"
-              : "case-meta mt-3 text-muted"
+              : "case-meta mt-4 text-muted"
           }
         >
           {resumeProfile.location} · {resumeProfile.phone} ·{" "}
@@ -78,34 +79,64 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
               : "case-meta mt-1 text-muted"
           }
         >
-          {resumeProfile.github} · {resumeProfile.linkedin}
+          <a
+            href={resumeProfile.linkedinHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={
+              isPrint
+                ? "text-[#6b6f7a]"
+                : "link-underline transition-colors hover:text-burgundy"
+            }
+          >
+            {resumeProfile.linkedin}
+          </a>
+          {" · "}
+          <a
+            href={resumeProfile.githubHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={
+              isPrint
+                ? "text-[#6b6f7a]"
+                : "link-underline transition-colors hover:text-burgundy"
+            }
+          >
+            {resumeProfile.github}
+          </a>
+        </p>
+        <p
+          className={
+            isPrint
+              ? "mt-1 text-sm text-[#6b6f7a]"
+              : "case-meta mt-1 text-muted"
+          }
+        >
+          Selected product work:{" "}
+          <a
+            href={resumeProfile.portfolioHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={
+              isPrint
+                ? "text-[#6b6f7a]"
+                : "link-underline transition-colors hover:text-burgundy"
+            }
+          >
+            {resumeProfile.portfolio}
+          </a>
         </p>
       </header>
 
       <div
         className={`divide-y ${
-          isPrint
-            ? "divide-[#6f2c3a]/18"
-            : "divide-border border-t-0"
+          isPrint ? "divide-[#6f2c3a]/18" : "divide-border border-t-0"
         }`}
       >
-        {isPrint ? (
-          <Section label="Contact" variant={variant}>
-            <ul
-              className="space-y-1 text-sm text-[#1a1f2e]"
-              {...{ "x-apple-data-detectors": "false" }}
-            >
-              <li>{resumeProfile.phone}</li>
-              <li>{resumeProfile.email}</li>
-              <li>{resumeProfile.location}</li>
-            </ul>
-          </Section>
-        ) : null}
-
         <Section label="Experience" variant={variant}>
           <ul className="space-y-6">
             {resumeExperience.map((role) => (
-              <li key={`${role.company}-${role.period}`}>
+              <li key={`${role.company}-${role.period}-${role.title}`}>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <p
                     className={
@@ -132,22 +163,49 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
                     }
                   >
                     {role.period}
+                    {role.location ? ` · ${role.location}` : null}
                   </p>
                 </div>
+                {role.note ? (
+                  <p
+                    className={
+                      isPrint
+                        ? "mt-1 text-sm italic text-[#6b6f7a]"
+                        : "case-meta mt-1 italic text-muted"
+                    }
+                  >
+                    {role.note}
+                  </p>
+                ) : null}
                 {role.website ? (
                   <p
                     className={`case-meta mt-0.5 tracking-wide ${
                       isPrint ? "text-[#8a909c]" : "text-muted"
                     }`}
                   >
-                    {role.website}
+                    {role.websiteHref ? (
+                      <a
+                        href={role.websiteHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={
+                          isPrint
+                            ? "text-[#8a909c]"
+                            : "link-underline transition-colors hover:text-burgundy"
+                        }
+                      >
+                        {role.website}
+                      </a>
+                    ) : (
+                      role.website
+                    )}
                   </p>
                 ) : null}
                 <ul
                   className={
                     isPrint
                       ? "mt-2.5 list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-[#2a3040] marker:text-burgundy/70"
-                      : "case-meta mt-2.5 list-disc space-y-1.5 pl-4 marker:text-burgundy/70 text-muted"
+                      : "case-meta mt-2.5 list-disc space-y-1.5 pl-4 text-muted marker:text-burgundy/70"
                   }
                 >
                   {role.bullets.map((bullet) => (
@@ -201,7 +259,24 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
                     }
                   >
                     {item.notes.map((note) => (
-                      <li key={note.text}>{note.text}</li>
+                      <li key={note.text}>
+                        {note.href ? (
+                          <a
+                            href={note.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={
+                              isPrint
+                                ? "text-[#6b6f7a]"
+                                : "link-underline transition-colors hover:text-burgundy"
+                            }
+                          >
+                            {note.text}
+                          </a>
+                        ) : (
+                          note.text
+                        )}
+                      </li>
                     ))}
                   </ul>
                 ) : null}
@@ -210,21 +285,28 @@ export function ResumeCv({ variant = "web" }: ResumeCvProps) {
           </ul>
         </Section>
 
-        <Section label="Languages" variant={variant}>
-          <ul
-            className={
-              isPrint
-                ? "flex flex-wrap gap-x-6 gap-y-1 text-sm text-[#1a1f2e]"
-                : "case-meta flex flex-wrap gap-x-6 gap-y-1 text-navy"
-            }
-          >
-            {resumeProfile.languages.map((entry) => (
-              <li key={entry.language}>
-                {entry.language}
-                <span className={isPrint ? "text-[#6b6f7a]" : "text-muted"}>
-                  {" "}
-                  · {entry.level}
-                </span>
+        <Section label="References" variant={variant}>
+          <ul className="space-y-3">
+            {resumeReferences.map((ref) => (
+              <li key={ref.name}>
+                <p
+                  className={
+                    isPrint
+                      ? "text-[15px] font-semibold tracking-tight text-[#1a1f2e]"
+                      : "case-subhead text-navy"
+                  }
+                >
+                  {ref.name}
+                </p>
+                <p
+                  className={
+                    isPrint
+                      ? "mt-0.5 text-sm text-[#6b6f7a]"
+                      : "case-meta mt-0.5 text-muted"
+                  }
+                >
+                  {ref.title}
+                </p>
               </li>
             ))}
           </ul>

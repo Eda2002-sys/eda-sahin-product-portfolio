@@ -153,10 +153,10 @@ export const projects: Project[] = [
     category: "Automotive · Workforce Intelligence · WhatsApp",
     summary:
       "Employees could ask product, financing and process questions by text or voice, receive answers grounded in approved company sources, access documents and complete training without leaving WhatsApp.",
-    context: ["~300 employees", "7 brand knowledge bases", "WhatsApp-first"],
+    context: ["~300 employees", "7 brand knowledge bases", "WhatsApp first"],
     roleHighlights: [
       "Mapped the employee question → answer → source workflow",
-      "Tested voice, text, images and document-based questions",
+      "Tested voice, text, images and document based questions",
       "Validated whether answers stayed grounded in approved sources",
       "Worked with engineering on QA issues and workflow improvements",
     ],
@@ -250,7 +250,7 @@ export const projects: Project[] = [
       insights: [
         {
           title: "Questions were conversational, not keyword perfect.",
-          body: "Employees often asked incomplete questions mid customer conversation. Retrieval needed clarification, source-linked answers and explicit failure states rather than assuming perfect prompts.",
+          body: "Employees often asked incomplete questions mid customer conversation. Retrieval needed clarification, source linked answers and explicit failure states rather than assuming perfect prompts.",
         },
         {
           title: "Usage signals needed a correction loop.",
@@ -270,29 +270,29 @@ export const projects: Project[] = [
     title: "Third Eye",
     category: "Operating Intelligence · AI · WhatsApp",
     summary:
-      "Frontline employees answer lightweight daily check-ins in WhatsApp. The product groups those updates into recurring issues, daily briefs, owners and next actions for managers.",
+      "Frontline employees answer lightweight daily check ins in WhatsApp. The product groups those updates into recurring issues, daily briefs, owners and next actions for managers.",
     roleHighlights: [
-      "Designed and tested employee check-in flows",
+      "Designed and tested employee check in flows",
       "Tested how raw updates became signals and daily briefs",
       "Reviewed manager dashboards and action flows",
       "Validated Meta / WhatsApp behaviour and handed issues to engineering",
     ],
     whatChanged:
-      "A WhatsApp-based operating system for turning employee updates into manager actions.",
+      "A WhatsApp based operating system for turning employee updates into manager actions.",
     productValue:
-      "Daily check-ins become manager-ready briefs with owners and next actions.",
+      "Daily check ins become manager ready briefs with owners and next actions.",
     ctaLabel: "View case study",
     href: "/work/third-eye",
     type: "case-study",
     visualNote:
-      "Editorial product patterns for WhatsApp check-ins, daily briefs and executive dashboard logic.",
+      "Editorial product patterns for WhatsApp check ins, daily briefs and executive dashboard logic.",
     caseStudy: {
       sourceNote:
         "Visuals are representative and created for this portfolio.",
       visuals: [
         {
           component: "third-eye-hero",
-          alt: "Frontline WhatsApp updates flowing through synthesis into manager-ready actions",
+          alt: "Frontline WhatsApp updates flowing through synthesis into manager ready actions",
           caption:
             "Frontline updates → synthesis → manager actions: the core Third Eye operating loop.",
           placement: "hero",
@@ -301,12 +301,12 @@ export const projects: Project[] = [
           component: "third-eye-problem",
           alt: "Before and after comparison of typical corporate tools versus Third Eye visibility",
           caption:
-            "From scattered chat and manual follow up to a daily manager-ready rhythm.",
+            "From scattered chat and manual follow up to a daily manager ready rhythm.",
           placement: "problem",
         },
         {
           component: "third-eye-approach",
-          alt: "WhatsApp check-in converting into a daily operating brief with grouped signals",
+          alt: "WhatsApp check in converting into a daily operating brief with grouped signals",
           caption:
             "Daily operating signal: WhatsApp in, brief out with risk, ownership and next action.",
           placement: "approach",
@@ -329,20 +329,20 @@ export const projects: Project[] = [
         stage:
           "Early product definition through live workflow and integration validation",
         usersScale: "Frontline employees, managers and executives",
-        surfaces: "WhatsApp check-ins, daily briefs, executive dashboard, admin flows",
+        surfaces: "WhatsApp check ins, daily briefs, executive dashboard, admin flows",
         collaboration: "Founders, engineering, operations stakeholders",
       },
       problem:
         "Frontline updates lived across WhatsApp and informal reporting, but managers still had to reconstruct what mattered manually. The product needed to capture lightweight daily input without adding another tool, then turn that input into recurring signals and next actions.",
       roleNarrative:
-        "I designed and tested employee check-in flows, validated how raw updates became signals and daily briefs, reviewed manager dashboards and action flows, and tested Meta / WhatsApp behaviour before handing issues to engineering.",
+        "I designed and tested employee check in flows, validated how raw updates became signals and daily briefs, reviewed manager dashboards and action flows, and tested Meta / WhatsApp behaviour before handing issues to engineering.",
       workSectionsTitle: "What I worked on",
       workSections: [
         {
           title: "Employee & onboarding flows",
           items: [
-            "Designed and tested onboarding so check-ins felt understandable from day one",
-            "Refined check-in prompts and sequencing for frontline completion",
+            "Designed and tested onboarding so check ins felt understandable from day one",
+            "Refined check in prompts and sequencing for frontline completion",
             "Validated employee vs admin permissions and path differences",
           ],
         },
@@ -371,7 +371,7 @@ export const projects: Project[] = [
         },
         {
           title: "Managers needed decisions, not transcripts.",
-          body: "Raw check-in volume recreated the attention problem. Briefs needed to surface recurring patterns, ownership and next actions.",
+          body: "Raw check in volume recreated the attention problem. Briefs needed to surface recurring patterns, ownership and next actions.",
         },
       ],
       journey: [],
@@ -409,7 +409,7 @@ export const projects: Project[] = [
       visuals: [
         {
           component: "hautonomy-hero",
-          alt: "Clinical document transforming into a structured, source-linked record",
+          alt: "Clinical document transforming into a structured, source linked record",
           caption:
             "Lab values only become useful when the original document and structured record stay connected.",
           placement: "hero",
@@ -457,7 +457,7 @@ export const projects: Project[] = [
         usersScale:
           "Patients in personalised programs; clinicians and admins reviewing progress",
         surfaces:
-          "Lab / document intake, marker review, patient programs, dashboards, wearable / check-in pathways",
+          "Lab / document intake, marker review, patient programs, dashboards, wearable / check in pathways",
         collaboration: "Product, clinical program design, engineering",
       },
       problem:
@@ -515,7 +515,7 @@ export const projects: Project[] = [
       journeyHighlightIndex: 3,
       demonstrates: [],
       outcomeLine:
-        "From disconnected lab data and fragile lifecycle logic to a reviewable, source-linked clinical workflow.",
+        "From disconnected lab data and fragile lifecycle logic to a reviewable, source linked clinical workflow.",
     },
   },
   {
@@ -525,11 +525,11 @@ export const projects: Project[] = [
     title: "AnalystAI Enterprise & DDQ",
     category: "Investment Technology · AI · Due Diligence",
     summary:
-      "Investment teams could upload data-room documents, ask questions, inspect the evidence behind AI answers, manage DDQs and tasks, and keep diligence work connected in one workspace.",
+      "Investment teams could upload data room documents, ask questions, inspect the evidence behind AI answers, manage DDQs and tasks, and keep diligence work connected in one workspace.",
     roleHighlights: [
-      "Tested document Q&A and source-linked answers",
+      "Tested document Q&A and source linked answers",
       "Validated citations against underlying documents",
-      "Tested DDQ, data-room and task workflows",
+      "Tested DDQ, data room and task workflows",
       "Turned client feedback into structured engineering issues and retested fixes",
     ],
     whatChanged:
@@ -542,16 +542,16 @@ export const projects: Project[] = [
     brandLogo: "/images/analystai-logo.png",
     brandUrl: "https://www.analystai.ai",
     visualNote:
-      "Editorial product patterns for document Q&A, DDQ workflows and source-linked diligence.",
+      "Editorial product patterns for document Q&A, DDQ workflows and source linked diligence.",
     caseStudy: {
       sourceNote:
         "Visuals are representative and created for this portfolio.",
       visuals: [
         {
           component: "analystai-hero",
-          alt: "Document Q&A with source-linked answer and citation verification panel",
+          alt: "Document Q&A with source linked answer and citation verification panel",
           caption:
-            "Source-linked answers: investment teams verify evidence before they share or act.",
+            "Source linked answers: investment teams verify evidence before they share or act.",
           placement: "hero",
         },
         {
@@ -577,9 +577,9 @@ export const projects: Project[] = [
         },
         {
           component: "analystai-workspace",
-          alt: "DDQ workspace with linked tasks and source-linked answers",
+          alt: "DDQ workspace with linked tasks and source linked answers",
           caption:
-            "Connected diligence workspace: DDQ progress, source-linked answers and open tasks in one view.",
+            "Connected diligence workspace: DDQ progress, source linked answers and open tasks in one view.",
           placement: "governance",
         },
         {
@@ -591,15 +591,15 @@ export const projects: Project[] = [
       glance: {
         role: "Product testing, client feedback loops, implementation, and engineering coordination",
         stage:
-          "Live enterprise product iteration across document Q&A, diligence and data-room workflows",
-        usersScale: "Investment and diligence teams working across documents and data-rooms",
-        surfaces: "Document Q&A, DDQ, data-rooms, tasks, libraries, reporting",
+          "Live enterprise product iteration across document Q&A, diligence and data room workflows",
+        usersScale: "Investment and diligence teams working across documents and data rooms",
+        surfaces: "Document Q&A, DDQ, data rooms, tasks, libraries, reporting",
         collaboration: "Founders, engineering, clients, implementation",
       },
       problem:
         "Investment teams need to move between documents, questions, tasks and decisions without losing the evidence behind an answer or the state of the diligence process. AI only adds value when those workflows stay connected.",
       roleNarrative:
-        "I tested document Q&A and source-linked answers, validated citations against underlying documents, walked DDQ and data-room workflows end-to-end, and turned client feedback into structured engineering issues that I retested after fixes.",
+        "I tested document Q&A and source linked answers, validated citations against underlying documents, walked DDQ and data room workflows end to end, and turned client feedback into structured engineering issues that I retested after fixes.",
       workSections: [
         {
           title: "AI trust & document workflows",
@@ -611,8 +611,8 @@ export const projects: Project[] = [
         {
           title: "Diligence & workspace flows",
           items: [
-            "Walked DDQ workflows end-to-end",
-            "Tested data-room UX, libraries, task flows and reporting paths",
+            "Walked DDQ workflows end to end",
+            "Tested data room UX, libraries, task flows and reporting paths",
           ],
         },
         {
@@ -639,9 +639,9 @@ export const projects: Project[] = [
         },
       ],
       journey: [
-        "Documents enter the workspace / data-room",
+        "Documents enter the workspace / data room",
         "User asks questions or works a DDQ path",
-        "AI returns source-linked outputs",
+        "AI returns source linked outputs",
         "Tasks and libraries organise follow up",
         "Reporting captures diligence progress",
         "Team revisits evidence with shared context",

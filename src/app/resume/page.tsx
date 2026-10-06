@@ -7,7 +7,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "CV · Eda Sahin",
   description:
-    "CV for Eda Sahin, Chief of Staff with experience across AI products, operations and M&A. Based in Istanbul.",
+    "CV for Eda Sahin, Product & Operations Associate with experience across AI products, operations and M&A. Based in Istanbul.",
   formatDetection: {
     telephone: false,
     email: false,
@@ -29,8 +29,8 @@ export default function ResumePage() {
         <div className="mt-6 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
           <div className="min-w-0">
             <p className="case-body text-pretty">
-              Chief of Staff with experience across AI products, operations and
-              M&A. Based in Istanbul.
+              Product &amp; Operations Associate with experience across AI
+              products, operations and M&A. Based in Istanbul.
             </p>
           </div>
           <div className="flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap">

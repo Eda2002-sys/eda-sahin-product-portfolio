@@ -48,8 +48,8 @@ export function Hero() {
 
         <div className="min-w-0 max-w-4xl">
           <p className="case-meta rise-in rise-in-delay-2 mt-5 text-muted md:mt-6">
-            Istanbul-based · Open to global product, operations, strategy and
-            founder-facing roles
+            Istanbul based · Open to global product, operations, strategy and
+            founder facing roles
           </p>
 
           <div className="rise-in rise-in-delay-2 mt-7 flex flex-col gap-3 md:mt-10">

@@ -107,7 +107,7 @@ function InsightCard({
   );
 }
 
-/** Frontline updates → synthesis → manager-ready (product landing pattern). */
+/** Frontline updates → synthesis → manager ready (product landing pattern). */
 export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
   const frontlineUpdates = [
     "Customers keep asking about insurance covering replacement parts.",
@@ -126,7 +126,7 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
             Frontline updates → manager actions
           </h3>
           <p className="case-meta mt-1.5 hidden text-muted @[42rem]:block">
-            WhatsApp check-ins become daily briefs, signals and next actions.
+            WhatsApp check ins become daily briefs, signals and next actions.
           </p>
         </div>
 
@@ -178,7 +178,7 @@ export function ThirdEyeHeroVisual({ caption }: { caption?: string }) {
 
           <div className="bg-navy p-3.5 text-background @[42rem]:col-span-5 @[42rem]:p-5">
             <p className="visual-kicker visual-kicker--on-dark">
-              Manager-ready
+              Manager ready
             </p>
             <div className="mt-2.5 rounded-sm border border-background/15 bg-background/5 p-3 @[42rem]:mt-3 @[42rem]:p-3.5">
               <span className="visual-kicker visual-kicker--on-dark rounded-sm bg-burgundy px-2 py-0.5">
@@ -267,7 +267,7 @@ export function ThirdEyeProblemVisual({ caption }: { caption?: string }) {
             <p className="visual-kicker text-muted">
               After
             </p>
-            <p className="case-subhead mt-2">Manager-ready loop</p>
+            <p className="case-subhead mt-2">Manager ready loop</p>
             <ul className="mt-5 space-y-3">
               {after.map((item) => (
                 <li
@@ -324,7 +324,7 @@ export function ThirdEyeApproachVisual({ caption }: { caption?: string }) {
           <div className="border-b border-border p-5 lg:col-span-5 lg:border-b-0 lg:border-r md:p-6">
             <div className="overflow-hidden rounded-[1.2rem] border border-border bg-background">
               <div className="border-b border-border px-4 py-2.5">
-                <p className="visual-kicker text-muted">Shift-close check-in</p>
+                <p className="visual-kicker text-muted">Shift close check in</p>
               </div>
               <div className="space-y-3 px-3 py-4">
                 <div className="max-w-[92%] rounded-sm rounded-tl-none border border-border bg-surface-elevated px-3 py-2.5">
@@ -400,7 +400,7 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
     {
       number: "02",
       title: "Web fallback",
-      body: "Same check-in via mobile link when WhatsApp delivery or permissions differ.",
+      body: "Same check in via mobile link when WhatsApp delivery or permissions differ.",
     },
     {
       number: "03",
@@ -428,7 +428,7 @@ export function ThirdEyeBuildVisual({ caption }: { caption?: string }) {
               </h3>
               <p className="case-meta mt-2 text-background/65">
                 Best for 20 to 50 frontline employees across 2 to 5 sites: WhatsApp
-                check-ins plus mobile web fallback.
+                check ins plus mobile web fallback.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {["Setup in days", "No employee app rollout"].map((pill) => (
@@ -479,7 +479,7 @@ export function ThirdEyeJourneyVisual({ caption }: { caption?: string }) {
           {
             number: "01",
             label: "Pulse",
-            title: "Frontline completes WhatsApp check-in",
+            title: "Frontline completes WhatsApp check in",
             body: "Short shift close questions capture customer issues, workarounds, branch differences and recovery blockers.",
           },
           {
@@ -564,7 +564,7 @@ export function ThirdEyeOutcomeVisual({ caption }: { caption?: string }) {
     "Recurring problems surfaced late",
   ];
   const after = [
-    "Lightweight WhatsApp check-ins",
+    "Lightweight WhatsApp check ins",
     "Repeated signals grouped into a daily brief",
     "Owners and next actions surfaced for managers",
     "Follow ups looped back into operations",

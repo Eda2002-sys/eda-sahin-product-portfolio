@@ -31,7 +31,7 @@ export const additionalProducts: AdditionalProduct[] = [
   {
     name: "Deep Market Research",
     summary:
-      "Research workflow combining multiple sources into structured, source-linked outputs.",
+      "Research workflow combining multiple sources into structured, source linked outputs.",
   },
   {
     name: "GA Capital M&A Platform",

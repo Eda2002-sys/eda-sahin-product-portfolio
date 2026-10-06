@@ -11,7 +11,11 @@ export function Experience() {
       aria-labelledby="experience-heading"
     >
       <div className="container-page section-space">
-        <SectionHeading id="experience-heading" title="Experience" />
+        <SectionHeading
+          id="experience-heading"
+          title="Experience"
+          description="I'm most useful when a problem is still messy. I get close to the real workflow, understand what is breaking, turn that into something actionable and stay close through implementation."
+        />
 
         <ol className="mt-10 space-y-0 md:mt-12">
           {experience.map((item) => (

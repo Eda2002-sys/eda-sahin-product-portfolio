@@ -93,7 +93,7 @@ export function SelectedWork() {
         <SectionHeading
           id="work-heading"
           title="Selected work"
-          description="AI makes it faster to learn across new fields. I use that speed with human judgement to understand unfamiliar workflows, ask the right questions and turn what I learn into products that work. Below are some of the AI-native products I've helped shape, test and implement."
+          description="AI makes it faster to learn across new fields. I use that speed with human judgement to understand unfamiliar workflows, ask the right questions and turn what I learn into products that work. Below are some of the AI native products I've helped shape, test and implement."
         />
         <div className="mt-2 md:mt-4">
           {flagship.map((project, index) => (
