@@ -128,6 +128,9 @@ export const resumeEducation: ResumeEducation[] = [
         text: "Full scholarship, ranked 1st in entrance examination",
         href: "https://www.darussafaka.org/haberler/darussafaka-egitim-kurumlari-torenle-acildi",
       },
+      {
+        text: "IMA Turkey 2013 Mental Arithmetic Olympics champion",
+      },
     ],
   },
 ];

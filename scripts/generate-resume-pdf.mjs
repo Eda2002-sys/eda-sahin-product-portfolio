@@ -221,6 +221,11 @@ const html = `<!DOCTYPE html>
       line-height: 1.4;
     }
 
+    .notes a {
+      color: #6f2c3a;
+      text-decoration: none;
+    }
+
     .ref-item { margin-bottom: 6px; }
     .ref-item:last-child { margin-bottom: 0; }
 
@@ -301,7 +306,15 @@ const html = `<!DOCTYPE html>
         "Darüşşafaka High School",
         "2016 to 2020",
         "High School Diploma",
-        [{ text: "Full scholarship, ranked 1st in entrance examination" }],
+        [
+          {
+            text: "Full scholarship, ranked 1st in entrance examination",
+            href: "https://www.darussafaka.org/haberler/darussafaka-egitim-kurumlari-torenle-acildi",
+          },
+          {
+            text: "IMA Turkey 2013 Mental Arithmetic Olympics champion",
+          },
+        ],
       )}
     </div>
   </section>
@@ -335,7 +348,10 @@ function experienceBlock(title, company, period, website, note, bullets) {
 }
 
 function educationNote(note) {
-  return `<div class="notes">${note.text}</div>`;
+  const content = note.href
+    ? `<a href="${note.href}">${note.text}</a>`
+    : note.text;
+  return `<div class="notes">${content}</div>`;
 }
 
 function educationBlock(institution, period, detail, notes = []) {
