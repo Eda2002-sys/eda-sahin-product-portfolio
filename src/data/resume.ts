@@ -59,8 +59,7 @@ export const resumeExperience: ResumeRole[] = [
   {
     title: "Product & Operations Associate",
     company: "GA Capital",
-    period: "2025 to 2026",
-    location: "New York, USA",
+    period: "07.25 to 09.26",
     note: "Combined role across GA Capital and AnalystAI, spanning AI products and M&A advisory.",
     website: "www.gacapital.ai",
     websiteHref: "https://www.gacapital.ai",
@@ -75,8 +74,7 @@ export const resumeExperience: ResumeRole[] = [
   {
     title: "Marketing Intern",
     company: "Mentor Özel Ders",
-    period: "2024 to 2025",
-    location: "Turkey",
+    period: "05.24 to 10.24",
     website: "mentorozelders.com",
     websiteHref: "https://mentorozelders.com",
     bullets: [
@@ -87,8 +85,7 @@ export const resumeExperience: ResumeRole[] = [
   {
     title: "Marketing Intern",
     company: "Docquity, Doctor Jobs Today",
-    period: "2022 to 2023",
-    location: "Singapore",
+    period: "11.22 to 04.24",
     website: "docquity.com",
     websiteHref: "https://docquity.com",
     bullets: [

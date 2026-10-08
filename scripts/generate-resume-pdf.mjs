@@ -252,7 +252,7 @@ const html = `<!DOCTYPE html>
       ${experienceBlock(
         "Product & Operations Associate",
         "GA Capital",
-        "2025 to 2026 · New York, USA",
+        "07.25 to 09.26",
         "www.gacapital.ai",
         "Combined role across GA Capital and AnalystAI, spanning AI products and M&A advisory.",
         [
@@ -266,9 +266,9 @@ const html = `<!DOCTYPE html>
       ${experienceBlock(
         "Marketing Intern",
         "Mentor Özel Ders",
-        "2024 to 2025 · Turkey",
+        "05.24 to 10.24",
         "mentorozelders.com",
-        null,
+        "6 month internship completed during university",
         [
           "Planned weekly Instagram content around campaigns, tutor demand and seasonal periods, working with the team from idea and copy through publishing.",
           "Organised team content shoots, coordinated schedules and practical details, and supported production on set.",
@@ -277,9 +277,9 @@ const html = `<!DOCTYPE html>
       ${experienceBlock(
         "Marketing Intern",
         "Docquity, Doctor Jobs Today",
-        "2022 to 2023 · Singapore",
+        "11.22 to 04.24",
         "docquity.com",
-        null,
+        "18 month internship completed during university",
         [
           "Wrote blog and web content for healthcare audiences in Malaysia, the Philippines and Indonesia.",
           "Worked in a regular feedback loop with the manager and content team, revising drafts, sharing weekly progress reports and adjusting work based on feedback.",
@@ -309,10 +309,6 @@ const html = `<!DOCTYPE html>
         [
           {
             text: "Full scholarship, ranked 1st in entrance examination",
-            href: "https://www.darussafaka.org/haberler/darussafaka-egitim-kurumlari-torenle-acildi",
-          },
-          {
-            text: "IMA Turkey 2013 Mental Arithmetic Olympics champion",
           },
         ],
       )}
